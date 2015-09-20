@@ -91,6 +91,7 @@ header a {
 }
 
 .choice {
+  box-shadow: 0 5px 5px #000;
   display: none;
   position:absolute;
   left:0;
@@ -135,15 +136,94 @@ header a {
   height: 480px;
   box-shadow: inset 0 1px 5px #000;
   overflow: hidden;
-  text-align: center;
+}
+
+.searchbar-section-darkness {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 480px;
 }
 
 .avis-logo {
+  position: relative;
   width: 105px;
   height: 45px;
   background-color: #d4002a;
   padding-top: 5px;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: bold;
   color: white;
+  text-align: center;
+}
+
+.ItalyFlag {
+  position: absolute;
+  bottom: -7px;
+  right: -5px;
+}
+
+.searchbar {
+  border-left: 45px solid #ffcd4a;
+  border-right: 45px solid #ffcd4a;
+  border-top: 20px solid #ffcd4a;
+  border-bottom: 20px solid #ffcd4a;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.searchbar-section-advertise {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+
+.searchbar-border {
+  width: 100%;
+  border: 2px solid #fff;
+}
+
+.searchbar input {
+  width: 55%;
+  float: left;
+  outline: 0;
+  border: none;
+  margin: 0 -5px;
+  padding: 13px 10px 14px 15px;
+}
+
+.searchbar-date-in,
+.searchbar-date-out {
+  background-color: #dddddd;
+  padding: 14px 13px 13px 13px;
+  border-right: 2px solid #fff;
+  margin-right: -4px;
+}
+
+.searchbar-price {
+  padding: 14px 27px 13px 27px;
+  background-color: #0073b5;
+}
+
+.searchbar .avis-logo {
+  float: left;
+}
+
+.searchbar-pref {
+  width: 100%;
+  text-shadow: 2px 2px #000;
+}
+
+.col-4 {
+  padding-left: 20px;
+  font-size: 13px;
+  color: #fff;
+  width: 25%;
+  margin-right: -4px;
+}
+
+.col-4 p::before{
+  padding-right: 8px;
+  content: "\f00c";
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
 }
