@@ -5,9 +5,119 @@
 .container {
   width: 970px;
   margin: auto;
+  font-size: 12px;
 }
+
+/* HEADER */
 
 header {
   background-color: #1a5880;
-  padding:40px 0;
+  padding:15px 0;
+  box-shadow: 0px 5px 5px #888888;
+}
+
+header div,
+header i,
+header span ,
+header ul{
+  color: white;
+}
+
+header a {
+  text-decoration: none;
+}
+
+.container div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logo {
+  margin: 0 40px 0 0;
+}
+
+.logo-name {
+  font-size: 14px;
+  vertical-align: middle;
+  padding-left: 5px;
+}
+
+.logo i {
+  vertical-align: middle;
+}
+
+.liked-users {
+  margin: 0 110px 0 0;
+}
+
+.liked-users-number {
+  font-size: 14px;
+}
+
+.border-right {
+  border-right: 1px solid white;
+  padding-right: 30px;
+}
+
+.contact-information {
+  width: 160px;
+  position: relative;
+}
+
+.contact-information .fa-chevron-down {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.contact-information-phone {
+  font-size: 14px;
+}
+
+.contact-information-communication {
+  font-size: 10px;
+  padding-left: 20px;
+}
+
+.language,
+.currency {
+  padding: 0 0 0 15px;
+  margin: 0 0 0 15px;
+  position: relative;
+}
+
+.choice {
+  display: none;
+  position:absolute;
+  left:0;
+  top: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.language a:hover .choice,
+.currency a:hover .choice {
+  display: block;
+}
+
+.choice li {
+  padding: 15px;
+  background-color: #1a5880;
+  margin-top: -1px;
+}
+
+.currency {
+  margin: 0 30px 0 30px;
+}
+
+.my-booking {
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.container .fa-chevron-down {
+  margin-left: 10px;
 }
