@@ -2,89 +2,559 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/brand_city.css">
   <title>EconomyBookings</title>
 </head>
 
 <body>
+  <!--<div class="template"></div>-->
   <header>
     <div class="container">
-      <a class="logo" href="#">
-        <i class="fa fa-bold fa-2x"></i>
-        <span class="logo-name">Economy Bookings</span>
-      </a>
+      <a class="logo" href="#"><img class="img-logo" src="img/EconomyBookings-Logo.png" alt="EconomyBookings" /></a>
       <div class="liked-users">
-        <a class="" href="#"><i class="fa fa-heart"></i></a>
+        <a class="liked-users-heart" href="#"><i class="fa fa-heart"></i></a>
         <span class="liked-users-number">41,760</span>
         <span class="liked-users-cont">users love us</span>
       </div>
-      <div class="border-right">
-        <div class="contact-information">
-          <a class="" href="#">
-            <i class="fa fa-phone fa-lg"></i>
+      <div class="dropdown border-right">
+        <div class="dropdown-header contact-information">
             <span class="contact-information-phone">(+371) 6-601-0858</span>
             <span class="contact-information-communication">communication in english</span>
-            <i class="fa fa-chevron-down"></i>
-          </a>
+        </div>
+        <div class="dropdown-content contact-information-list">
+          <div class="dropdown-row cf">
+            <div class="col-2">
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/PortuFlag.png" alt="countryflag" width=15px height=10px />France<span class="contact-number">+33 17 09 186 12</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/HungaryFlag.png" alt="countryflag" width=15px height=10px />Sweden<span class="contact-number">+46 8 5051 3532</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/LatviaFlag.png" alt="countryflag" width=15px height=10px />United Kingdom<span class="contact-number">+44 203 478 5239</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/PortuFlag.png" alt="countryflag" width=15px height=10px />Israel<span class="contact-number">+972 3721 9636</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/HungaryFlag.png" alt="countryflag" width=15px height=10px />USA<span class="contact-number">1 202 800 9938</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/LatviaFlag.png" alt="countryflag" width=15px height=10px />Latvia<span class="contact-number">+371 6 601 0858</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/PortuFlag.png" alt="countryflag" width=15px height=10px />Australia<span class="contact-number">+61 280 733 414</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/HungaryFlag.png" alt="countryflag" width=15px height=10px />Switzerland<span class="contact-number">+41 315 280 911</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/LatviaFlag.png" alt="countryflag" width=15px height=10px />Hong Kong<span class="contact-number">+852 580 859 11</span></a>
+            </div>
+            <div class="col-2">
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/PortuFlag.png" alt="countryflag" width=15px height=10px />Italy<span class="contact-number">+39 06 4523 0451</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/HungaryFlag.png" alt="countryflag" width=15px height=10px />Poland<span class="contact-number">+48 2 2212 0618</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/LatviaFlag.png" alt="countryflag" width=15px height=10px />Spain<span class="contact-number">+34 9 1791 1261</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/PortuFlag.png" alt="countryflag" width=15px height=10px />Russia<span class="contact-number">+7 495 989 1167</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/HungaryFlag.png" alt="countryflag" width=15px height=10px />Ukraine<span class="contact-number">800 50 11 47</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/LatviaFlag.png" alt="countryflag" width=15px height=10px />Germany<span class="contact-number">800 180 40 08</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/PortuFlag.png" alt="countryflag" width=15px height=10px />Belgium<span class="contact-number">+32 258 849 11</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/HungaryFlag.png" alt="countryflag" width=15px height=10px />Canada<span class="contact-number">+1 613 701 09 11</span></a>
+              <a href="#" class="choice"><img class="contact-information-flag" src="img/LatviaFlag.png" alt="countryflag" width=15px height=10px />Brazil<span class="contact-number">+55 613 717 51 11</span></a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="language">
-        <a class="" href="#">
-          <span>EN</span>
-          <i class="fa fa-chevron-down"></i>
-          <ul class="choice">
-            <li>LV</li>
-            <li>RU</li>
-          </ul>
-        </a>
-      </div>
-      <div class="currency">
-        <a class="" href="#">
-          <i class="fa fa-eur"></i>
-          <i class="fa fa-chevron-down"></i>
-          <ul class="choice">
-            <li><i class="fa fa-usd"></i></li>
-            <li><i class="fa fa-rub"></i></li>
-          </ul>
-        </a>
-      </div>
-      <a class="" href="#">
-        <div class="my-booking">
-          <span>My Booking</span>
-          <i class="fa fa-chevron-down"></i>
+      <div class="dropdown menu-btn language-menu">
+        <span class="dropdown-header menu-btn-header">EN</span>
+        <div class="dropdown-content language-currency  ">
+          <div class="dropdown-row cf">
+            <div class="col-2">
+              <a href="#" class="choice">Deutsch</a>
+              <a href="#" class="choice">English</a>
+              <a href="#" class="choice">Espanol</a>
+              <a href="#" class="choice">Francais</a>
+              <a href="#" class="choice">Italiano</a>
+              <a href="#" class="choice">Suomi</a>
+              <a href="#" class="choice">Latviesu</a>
+            </div>
+            <div class="col-2">
+              <a href="#" class="choice">Nederlands</a>
+              <a href="#" class="choice">Polski</a>
+              <a href="#" class="choice">Русский</a>
+              <a href="#" class="choice">Portugese</a>
+              <a href="#" class="choice">Svenska</a>
+              <a href="#" class="choice">Chinese</a>
+            </div>
+          </div>
         </div>
-      </a>
+      </div>
+      <div class="dropdown menu-btn currency-menu">
+        <span class="dropdown-header menu-btn-header"><i class="fa fa-eur"></i></span>
+        <div class="dropdown-content language-currency">
+          <div class="dropdown-row cf">
+            <a href="#" class="choice">Euro<span class="currency-symbol"><span class="fa fa-eur"></span></span></a>
+            <a href="#" class="choice">US Dollars<span class="currency-symbol"><span class="fa fa-usd"></span></span></a>
+            <a href="#" class="choice">GB Pounds<span class="currency-symbol"><span class="fa fa-gbp"></span></span></a>
+            <a href="#" class="choice">Australian Dollars<span class="currency-symbol"><span class="fa fa-usd"></span></span></a>
+            <a href="#" class="choice">Bahrain Dinars<span class="currency-symbol">BHD</span></a>
+            <a href="#" class="choice">Botswana Pula<span class="currency-symbol">BWP</span></a>
+            <a href="#" class="choice">Bahamian Dollars<span class="currency-symbol"><span class="fa fa-usd"></span></span></a>
+            <a href="#" class="choice">Argentine Pesos<span class="currency-symbol"><span class="fa fa-usd"></span></span></a>
+            <a href="#" class="choice">Armenian dram<span class="currency-symbol">AMD</span></a>
+            <a href="#" class="choice">Brazilian Reais<span class="currency-symbol">R<span class="fa fa-usd"></span></span></a>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown menu-btn menu-btn-bordered">
+        <label class="dropdown-header menu-btn-header my-bookings-label" for="name">My Booking</label>
+        <div class="dropdown-content my-bookings">
+          <div class="dropdown-row cf">
+            <form action="#">
+              <div>
+                <input class="my-bookings-input" type="text" name="name" id="name" placeholder="John Smith" />
+              </div>
+              <div>
+                <input class="my-bookings-input" type="password" name="password" id="password"/>
+              </div>
+              <div>
+                <input class="my-bookings-submit" type="submit" value="Sign in" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <section class="searchbar-section">
-    <div class="searchbar-section-darkness">
+  <section class="searchbar-section cf">
+    <div class="searchbar-section-darkness box box--center box--align-center cf">
     <div class="container">
       <div class="searchbar-section-advertise">
         <h1>Rent car with AVIS<sup>8.3</sup> in Milan</h1>
-        <p>Millions of people set off on vacation day.</p>
-        <p>We help them pick up their flights and accommodation cheaply, easily and fast.</p>
+        <p class="quote">Millions of people set off on vacation day.</p>
+        <p class="quote-2">We help them pick up their flights and accommodation cheaply, easily and fast.</p>
       </div>
       <div class="searchbar">
-        <div class="searchbar-border">
+        <div class="searchbar-border box">
           <div class="avis-logo">
             <span>AVIS</span>
             <img class="ItalyFlag" src="img/ItalyFlag.png" alt="ItalyFlag" />
           </div>
-          <input type="text" name="Searchbar" value="" autofocus>
-          <div class="searchbar-date-in">
-            <span>Dec 29</span>
+          <input class="search" type="text" name="Searchbar" value="">
+          <div class="dropdown searchbar-date">
+            <div class="dropdown-header">
+              <span>Dec 29</span>
+            </div>
+            <div class="dropdown-content searchbar-calendar searchbar-calendar-date-in">
+              <div class="dropdown-row cf">
+                <div class="calendar-box">
+                  <div class="calendar-months cf">
+                    <div class="col-3">
+                      <span class="table-left-arrow"><i class="fa fa-chevron-left"></i></span>
+                      <span>December 2014</span>
+                    </div>
+                    <div class="col-3">
+                      <span>January 2015</span>
+                    </div>
+                    <div class="col-3">
+                      <span>February 2015</span>
+                      <span class="table-right-arrow"><i class="fa fa-chevron-right"></i></span>
+                    </div>
+                  </div>
+                  <div class="calendar-table-box cf">
+                    <div class="col-3">
+                      <table class="calendar">
+                        <thead class="calendar-head">
+                            <tr>
+                              <th>S</th>
+                              <th>M</th>
+                              <th>T</th>
+                              <th>W</th>
+                              <th>T</th>
+                              <th>F</th>
+                              <th>S</th>
+                            </tr>
+                        </thead>
+                        <tbody class="calendar-body">
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>1</td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>4</td>
+                              <td>5</td>
+                              <td>6</td>
+                              <td>7</td>
+                              <td>8</td>
+                              <td>9</td>
+                            </tr>
+                            <tr>
+                              <td>10</td>
+                              <td>11</td>
+                              <td>12</td>
+                              <td>13</td>
+                              <td>14</td>
+                              <td>15</td>
+                              <td>16</td>
+                            </tr>
+                            <tr>
+                              <td>17</td>
+                              <td>18</td>
+                              <td>19</td>
+                              <td>20</td>
+                              <td>21</td>
+                              <td>22</td>
+                              <td>23</td>
+                            </tr>
+                            <tr>
+                              <td>24</td>
+                              <td>25</td>
+                              <td>26</td>
+                              <td>27</td>
+                              <td class="calendar-trip-number-start"><div class="right-arrow"></div>28</td>
+                              <td class="calendar-trip-number">29</td>
+                              <td class="calendar-trip-number">30</td>
+                            </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-3">
+                    <table class="calendar">
+                      <thead class="calendar-head">
+                        <tr>
+                          <th>S</th>
+                          <th>M</th>
+                          <th>T</th>
+                          <th>W</th>
+                          <th>T</th>
+                          <th>F</th>
+                          <th>S</th>
+                        </tr>
+                      </thead>
+                      <tbody class="calendar-body">
+                          <tr>
+                            <td class="calendar-trip-number">1</td>
+                            <td class="calendar-trip-number">2</td>
+                            <td class="calendar-trip-number">3</td>
+                            <td class="calendar-trip-number">4</td>
+                            <td class="calendar-trip-number">5</td>
+                            <td class="calendar-trip-number">6</td>
+                            <td class="calendar-trip-number">7</td>
+                          </tr>
+                          <tr>
+                            <td class="calendar-trip-number">8</td>
+                            <td class="calendar-trip-number">9</td>
+                            <td class="calendar-trip-number">10</td>
+                            <td class="calendar-trip-number-end"><div class="right-arrow"></div>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                          </tr>
+                          <tr>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                          </tr>
+                          <tr>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                          </tr>
+                          <tr>
+                            <td>29</td>
+                            <td>30</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-3">
+                  <table class="calendar">
+                    <thead class="calendar-head">
+                      <tr>
+                        <th>S</th>
+                        <th>M</th>
+                        <th>T</th>
+                        <th>W</th>
+                        <th>T</th>
+                        <th>F</th>
+                        <th>S</th>
+                      </tr>
+                    </thead>
+                    <tbody class="calendar-body">
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                        </tr>
+                        <tr>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                        </tr>
+                        <tr>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                        </tr>
+                        <tr>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+              </div>
+              </div>
+            </div>
           </div>
-          <div class="searchbar-date-out">
-            <span>Jan 11</span>
+          <div class="dropdown searchbar-date">
+            <div class="dropdown-header">
+              <span>Jan 11</span>
+            </div>
+            <div class="dropdown-content searchbar-calendar searchbar-calendar-date-in">
+              <div class="dropdown-row cf">
+                <div class="calendar-box">
+                  <div class="calendar-months cf">
+                    <div class="col-3">
+                      <span class="table-left-arrow"><i class="fa fa-chevron-left"></i></span>
+                      <span>December 2014</span>
+                    </div>
+                    <div class="col-3">
+                      <span>January 2015</span>
+                    </div>
+                    <div class="col-3">
+                      <span>February 2015</span>
+                      <span class="table-right-arrow"><i class="fa fa-chevron-right"></i></span>
+                    </div>
+                  </div>
+                  <div class="calendar-table-box cf">
+                    <div class="col-3">
+                      <table class="calendar">
+                        <thead class="calendar-head">
+                            <tr>
+                              <th>S</th>
+                              <th>M</th>
+                              <th>T</th>
+                              <th>W</th>
+                              <th>T</th>
+                              <th>F</th>
+                              <th>S</th>
+                            </tr>
+                        </thead>
+                        <tbody class="calendar-body">
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td>1</td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>4</td>
+                              <td>5</td>
+                              <td>6</td>
+                              <td>7</td>
+                              <td>8</td>
+                              <td>9</td>
+                            </tr>
+                            <tr>
+                              <td>10</td>
+                              <td>11</td>
+                              <td>12</td>
+                              <td>13</td>
+                              <td>14</td>
+                              <td>15</td>
+                              <td>16</td>
+                            </tr>
+                            <tr>
+                              <td>17</td>
+                              <td>18</td>
+                              <td>19</td>
+                              <td>20</td>
+                              <td>21</td>
+                              <td>22</td>
+                              <td>23</td>
+                            </tr>
+                            <tr>
+                              <td>24</td>
+                              <td>25</td>
+                              <td>26</td>
+                              <td>27</td>
+                              <td class="calendar-trip-number-start"><div class="right-arrow"></div>28</td>
+                              <td class="calendar-trip-number">29</td><td class="calendar-trip-number">30</td>
+                            </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="col-3">
+                    <table class="calendar">
+                      <thead class="calendar-head">
+                        <tr>
+                          <th>S</th>
+                          <th>M</th>
+                          <th>T</th>
+                          <th>W</th>
+                          <th>T</th>
+                          <th>F</th>
+                          <th>S</th>
+                        </tr>
+                      </thead>
+                      <tbody class="calendar-body">
+                          <tr>
+                            <td class="calendar-trip-number">1</td>
+                            <td class="calendar-trip-number">2</td>
+                            <td class="calendar-trip-number">3</td>
+                            <td class="calendar-trip-number">4</td>
+                            <td class="calendar-trip-number">5</td>
+                            <td class="calendar-trip-number">6</td>
+                            <td class="calendar-trip-number">7</td>
+                          </tr>
+                          <tr>
+                            <td class="calendar-trip-number">8</td>
+                            <td class="calendar-trip-number">9</td>
+                            <td class="calendar-trip-number">10</td>
+                            <td class="calendar-trip-number-end"><div class="right-arrow"></div>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>14</td>
+                          </tr>
+                          <tr>
+                            <td>15</td>
+                            <td>16</td>
+                            <td>17</td>
+                            <td>18</td>
+                            <td>19</td>
+                            <td>20</td>
+                            <td>21</td>
+                          </tr>
+                          <tr>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>24</td>
+                            <td>25</td>
+                            <td>26</td>
+                            <td>27</td>
+                            <td>28</td>
+                          </tr>
+                          <tr>
+                            <td>29</td>
+                            <td>30</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-3">
+                  <table class="calendar">
+                    <thead class="calendar-head">
+                      <tr>
+                        <th>S</th>
+                        <th>M</th>
+                        <th>T</th>
+                        <th>W</th>
+                        <th>T</th>
+                        <th>F</th>
+                        <th>S</th>
+                      </tr>
+                    </thead>
+                    <tbody class="calendar-body">
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td>4</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>7</td>
+                          <td>8</td>
+                          <td>9</td>
+                          <td>10</td>
+                          <td>11</td>
+                          <td>12</td>
+                        </tr>
+                        <tr>
+                          <td>13</td>
+                          <td>14</td>
+                          <td>15</td>
+                          <td>16</td>
+                          <td>17</td>
+                          <td>18</td>
+                          <td>19</td>
+                        </tr>
+                        <tr>
+                          <td>20</td>
+                          <td>21</td>
+                          <td>22</td>
+                          <td>23</td>
+                          <td>24</td>
+                          <td>25</td>
+                          <td>26</td>
+                        </tr>
+                        <tr>
+                          <td>27</td>
+                          <td>28</td>
+                          <td>29</td>
+                          <td>30</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="searchbar-price">
-            <span>Show Prices</span>
-          </div>
+          <input class="searchbar-price" type="submit" value="Show Prices" />
         </div>
       </div>
-      <div class="searchbar-pref">
+      <div class="searchbar-pref cf">
         <div class="col-4">
           <p>Collision Damage Waiver</p>
           <p>Theft Protection</p>
@@ -103,6 +573,121 @@
         </div>
       </div>
     </div>
+    </div>
+  </section>
+  <section class="auto-advertise cf">
+    <div class="auto-advertise-header">
+      <span>hot deals in milan from avis</span>
+    </div>
+    <div class="auto-advertise-main">
+      <div class="box box--center box-wrappable cf">
+        <div class="car-rent">
+          <span class="car-naming">Audi Q3</span>
+          <img class="car-photo" src="img/AudiQ3.png" alt="Audi Q3"/>
+          <span class="car-new-price">16,72</span>
+          <span class="car-old-price">19,99 <i class="fa fa-eur"></i></span>
+          <a href="#" class="rent-btn">Book now</a>
+          <span class="car-coord">at Malpensa Airport (MXP)</span>
+        </div>
+        <div class="car-rent">
+          <span class="car-naming">Chevrolet Tahoe</span>
+          <img class="car-photo" src="img/Tahoe.png" alt="Chevrolet Tahoe"/>
+          <span class="car-new-price">14,99</span>
+          <span class="car-old-price">17,74 <i class="fa fa-eur"></i></span>
+          <a href="#" class="rent-btn">Book now</a>
+          <span class="car-coord">at Airport Belgamo</span>
+        </div>
+        <div class="car-rent">
+          <span class="car-naming">Skoda Octavia Scout</span>
+          <img class="car-photo" src="img/Skoda.png" alt="Skoda Octavia Scout"/>
+          <span class="car-price">18,42</span>
+          <a href="#" class="rent-btn">Book now</a>
+          <span class="car-coord">at Airport Linate</span>
+        </div>
+        <div class="car-rent">
+          <span class="car-naming">УАЗ Patriot</span>
+          <img class="car-photo" src="img/Patriot.png" alt="УАЗ Patriot"/>
+          <span class="car-price">19,99</span>
+          <a href="#" class="rent-btn">Book now</a>
+          <span class="car-coord">at Downtown</span>
+        </div>
+        <div class="car-rent">
+          <span class="car-naming">Audi Q3</span>
+          <img class="car-photo" src="img/AudiQ3.png" alt="Audi Q3"/>
+          <span class="car-price">16,72</span>
+          <a href="#" class="rent-btn">Book now</a>
+          <span class="car-coord">at Milan Exhibition center</span>
+        </div>
+      </div>
+    </div>
+    <div class="auto-advertise-footer">
+      <span class="auto-advertise-footer-heading">top locations in milan</span>
+      <a href="#"><span>Milan Malpensa Airport (MXP)</span></a>
+      <a href="#"><span>Airport Bergamo</span></a>
+      <a href="#"><span>Airport Linate</span></a>
+      <a href="#"><span>Downtown</span></a>
+      <a href="#"><span>Milan Exhibition Center</span></a>
+      <a href="#"><span>Largo Augusto</span></a>
+    </div>
+  </section>
+  <section class="customer-ratings cf">
+    <div class="container">
+      <div class="customer-ratings-header cf">
+        <div class="customer-ratings-heading"><span>AVIS Customer Ratings in Milan</span></div>
+        <div class="avis-logo">
+          <span>AVIS</span>
+          <img class="ItalyFlag" src="img/ItalyFlag.png" alt="ItalyFlag" />
+        </div>
+      </div>
+      <div class="customer-ratings-main">
+        <div class="col-3 customer-ratings-main-left">
+          <div class="customer-ratings-points">
+            <div class="cust-rat-points-row cf">
+              <span class="col-11">Overall value for money of your car rental</span>
+              <span class="col-7">8.3</span>
+            </div>
+            <div class="cust-rat-points-row cf">
+              <span class="col-11">How easy was it to find pickup location?</span>
+              <span class="col-7">8.2</span>
+            </div>
+            <div class="cust-rat-points-row cf">
+              <span class="col-11">Work efficiently of the car rental agents</span>
+              <span class="col-7">8.4</span>
+            </div>
+            <div class="cust-rat-points-row cf">
+              <span class="col-11">Time spent picking up the car</span>
+              <span class="col-7">8.5</span>
+            </div>
+            <div class="cust-rat-points-row cf">
+              <span class="col-11">Time spent dropping off the car</span>
+              <span class="col-7">7.9</span>
+            </div>
+            <div class="cust-rat-points-row cf">
+              <span class="col-11">Cae cleanliness</span>
+              <span class="col-7">7.9</span>
+            </div>
+            <div class="cust-rat-points-row cf">
+              <span class="col-11">Overall condition of the car</span>
+              <span class="col-7">7.8</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="box">
+            <div class="box-item">
+              <div class="ratings-header">
+
+              </div>
+              <div class="ratings-plus">
+
+              </div>
+              <div class="ratings-minus">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </body>

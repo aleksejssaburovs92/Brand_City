@@ -2,16 +2,203 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.box {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+}
+.box--align-center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box-wrappable {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.box--center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cf:before,
+.cf:after {
+ content: " ";
+ display: table;
+}
+
+.cf:after {
+ clear: both;
+}
+
+
 .container {
-  width: 970px;
+  width: 960px;
   margin: auto;
 }
+
+.col-1 {
+  width: 8.333%;
+  float: left;
+}
+
+.col-2 {
+  width: 50%;
+  float: left;
+}
+
+.col-3 {
+  float: left;
+  width: 33.333%;
+}
+
+.col-4 {
+  float: left;
+  width: 25%;
+}
+
+.col-6 {
+  float: left;
+  width: 66.666%;
+}
+
+.col-7 {
+  width: 16.666%;
+  float: left;
+}
+
+.col-8 {
+  width: 41.666%;
+  float: left;
+}
+
+.col-9 {
+  width: 58.333%;
+  float: left;
+}
+
+.col-10 {
+  width: 75%;
+  float: left;
+}
+
+.col-11 {
+  width: 83.333%;
+  float: left;
+}
+
+.col-12 {
+  width: 91.666%;
+  float: left;
+}
+
+.template {
+    position: absolute;
+    background: url(../img/Brand-City.png);
+    top: 0;
+    left: -43px;
+    width: 1366px;
+    height: 4697px;
+    z-index: 9;
+    -webkit-filter: opacity(0.2);
+    filter: opacity(0.2);
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  display: none;
+}
+
+.dropdown-row {
+  overflow: hidden;
+  box-shadow: 1px 1px 5px #000;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Menu button */
+.menu-btn {
+  display: inline-block;
+}
+.menu-btn-header {
+  display: block;
+  padding: 9px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 13px;
+
+}
+.menu-btn-header:hover {
+  background-color: #133f5c;
+  cursor: pointer;
+}
+
+/* borderred menu button */
+.menu-btn-bordered .menu-btn-header {
+  border: 1px solid white;
+}
+
+.menu-btn-bordered {
+    margin-left: 20px;
+}
+/* menu button with dropdown */
+.menu-btn.dropdown .menu-btn-header::after{
+  content:'\f078';
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+  font-size: 10px;
+}
+
+.menu-btn.dropdown:hover .menu-btn-header::after{
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+    -webkit-animation: spin 0.5s 1;
+    -webkit-animation-fill-mode:forwards;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(180deg);
+    }
+}
+
 
 /* HEADER */
 
 header {
   background-color: #1a5880;
-  padding:15px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
 }
 
 header div,
@@ -25,40 +212,73 @@ header a {
   text-decoration: none;
 }
 
-.container div {
-  display: inline-block;
+header div {
   vertical-align: middle;
 }
 
 .logo {
   margin: 0 40px 0 0;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 18px 0 10px 0;
 }
 
-.logo-name {
-  font-size: 14px;
-  vertical-align: middle;
-  padding-left: 5px;
-}
-
-.logo i {
-  vertical-align: middle;
-}
 
 .liked-users {
-  margin: 0 110px 0 0;
+  margin: 0 80px 0 0;
+  display: inline-block;
+}
+
+.liked-users-heart {
+  font-size: 14px;
 }
 
 .liked-users-number {
-  font-size: 14px;
+  font-size: 16px;
+  margin-left: 3px;
 }
 
 .liked-users-cont {
-  font-size: 12px;
+  font-size: 13px;
+  margin-left: 2px;
 }
 
 .border-right {
-  border-right: 1px solid white;
-  padding-right: 30px;
+  position: relative;
+  padding: 10px 33px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.border-right.dropdown .contact-information::after{
+  content:'\f078';
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.border-right:hover {
+  background-color: #133f5c;
+}
+
+.border-right::after {
+    content: '';
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: absolute;
+    right: 0;
+    height: 30px;
+    top: 16px;
+  }
+
+.border-right:hover::after {
+  display:none;
 }
 
 .contact-information {
@@ -66,15 +286,27 @@ header a {
   position: relative;
 }
 
+.contact-information::before {
+  content: '\f095';
+  font-family: FontAwesome;
+  position: relative;
+  top:10px;
+  left: 2px;
+  font-size: 17px;
+}
+
 .contact-information .fa-chevron-down {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .contact-information-phone {
-  font-size: 14px;
+  font-size: 15px;
+  padding-left: 5px;
 }
 
 .contact-information-communication {
@@ -82,49 +314,99 @@ header a {
   padding-left: 20px;
 }
 
-.language,
-.currency {
-  padding: 0 0 0 15px;
-  margin: 0 0 0 15px;
-  position: relative;
-  font-size: 12px;
+.contact-information-flag {
+  margin-right: 10px;
 }
+
+.contact-number{
+  float: right;
+}
+
+.language-menu {
+  margin-left: 10px;
+}
+
+.currency-menu {
+  margin-left: 10px;
+}
+
+.dropdown .contact-information-list {
+  left: -155px;
+  width: 540px;
+}
+
+.dropdown-content {
+  width: 240px;
+  left: -80px;
+}
+
+.contact-information .dropdown-row,
+.language-currency .dropdown-row {
+  padding: 10px 0;
+}
+
+.contact-information-list .col-2:nth-child(1),
+.language-currency .col-2:nth-child(1) {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.choice:hover {
+  background-color: #1a587f;
+  color: #fff;
+}
+
+.choice:hover .contact-number,
+.choice:hover .currency-symbol {
+  color: #fff;
+}
+
+
 
 .choice {
-  box-shadow: 0 5px 5px #000;
-  display: none;
-  position:absolute;
-  left:0;
-  top: 30px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.language a:hover .choice,
-.currency a:hover .choice {
-  display: block;
-}
-
-.choice li {
-  padding: 15px;
-  background-color: #1a5880;
-  margin-top: -1px;
-}
-
-.currency {
-  margin: 0 30px 0 30px;
-}
-
-.my-booking {
-  border: 1px solid white;
+  font-size: 13px;
   padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 12px;
+  font-family: OpenSans;
+  display:block;
+  color: #000;
 }
 
-.container .fa-chevron-down {
-  margin-left: 10px;
+.contact-number {
+  color: #000;
+}
+
+.choice .currency-symbol span{
+  color: #1a587f;
+}
+
+.choice:hover .currency-symbol span{
+  color: #fff;
+}
+
+.choice .currency-symbol {
+  float: right;
+  color: #1a587f;
+}
+
+.my-bookings-label {
+  padding-left: 16px;
+}
+
+.my-bookings form {
+  padding: 20px;
+}
+
+.my-bookings-input {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 5px;
+  color: #000;
+}
+
+.my-bookings-submit {
+  width: 100%;
+  padding: 10px;
+  background-color:#0073b5;
+  border:none ;
 }
 
 /* SEARCHBAR SECTION */
@@ -133,20 +415,22 @@ header a {
   background-image: url(../img/milano.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 480px;
   box-shadow: inset 0 1px 5px #000;
-  overflow: hidden;
 }
 
 .searchbar-section-darkness {
   background-color: rgba(0, 0, 0, 0.5);
-  height: 480px;
+  padding-top: 66px;
+}
+
+.searchbar-section .container {
+  margin-top: 115px;
 }
 
 .avis-logo {
-  position: relative;
   width: 105px;
-  height: 45px;
+  display: inline-block;
+  position: relative;
   background-color: #d4002a;
   padding-top: 5px;
   font-size: 27px;
@@ -157,24 +441,45 @@ header a {
 
 .ItalyFlag {
   position: absolute;
-  bottom: -7px;
-  right: -5px;
+  bottom: -5px;
+  right: -7px;
 }
 
 .searchbar {
-  border-left: 45px solid #ffcd4a;
-  border-right: 45px solid #ffcd4a;
+  border-left: 30px solid #ffcd4a;
+  border-right: 30px solid #ffcd4a;
   border-top: 20px solid #ffcd4a;
   border-bottom: 20px solid #ffcd4a;
   border-radius: 5px;
-  width: 100%;
 }
 
+
+
 .searchbar-section-advertise {
+  font-weight: lighter;
   width: 100%;
   text-align: center;
   color: #fff;
   text-shadow: 2px 2px #000;
+}
+
+.searchbar-section-advertise h1 {
+  font-size: 48px;
+  font-weight: lighter;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+}
+
+.quote {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.quote-2 {
+  margin-top: 3px;
+  margin-bottom: 22px;
+  font-size: 20px;
 }
 
 .searchbar-border {
@@ -182,48 +487,430 @@ header a {
   border: 2px solid #fff;
 }
 
-.searchbar input {
-  width: 55%;
-  float: left;
+.search {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 0;
+      -ms-flex: 1 1 0;
+          flex: 1 1 0;
+  display: inline-block;
   outline: 0;
   border: none;
-  margin: 0 -5px;
-  padding: 13px 10px 14px 15px;
-}
-
-.searchbar-date-in,
-.searchbar-date-out {
-  background-color: #dddddd;
-  padding: 14px 13px 13px 13px;
-  border-right: 2px solid #fff;
-  margin-right: -4px;
+  padding-left: 10px;
 }
 
 .searchbar-price {
-  padding: 14px 27px 13px 27px;
+  width: 155px;
+  display: inline-block;
+  border: none;
+  padding: 11px 0px;
   background-color: #0073b5;
+  outline: none;
+  color:#fff;
+  font-size: 18px;
+  padding-top: 8px;
 }
 
-.searchbar .avis-logo {
-  float: left;
+.searchbar-date {
+  display: inline-block;
+  width: 72px;
+  background-color: #dddddd;
+  padding-top: 11px;
+  padding-left: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.searchbar-date::before {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 0;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border-top: 22px solid transparent;
+  border-bottom: 21px solid transparent;
+  border-left: 10px solid #dddddd;
+}
+
+.searchbar-date::after {
+  content: '';
+  position: absolute;
+  right: -12px;
+  top: -2px;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-top: 24px solid transparent;
+  border-bottom: 23px solid transparent;
+  border-left: 12px solid #ffffff;
 }
 
 .searchbar-pref {
   width: 100%;
   text-shadow: 2px 2px #000;
-}
-
-.col-4 {
-  padding-left: 20px;
   font-size: 13px;
   color: #fff;
-  width: 25%;
-  margin-right: -4px;
+  padding: 5px 30px 25px 30px;
+}
+
+.searchbar-calendar {
+  width: 900px;
+  z-index: 1;
+}
+
+.searchbar-calendar .dropdown-row {
+  border-radius: inherit;
+}
+
+.searchbar  .dropdown-row:before {
+    position: absolute;
+    content: "";
+    top:2px;
+    z-index: 1;
+    left: 630px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+}
+
+.searchbar-calendar .dropdown-row:after {
+    position: absolute;
+    content: "";
+    top:5px;
+    z-index: 2;
+    left: 631px;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 9px solid #eeeeee;
+}
+
+.searchbar-calendar-date-in {
+  left: -598px;
 }
 
 .col-4 p::before{
-  padding-right: 8px;
+  padding-right: 5px;
   content: "\f00c";
+  font-family:FontAwesome;
+  font-size: 15px;
+}
+
+.calendar-table-box .col-3:not(:last-child){
+  border-right: 1px solid black;
+}
+
+.calendar-months {
+  padding: 10px;
+  background-color: #eeeeee;
+  margin: 2px;
+}
+
+.calendar-months .col-3 {
+  text-align: center;
+}
+
+.table-left-arrow {
+  float: left;
+  text-decoration: none;
+  color: #818181;
+  cursor: pointer;
+}
+
+.table-right-arrow {
+  float: right;
+  text-decoration: none;
+  color:#818181;
+  cursor: pointer;
+}
+
+.calendar-box .col-3 {
+  padding: 5px;
+}
+
+.calendar-table-box {
+  padding: 5px;
+}
+
+.calendar td {
+  text-align: center;
+  padding:7px 13px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.calendar th {
+  padding: 10px 0;
+}
+
+.calendar tr {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.calendar-trip-number {
+  background-color: #b2dcff;
+}
+
+.calendar-trip-number-start,
+.calendar-trip-number-end{
+  background-color: #008aff;
+  position: relative;
+}
+
+.calendar-trip-number-start .right-arrow{
+  position: absolute;
+  right: -7px;
+  top: 0;
+  width: 0;
+  	height: 0;
+  	border-top: 15px solid transparent;
+  	border-bottom: 15px solid transparent;
+
+  	border-left: 8px solid #008aff;
+  }
+
+  .calendar-trip-number-end .right-arrow{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    	height: 0;
+    	border-top: 15px solid transparent;
+    	border-bottom: 15px solid transparent;
+
+    	border-left: 8px solid #b2dcff;
+    }
+
+
+/* CAR ADVERTISE SECTION */
+
+.auto-advertise {
+  background-color: #efe3c5;
+}
+
+.auto-advertise-header {
+  font-size: 18px;
+  color: #8d6a16;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+  padding-top: 25px;
+  padding-bottom: 10px;
+}
+
+.auto-advertise-main {
+  background: white;
+  position: relative;
+}
+
+.auto-advertise-footer {
+  padding: 25px 0;
+  text-align: center;
+}
+
+.auto-advertise-footer-heading {
+  display:block;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 100;
+  padding-bottom: 15px;
+}
+
+.auto-advertise-footer a{
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  padding: 10px;
+  font-size: 16px;
+  color: #8d6a16;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+.auto-advertise-footer a:hover {
+  background-color: #ccc;
+}
+
+.car-rent{
+  position: relative;
+  text-align: center;
+  width: 230px;
+  height: 320px;
+}
+
+.car-photo {
+  height: 130px;
+  width: 175px;
+  margin-top: 7px;
+}
+
+.car-naming{
+  padding-top: 17px;
+  font-size: 15px;
+}
+
+.car-price {
+  font-size: 30px;
+  font-weight: 600;
+  color:black;
+  padding-bottom: 12px;
+}
+
+.car-price::after {
+  content: '\f153';
+  font-family: FontAwesome;
+  font-size: 25px;
+  font-weight: 100;
+  margin-left: 5px;
+}
+
+.car-new-price{
+  color:red;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: -10px;
+}
+
+.car-new-price::after{
+  content: '\f153';
+  font-family: FontAwesome;
+  font-size: 25px;
+  font-weight: 100;
+  margin-left: 5px;
+}
+
+.car-old-price {
+  text-decoration: line-through;
+  color: #777777;
+  font-size: 14px;
+}
+
+.rent-btn {
+  padding: 10px 40px;
+  background: #0073b5;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+.rent-btn:hover {
+  background-color: #f2a622;
+}
+
+.car-rent span{
+  display: block;
+}
+
+.car-rent .rent-btn {
+  display: inline-block;
+}
+
+.car-rent:hover {
+  -webkit-transform:translate(0%, -2.5%) scale(1.05, 1.05);
+      -ms-transform:translate(0%, -2.5%) scale(1.05, 1.05);
+          transform:translate(0%, -2.5%) scale(1.05, 1.05);
+  -webkit-animation: grow 0.5s 1;
+  -webkit-animation-fill-mode:forwards;
+  background-color: white;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+@-webkit-keyframes grow {
+0% {
+    -webkit-transform: scale(1,1) translate(0%,0%);
+}
+
+100% {
+    -webkit-transform: scale(1.05,1.05) translate(0%, -2.5%);
+};
+}
+
+
+.car-coord {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #444444;
+}
+
+.auto-advertise-main::before {
+  position: absolute;
+  content: "";
+  top: 34%;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-bottom: 40px solid transparent;
+  border-top: 40px solid transparent;
+  border-right: 15px solid #cccccc;
+  cursor: pointer;
+}
+
+.auto-advertise-main::after {
+  position: absolute;
+  content: "";
+  top: 34%;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-bottom: 40px solid transparent;
+  border-top: 40px solid transparent;
+  border-left: 15px solid #cccccc;
+  cursor: pointer;
+}
+
+.contact-information-list .dropdown-row:before {
+    position: absolute;
+    content: "";
+    top: -5px;
+    left: 259px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid #fff;
+}
+
+.dropdown-row:before {
+    position: absolute;
+    content: "";
+    top:-0px;
+
+    left: 110px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid #fff;
+}
+
+
+/* CUSTOMER RATINGS */
+
+.customer-ratings .avis-logo {
+  /*float: right;*/
+}
+
+.customer-ratings-header {
+  padding-bottom: 20px;
+  padding-top: 30px;
+  border-bottom: 5px solid #ccc;
+}
+
+.customer-ratings-heading {
+  display: inline-block;
+  font-size: 24px;
+}
+
+.vh {
+  min-height: 100vh;
+  width: 100vw;
 }
