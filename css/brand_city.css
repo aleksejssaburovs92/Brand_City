@@ -1156,10 +1156,22 @@ header input[type=checkbox]:checked ~ #menu{
     }
 
     .dropdown-content {
+      margin: auto;
       position: static;
+      text-align: left;
     }
 
     .dropdown-content .col-2 {
       width: 50%;
-    }  
+    }
+
+    .dropdown-row::before,
+    .contact-information-list .dropdown-row::before {
+      content: '';
+      border: none;
+    }
+
+    .contact-information {
+      margin: auto;
+    }
 }
