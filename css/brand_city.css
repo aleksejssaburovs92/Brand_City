@@ -529,7 +529,6 @@ header div {
   background-color: #dddddd;
   padding-top: 11px;
   padding-left: 20px;
-  cursor: pointer;
   font-size: 14px;
 }
 
@@ -621,6 +620,7 @@ header div {
   padding: 10px;
   background-color: #eeeeee;
   margin: 2px;
+  position: relative;
 }
 
 .calendar-months .col-3 {
@@ -628,14 +628,20 @@ header div {
 }
 
 .table-left-arrow {
-  float: left;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
   text-decoration: none;
   color: #818181;
   cursor: pointer;
 }
 
 .table-right-arrow {
-  float: right;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
   text-decoration: none;
   color:#818181;
   cursor: pointer;
@@ -1136,9 +1142,15 @@ header input[type=checkbox]:checked ~ #menu{
         width: 100%;
         padding: 10px;
     }
+
+    .searchbar-pref .col-4 {
+      width: 50%;
+    }
+
     .container {
       width: 768px;
       margin: auto;
+      padding: 10px;
     }
     .logo,
     .liked-users,
@@ -1155,23 +1167,66 @@ header input[type=checkbox]:checked ~ #menu{
       border: none;
     }
 
-    .dropdown-content {
+    header {
+      display: none;
+    }
+
+    header .dropdown-content {
       margin: auto;
       position: static;
       text-align: left;
     }
 
-    .dropdown-content .col-2 {
+    header .dropdown-content .col-2 {
       width: 50%;
     }
 
-    .dropdown-row::before,
-    .contact-information-list .dropdown-row::before {
+    header .dropdown-row::before,
+    header .contact-information-list .dropdown-row::before {
       content: '';
       border: none;
     }
 
-    .contact-information {
+    header .contact-information {
       margin: auto;
+    }
+
+    .negative::before {
+      left: 0;
+    }
+
+    .positive::before {
+      left: 0;
+      top: 10px;
+    }
+
+    .feedback {
+      padding-left: 20px;
+    }
+
+    .searchbar-calendar {
+      width: 300px;
+      left: -100px;
+    }
+
+    .calendar-months .col-3 {
+      display: none;
+    }
+
+    .calendar-months .col-3:nth-child(2) {
+      display: block;
+    }
+
+    .calendar-table-box .col-3 {
+      display: none;
+      border:none;
+    }
+
+    .calendar-table-box .col-3:nth-child(2) {
+      display: block;
+    }
+
+    .calendar-table-box .col-3:not(:last-child){
+      border-right: none;
     }
 }
