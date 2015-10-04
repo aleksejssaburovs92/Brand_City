@@ -37,7 +37,10 @@ a{
 }
 
 .box__item--equal {
-  flex: 1 0 0;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 0;
+      -ms-flex: 1 0 0;
+          flex: 1 0 0;
 }
 
 .cf:before,
@@ -831,13 +834,13 @@ header div {
 }
 
 @-webkit-keyframes grow {
-0% {
-    -webkit-transform: scale(1,1) translate(0%,0%);
-}
+  0% {
+      -webkit-transform: scale(1,1) translate(0%,0%);
+  }
 
-100% {
-    -webkit-transform: scale(1.05,1.05) translate(0%, -2.5%);
-};
+  100% {
+      -webkit-transform: scale(1.05,1.05) translate(0%, -2.5%);
+  }
 }
 
 
