@@ -58,7 +58,7 @@ a{
   width: 960px;
   margin: auto;
 }
-
+/* FOR DESKTOP */
 .col-1 {
   width: 8.333%;
   float: left;
@@ -912,11 +912,6 @@ header div {
   padding: 30px 0;
 }
 
-.customer-ratings-main-left {
-  width: 31%;
-  float: left;
-}
-
 .customer-ratings-header {
   padding-bottom: 20px;
   border-bottom: 5px solid #ccc;
@@ -1012,8 +1007,6 @@ header div {
 .feedback-main {
   padding-top: 15px;
   padding-left: 32px;
-  width: 69%;
-  float: right;
 }
 
 .feedback-name {
@@ -1113,4 +1106,60 @@ header div {
   content: '\f101';
   font-family: FontAwesome;
   margin-right: 5px;
+}
+
+
+
+
+.show-menu {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #fff;
+	background: #19c589;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+}
+
+header input[type=checkbox]{
+    display: none;
+}
+
+header input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+/* TABLET VERSION */
+
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+        padding: 10px;
+    }
+    .container {
+      width: 768px;
+      margin: auto;
+    }
+    .logo,
+    .liked-users,
+    .currency-menu,
+    .language-menu,
+    .menu-btn-bordered,
+    .border-right {
+      width: 100%;
+      text-align: center;
+      margin: 0;
+    }
+
+    .menu-btn-bordered .menu-btn-header{
+      border: none;
+    }
+
+    .dropdown-content {
+      position: static;
+    }
+
+    .dropdown-content .col-2 {
+      width: 50%;
+    }  
 }
