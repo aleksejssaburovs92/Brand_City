@@ -905,6 +905,10 @@ header div {
 
 /* CUSTOMER RATINGS */
 
+.customer-ratings {
+  padding: 30px 0;
+}
+
 .customer-ratings-main-left {
   width: 31%;
   float: left;
@@ -912,7 +916,6 @@ header div {
 
 .customer-ratings-header {
   padding-bottom: 20px;
-  padding-top: 30px;
   border-bottom: 5px solid #ccc;
 }
 
@@ -1053,5 +1056,58 @@ header div {
   content: '\f101';
   font-family: FontAwesome;
   color: #0073b5;
+  margin-right: 5px;
+}
+
+
+/* AVIS IN OTHER CITIES */
+
+.Avis-other-cities{
+  padding: 25px 0;
+  background-color: #f6f6f6;
+}
+
+.Avis-other-cities-header{
+  padding-bottom: 15px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+}
+
+.avis-cities{
+  display: block;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: #000;
+  line-height: 1.4;
+  font-size: 13px;
+}
+
+.avis-cities:last-child {
+  border-bottom: none;
+}
+
+.avis-col{
+  padding-right: 20px;
+}
+.avis-col:last-child {
+  padding-right: 0;
+}
+
+.avis-row {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+}
+
+.Avis-other-cities-footer {
+  margin-top: 20px;
+  color: #777777;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.Avis-other-cities-footer::before {
+  content: '\f101';
+  font-family: FontAwesome;
   margin-right: 5px;
 }
