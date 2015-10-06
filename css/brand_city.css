@@ -8,6 +8,15 @@ body {
 
 a{
   color: #0073b5;
+  transition-property: color background-color opacity;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
+}
+
+a span {
+  transition-property: color background-color opacity;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
 }
 
 .box {
@@ -353,8 +362,7 @@ header div {
   left: -80px;
 }
 
-.contact-information .dropdown-row,
-.language-currency .dropdown-row {
+  .navigation .dropdown-row {
   padding: 10px 0;
 }
 
