@@ -19,6 +19,10 @@ a span {
   transition-timing-function: ease-in-out;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .box {
   display:-webkit-box;
   display:-webkit-flex;
@@ -1091,6 +1095,10 @@ header div {
   color: #000;
   line-height: 1.4;
   font-size: 13px;
+}
+
+.avis-cities:hover{
+  text-decoration: underline;
 }
 
 .avis-cities:last-child {
