@@ -8,15 +8,21 @@ body {
 
 a{
   color: #0073b5;
-  transition-property: color background-color opacity;
-  transition-duration: .25s;
-  transition-timing-function: ease-in-out;
+  -webkit-transition-property: color background-color opacity;
+          transition-property: color background-color opacity;
+  -webkit-transition-duration: .25s;
+          transition-duration: .25s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
 }
 
 a span {
-  transition-property: color background-color opacity;
-  transition-duration: .25s;
-  transition-timing-function: ease-in-out;
+  -webkit-transition-property: color background-color opacity;
+          transition-property: color background-color opacity;
+  -webkit-transition-duration: .25s;
+          transition-duration: .25s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
 }
 
 a:hover {
@@ -47,6 +53,13 @@ a:hover {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.box--between {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .box__item--equal {
@@ -557,6 +570,14 @@ header div {
   border-left: 10px solid #dddddd;
 }
 
+.searchbar-date:hover {
+  background-color: #add8e6;
+}
+
+.searchbar-date:hover::before {
+  border-left: 10px solid #add8e6;
+}
+
 .searchbar-date::after {
   content: '';
   position: absolute;
@@ -631,19 +652,23 @@ header div {
 .calendar-months {
   padding: 10px;
   background-color: #eeeeee;
-  margin: 2px;
   position: relative;
+  text-align: center;
 }
 
 .calendar-months .col-3 {
   text-align: center;
 }
 
+.calendar-box {
+  position: relative;
+}
+
 .table-left-arrow {
   position: absolute;
   left: 5px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 17px;
+  z-index: 2;
   text-decoration: none;
   color: #818181;
   cursor: pointer;
@@ -652,8 +677,8 @@ header div {
 .table-right-arrow {
   position: absolute;
   right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 17px;
+  z-index: 2;
   text-decoration: none;
   color:#818181;
   cursor: pointer;
@@ -664,7 +689,29 @@ header div {
 }
 
 .calendar-table-box {
-  padding: 5px;
+  padding: 3px;
+}
+
+.calendar {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.calendar-border-left {
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 4px 0;
+    padding: 0 4px;
+  }
+
+.calendar-none-border {
+  border: none;
+}
+
+.calendar-wrap {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 0;
+      -ms-flex: 1 0 0;
+          flex: 1 0 0;
 }
 
 .calendar td {
@@ -1062,7 +1109,7 @@ header div {
 
 .feedback-footer {
   font-size: 13px;
-  border-top: 1px dotted rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
   padding-top: 5px;
 }
 
@@ -1089,7 +1136,7 @@ header div {
 
 .avis-cities{
   display: block;
-  padding: 11px 0;
+  padding: 11px 0 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   text-decoration: none;
   color: #000;
@@ -1114,7 +1161,7 @@ header div {
 
 .avis-row {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .Avis-other-cities-footer {
@@ -1149,6 +1196,118 @@ header input[type=checkbox]{
 
 header input[type=checkbox]:checked ~ #menu{
     display: block;
+}
+
+
+/*OTHER RENTAL SUPPLIERS*/
+
+.other-rental {
+  background-color: #d8e9f2;
+}
+
+.other-rental h2 {
+  text-transform: uppercase;
+  color: #1a5880;
+  font-size: 18px;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.rental-supp {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 35px;
+}
+
+.rental-supp-logo {
+  width: 120px;
+  height: 50px;
+}
+
+
+/* RENT CAR WORLDWIDE */
+
+.rent-ww-h {
+  font-size: 32px;
+  text-align: center;
+  color: #777777;
+  display: block;
+  margin-top: 30px;
+  padding-bottom: 25px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.norton {
+  width: 120px;
+  height: 70px;
+  margin-top: 17px;
+  margin-left: 2px;
+}
+
+.rent-ww-c-h {
+  color: #333333;
+  font-size: 22px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.rent-ww-left {
+  margin-top: 20px;
+  width: 660px;
+  float: left;
+}
+
+/*.rent-ww-cont::before {
+  padding-right: 8px;
+  padding-left: 3px;
+  content: "\f00c";
+  font-family: FontAwesome;
+  font-size: 24px;
+  color: #0073b5;
+}*/
+
+.ren-ww-right {
+  margin-top: 32px;
+  padding: 10px 17px 15px;
+  width: 300px;
+  float: right;
+  border: 1px dashed rgba(0, 0, 0, 0.2);
+}
+
+.rent-ww-cont {
+  color: #333333;
+  font-size: 15px;
+  padding: 0 35px;
+  margin-top: 20px;
+}
+
+.review-center-name {
+  font-size: 14px;
+}
+
+.review-center-rating {
+  float: right;
+  font-size: 13px;
+  color: #ffcd4a;
+}
+
+.review-center-cont {
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.ren-ww-right a {
+  font-size: 13px;
+  display: inline-block;
+  margin-top: 7px;
+}
+
+.review-logo {
+  float: right;
+  width: 147px;
+  height: 47px;
+  margin-top: 11px;
 }
 
 /* TABLET VERSION */
@@ -1223,6 +1382,13 @@ header input[type=checkbox]:checked ~ #menu{
     .searchbar-calendar {
       width: 300px;
       left: -100px;
+    }
+
+    .calendar {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 0 0%;
+          -ms-flex: 1 0 0%;
+              flex: 1 0 0%;
     }
 
     .calendar-months .col-3 {
