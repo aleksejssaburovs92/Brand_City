@@ -25,6 +25,16 @@ a span {
           transition-timing-function: ease-in-out;
 }
 
+input {
+  -webkit-transition-property: color background-color opacity;
+          transition-property: color background-color opacity;
+  -webkit-transition-duration: .25s;
+          transition-duration: .25s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  outline: 0;
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -231,7 +241,7 @@ a:hover {
 
 /* HEADER */
 
-header {
+.navigation {
   background-color: #1a5880;
   position: fixed;
   width: 100%;
@@ -1258,14 +1268,14 @@ header input[type=checkbox]:checked ~ #menu{
   float: left;
 }
 
-/*.rent-ww-cont::before {
-  padding-right: 8px;
-  padding-left: 3px;
+.rent-ww-cont::before {
+  position: absolute;
+  left: 0;
   content: "\f00c";
   font-family: FontAwesome;
   font-size: 24px;
   color: #0073b5;
-}*/
+}
 
 .ren-ww-right {
   margin-top: 32px;
@@ -1276,10 +1286,15 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .rent-ww-cont {
+  position: relative;
   color: #333333;
   font-size: 15px;
   padding: 0 35px;
   margin-top: 20px;
+}
+
+.rent-ww-row-box {
+  margin-bottom: 30px;
 }
 
 .review-center-name {
@@ -1308,6 +1323,56 @@ header input[type=checkbox]:checked ~ #menu{
   width: 147px;
   height: 47px;
   margin-top: 11px;
+}
+
+.rent-ww-footer {
+  text-align: center;
+}
+
+.rent-ww-qst,
+.rent-ww-email {
+  background-color: #eeeeee;
+  padding: 25px;
+}
+
+.rent-ww-footer  .rent-ww-footer-btn {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #0073b5;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  outline: 0;
+  border: none;
+}
+
+.rent-ww-qst a {
+  display: inline-block;
+  font-size: 14px;
+}
+
+.rent-ww-footer-btn:hover {
+  background-color: #f2a622;
+}
+
+.rent-ww-tl {
+  background-color: #dddddd;
+  padding: 25px;
+}
+
+.rent-ww-footer-h {
+  font-size: 18px;
+}
+
+.rent-ww-footer p{
+  font-size: 14px;
+}
+
+.rent-ww-footer-mail {
+  text-align: left;
+  padding: 10px;
+  width: 100%;
 }
 
 /* TABLET VERSION */
