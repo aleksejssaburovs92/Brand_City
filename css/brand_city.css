@@ -1336,6 +1336,7 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .rent-ww-footer  .rent-ww-footer-btn {
+  margin: 15px 0;
   padding: 10px;
   width: 100%;
   border-radius: 5px;
@@ -1363,16 +1364,39 @@ header input[type=checkbox]:checked ~ #menu{
 
 .rent-ww-footer-h {
   font-size: 18px;
+  color: #444444;
+  font-weight: bold;
 }
 
 .rent-ww-footer p{
   font-size: 14px;
+  color: #444444;
 }
 
 .rent-ww-footer-mail {
   text-align: left;
   padding: 10px;
   width: 100%;
+}
+
+.rent-phone {
+  font-size: 30px;
+  color: #0073b5;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+  padding: 9px;
+  display: block;
+}
+
+.social-h {
+  color:#777777;
+  font-size: 15px;
+  padding: 15px 0;
+}
+
+.social-i {
+  color:#777777;
+  font-size: 35px;
+  margin: 0 10px;
 }
 
 /* TABLET VERSION */
