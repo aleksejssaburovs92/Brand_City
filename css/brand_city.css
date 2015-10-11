@@ -40,11 +40,18 @@ a:hover {
 }
 
 .box {
+  display: table;
   display:-webkit-box;
   display:-webkit-flex;
   display:-ms-flexbox;
   display:flex;
 }
+
+.box-item {
+  display: table-cell;
+}
+
+
 .box--align-center {
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -74,9 +81,9 @@ a:hover {
 
 .box__item--equal {
   -webkit-box-flex: 1;
-  -webkit-flex: 1 0 0;
-      -ms-flex: 1 0 0;
-          flex: 1 0 0;
+  -webkit-flex: 1 0 0%;
+      -ms-flex: 1 0 0%;
+          flex: 1 0 0%;
 }
 
 .cf:before,
@@ -1294,7 +1301,7 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .rent-ww-row-box {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .review-center-name {
@@ -1327,16 +1334,17 @@ header input[type=checkbox]:checked ~ #menu{
 
 .rent-ww-footer {
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .rent-ww-qst,
 .rent-ww-email {
   background-color: #eeeeee;
-  padding: 25px;
+  padding: 25px 25px 0;
 }
 
 .rent-ww-footer  .rent-ww-footer-btn {
-  margin: 15px 0;
+  margin: 19px 0;
   padding: 10px;
   width: 100%;
   border-radius: 5px;
@@ -1359,7 +1367,7 @@ header input[type=checkbox]:checked ~ #menu{
 
 .rent-ww-tl {
   background-color: #dddddd;
-  padding: 25px;
+  padding: 25px 25px 0;
 }
 
 .rent-ww-footer-h {
@@ -1371,11 +1379,12 @@ header input[type=checkbox]:checked ~ #menu{
 .rent-ww-footer p{
   font-size: 14px;
   color: #444444;
+  margin: 5px 0;
 }
 
 .rent-ww-footer-mail {
   text-align: left;
-  padding: 10px;
+  padding: 8px;
   width: 100%;
 }
 
@@ -1383,20 +1392,156 @@ header input[type=checkbox]:checked ~ #menu{
   font-size: 30px;
   color: #0073b5;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
-  padding: 9px;
+  padding-bottom: 10px;
   display: block;
 }
 
 .social-h {
   color:#777777;
   font-size: 15px;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 .social-i {
   color:#777777;
   font-size: 35px;
-  margin: 0 10px;
+  margin-left:15px;
+}
+
+/* FOOTER */
+
+.footer {
+  background-image: url(../img/footerbg.png);
+  background-size: cover;
+}
+
+.footer-darkness {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.footer-aside {
+  width: 500px;
+  float: left;
+  margin-top: 60px;
+}
+
+.footer-aside p {
+  font-size: 18px;
+  color: #fff;
+  margin-top: 35px;
+}
+
+.footer-h {
+  font-size: 60px;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.footer-market {
+  width: 235px;
+  height: 75px;
+}
+
+.footer-aside .box {
+  margin: 40px 0 50px;
+}
+
+.google-play {
+  background: url(../img/google-play.png) -236px 0;
+}
+
+.apple-store {
+  background: url(../img/appstore.png) -236px 0;
+}
+
+.av-foot {
+  display: block;
+  padding-left: 85px;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #0579c1;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.app-st {
+  display: block;
+  padding-left: 85px;
+  font-size: 22px;
+  color: #0579c1;
+  font-weight: 600;
+}
+
+.footer-market:hover {
+  cursor: pointer;
+  background-position: 0 0;
+}
+
+.stars-foot {
+  text-align: center;
+  color: #fff292;
+  font-size: 15px;
+  margin: 10px 0;
+}
+
+.footer-blck {
+  padding: 30px 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #444444;
+}
+
+.autorental {
+  width: 160px;
+  height: 30px;
+  color: #444444;
+}
+
+.crn {
+  display: inline-block;
+}
+
+.car-rental-n {
+  width: 85px;
+  color: #787878;
+  display: inline-block;
+}
+
+.crn-logo {
+  font-size: 22px;
+}
+
+.footer-phone {
+  text-align: center;
+  position: relative;
+  float: right;
+}
+
+.phone {
+  height: 525px;
+  width: 305px;
+  position: absolute;
+  top: 30px;
+  right: 7px;
+}
+
+.phone-img {
+  position: absolute;
+  height: 345px;
+  width: 235px;
+  top: 105px;
+  right: 41px;
+}
+
+.zoom-img {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  position: absolute;
+  top: 230px;
+  right: 155px;
+  background: url(../img/circle-img.png) 0px -165px;
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
 }
 
 /* TABLET VERSION */
