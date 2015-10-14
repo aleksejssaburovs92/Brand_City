@@ -1708,8 +1708,8 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .footer-copyr {
-  height: 90px;
   background-image: url(../img/footer-bg.png);
+  background-repeat: repeat;
 }
 
 .bgroup {
