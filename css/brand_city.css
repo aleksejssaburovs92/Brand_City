@@ -45,7 +45,6 @@ a:hover {
 }
 
 .box {
-  display: table;
   display:-webkit-box;
   display:-webkit-flex;
   display:-ms-flexbox;
@@ -54,10 +53,6 @@ a:hover {
 
 .first-order {
   order: -1;
-}
-
-.box-item {
-  display: table-cell;
 }
 
 .box-equal {

@@ -1,0 +1,9 @@
+/* IE FIX */
+
+.box-item {
+  display: table-cell;
+}
+
+.box {
+    display: table;
+}
