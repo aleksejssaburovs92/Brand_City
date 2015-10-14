@@ -2,8 +2,13 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 1.6rem;
 }
 
 a{
@@ -45,6 +50,10 @@ a:hover {
   display:-webkit-flex;
   display:-ms-flexbox;
   display:flex;
+}
+
+.first-order {
+  order: -1;
 }
 
 .box-item {
@@ -101,6 +110,10 @@ a:hover {
   -webkit-flex: 1 0 100%;
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
+}
+
+.box-no-wrapp {
+  flex-wrap: nowrap;
 }
 
 .cf:before,
@@ -199,7 +212,7 @@ a:hover {
 
 .dropdown-row {
   overflow: hidden;
-  box-shadow: 1px 1px 5px #000;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.25);
   margin-top: 10px;
   border-radius: 5px;
   background-color: white;
@@ -218,7 +231,7 @@ a:hover {
   padding: 9px 10px;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 13px;
+  font-size: 1.3rem;
 
 }
 .menu-btn-header:hover {
@@ -241,7 +254,7 @@ a:hover {
   display: inline-block;
   margin-left: 10px;
   position: relative;
-  font-size: 10px;
+  font-size: 1rem;
 }
 
 .menu-btn.dropdown:hover .menu-btn-header::after{
@@ -301,17 +314,25 @@ header div {
 }
 
 .liked-users-heart {
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .liked-users-number {
-  font-size: 16px;
+  font-size: 1.6rem;
   margin-left: 3px;
 }
 
 .liked-users-cont {
-  font-size: 13px;
+  font-size: 1.3rem;
   margin-left: 2px;
+}
+
+.mobile-nav-wrapp{
+  display: inline-block;
+}
+
+.mobile-btn {
+  display: none;
 }
 
 .border-right {
@@ -326,7 +347,7 @@ header div {
   font-family: FontAwesome;
   display: inline-block;
   margin-left: 20px;
-  font-size: 10px;
+  font-size: 1rem;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -363,7 +384,7 @@ header div {
   position: relative;
   top:10px;
   left: 2px;
-  font-size: 17px;
+  font-size: 1.7rem;
 }
 
 .contact-information .fa-chevron-down {
@@ -376,12 +397,12 @@ header div {
 }
 
 .contact-information-phone {
-  font-size: 15px;
+  font-size: 1.5rem;
   padding-left: 5px;
 }
 
 .contact-information-communication {
-  font-size: 10px;
+  font-size: 1rem;
   padding-left: 20px;
 }
 
@@ -435,7 +456,7 @@ header div {
 
 
 .choice {
-  font-size: 13px;
+  font-size: 1.3rem;
   padding: 10px 20px;
   font-family: OpenSans;
   display:block;
@@ -505,7 +526,7 @@ header div {
   position: relative;
   background-color: #d4002a;
   padding-top: 5px;
-  font-size: 27px;
+  font-size: 2.7rem;
   font-weight: bold;
   color: white;
   text-align: center;
@@ -537,7 +558,7 @@ header div {
 }
 
 .searchbar-section-advertise h1 {
-  font-size: 48px;
+  font-size: 4.8rem;
   font-weight: lighter;
   margin-bottom: 0;
   letter-spacing: 1px;
@@ -545,14 +566,14 @@ header div {
 
 .quote {
   margin: 0;
-  font-size: 20px;
+  font-size: 2rem;
   letter-spacing: 1px;
 }
 
 .quote-2 {
   margin-top: 3px;
   margin-bottom: 22px;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .searchbar-border {
@@ -579,7 +600,7 @@ header div {
   background-color: #0073b5;
   outline: none;
   color:#fff;
-  font-size: 18px;
+  font-size: 1.8rem;
   padding-top: 8px;
 }
 
@@ -589,7 +610,7 @@ header div {
   background-color: #dddddd;
   padding-top: 11px;
   padding-left: 20px;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .searchbar-date::before {
@@ -627,9 +648,8 @@ header div {
 }
 
 .searchbar-pref {
-  width: 100%;
   text-shadow: 2px 2px #000;
-  font-size: 13px;
+  font-size: 1.3rem;
   color: #fff;
   padding: 5px 30px 25px 30px;
 }
@@ -673,11 +693,11 @@ header div {
   left: -598px;
 }
 
-.col-4 p::before{
+.searchbar-pref p::before{
   padding-right: 5px;
   content: "\f00c";
   font-family:FontAwesome;
-  font-size: 15px;
+  font-size: 1.5rem;
 }
 
 .calendar-table-box .col-3:not(:last-child){
@@ -752,7 +772,7 @@ header div {
 .calendar td {
   text-align: center;
   padding:7px 13px;
-  font-size: 13px;
+  font-size: 1.3rem;
   cursor: pointer;
 }
 
@@ -807,7 +827,7 @@ header div {
 }
 
 .auto-advertise-header {
-  font-size: 18px;
+  font-size: 1.8rem;
   color: #8d6a16;
   text-align: center;
   text-transform: uppercase;
@@ -828,7 +848,7 @@ header div {
 
 .auto-advertise-footer-heading {
   display:block;
-  font-size: 18px;
+  font-size: 1.8rem;
   text-align: center;
   text-transform: uppercase;
   font-weight: 100;
@@ -838,7 +858,7 @@ header div {
 .auto-advertise-footer a{
   display: inline-block;
   padding: 10px;
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #8d6a16;
   font-weight: lighter;
   text-decoration: none;
@@ -846,6 +866,10 @@ header div {
 
 .auto-advertise-footer a:hover {
   background-color: #ccc;
+}
+
+.slider {
+  width: 1150px;
 }
 
 .car-rent{
@@ -863,11 +887,11 @@ header div {
 
 .car-naming{
   padding-top: 17px;
-  font-size: 15px;
+  font-size: 1.5rem;
 }
 
 .car-price {
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: 600;
   color:black;
   padding-bottom: 12px;
@@ -876,14 +900,14 @@ header div {
 .car-price::after {
   content: '\f153';
   font-family: FontAwesome;
-  font-size: 25px;
+  font-size: 2.5rem;
   font-weight: 100;
   margin-left: 5px;
 }
 
 .car-new-price{
   color:red;
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: 600;
   margin-top: -10px;
 }
@@ -891,7 +915,7 @@ header div {
 .car-new-price::after{
   content: '\f153';
   font-family: FontAwesome;
-  font-size: 25px;
+  font-size: 2.5rem;
   font-weight: 100;
   margin-left: 5px;
 }
@@ -899,7 +923,7 @@ header div {
 .car-old-price {
   text-decoration: line-through;
   color: #777777;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .rent-btn {
@@ -950,34 +974,28 @@ header div {
   left: 0;
   right: 0;
   margin-bottom: 15px;
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #444444;
 }
 
-.auto-advertise-main::before {
-  position: absolute;
-  content: "";
-  top: 34%;
-  left: 20px;
+.arrow-left {
   width: 0;
   height: 0;
   border-bottom: 40px solid transparent;
   border-top: 40px solid transparent;
   border-right: 15px solid #cccccc;
   cursor: pointer;
+  margin-right: 10px;
 }
 
-.auto-advertise-main::after {
-  position: absolute;
-  content: "";
-  top: 34%;
-  right: 20px;
+.arrow-right {
   width: 0;
   height: 0;
   border-bottom: 40px solid transparent;
   border-top: 40px solid transparent;
   border-left: 15px solid #cccccc;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .contact-information-list .dropdown-row:before {
@@ -1018,7 +1036,7 @@ header div {
 }
 
 .customer-ratings-heading {
-  font-size: 24px;
+  font-size: 2.4rem;
   float: left;
 }
 
@@ -1037,18 +1055,18 @@ header div {
 
 .cust-rat-overall-number {
   display: block;
-  font-size: 32px;
+  font-size: 3.2rem;
   color: #0073b5;
 }
 
 .cust-rat-overall-mark {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .cust-rat-overall-reviews {
   display: block;
-  font-size: 13px;
+  font-size: 1.3rem;
   color: #0073b5;
 }
 
@@ -1058,13 +1076,13 @@ header div {
 }
 
 .cust-rat-points-row .col-11 {
-  font-size: 13px;
+  font-size: 1.3rem;
 }
 
 .cust-rat-number {
   float: right;
   color: #0073b5;
-  font-size: 15px;
+  font-size: 1.5rem;
 }
 
 .cust-rat-points-row {
@@ -1079,7 +1097,7 @@ header div {
 .feedback {
   margin: 0;
   font-family: Arial;
-  font-size: 13px;
+  font-size: 1.3rem;
   line-height: 1.4;
 }
 
@@ -1100,7 +1118,7 @@ header div {
 
 .feedback-rat {
   float: right;
-  font-size: 18px;
+  font-size: 1.8rem;
   color: #1a5880;
 }
 
@@ -1110,17 +1128,17 @@ header div {
 }
 
 .feedback-name {
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .feedback-date {
-  font-size: 12px;
+  font-size: 1.2rem;
   color: #777777;
 }
 
 .positive::before {
   font-family: FontAwesome;
-  font-size: 15px;
+  font-size: 1.5rem;
   content: '\f067';
   position: absolute;
   top: 8px;
@@ -1134,7 +1152,7 @@ header div {
 
 .negative::before{
   font-family: FontAwesome;
-  font-size: 15px;
+  font-size: 1.5rem;
   content: '\f068';
   position: absolute;
   top: 10px;
@@ -1143,7 +1161,7 @@ header div {
 }
 
 .feedback-footer {
-  font-size: 13px;
+  font-size: 1.3rem;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   padding-top: 5px;
 }
@@ -1166,7 +1184,7 @@ header div {
 .Avis-other-cities-header{
   padding-bottom: 15px;
   border-bottom: 3px solid rgba(0, 0, 0, 0.1);
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 .avis-cities{
@@ -1176,7 +1194,7 @@ header div {
   text-decoration: none;
   color: #000;
   line-height: 1.4;
-  font-size: 13px;
+  font-size: 1.3rem;
 }
 
 .avis-cities:hover{
@@ -1202,7 +1220,7 @@ header div {
 .Avis-other-cities-footer {
   margin-top: 20px;
   color: #777777;
-  font-size: 13px;
+  font-size: 1.3rem;
   text-decoration: none;
 }
 
@@ -1243,15 +1261,20 @@ header input[type=checkbox]:checked ~ #menu{
 .other-rental h2 {
   text-transform: uppercase;
   color: #1a5880;
-  font-size: 18px;
+  font-size: 1.8rem;
   text-align: center;
   margin: 25px 0;
+}
+
+.rental-cont {
+  margin: 0 -5px;
 }
 
 .rental-supp {
   text-align: center;
   margin-top: 70px;
   margin-bottom: 35px;
+  padding: 0 5px;
 }
 
 .rental-supp-logo {
@@ -1259,11 +1282,15 @@ header input[type=checkbox]:checked ~ #menu{
   height: 50px;
 }
 
+.normalize-flxb-btwn{
+  width: 30%;
+}
+
 
 /* RENT CAR WORLDWIDE */
 
 .rent-ww-h {
-  font-size: 32px;
+  font-size: 3.2rem;
   text-align: center;
   color: #777777;
   display: block;
@@ -1281,7 +1308,7 @@ header input[type=checkbox]:checked ~ #menu{
 
 .rent-ww-c-h {
   color: #333333;
-  font-size: 22px;
+  font-size: 2.2rem;
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
@@ -1298,7 +1325,7 @@ header input[type=checkbox]:checked ~ #menu{
   left: 0;
   content: "\f00c";
   font-family: FontAwesome;
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #0073b5;
 }
 
@@ -1313,7 +1340,7 @@ header input[type=checkbox]:checked ~ #menu{
 .rent-ww-cont {
   position: relative;
   color: #333333;
-  font-size: 15px;
+  font-size: 1.5rem;
   padding: 0 35px;
   margin-top: 20px;
 }
@@ -1323,22 +1350,22 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .review-center-name {
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .review-center-rating {
   float: right;
-  font-size: 13px;
+  font-size: 1.3rem;
   color: #ffcd4a;
 }
 
 .review-center-cont {
-  font-size: 13px;
+  font-size: 1.3rem;
   margin-top: 5px;
 }
 
 .ren-ww-right a {
-  font-size: 13px;
+  font-size: 1.3rem;
   display: inline-block;
   margin-top: 7px;
 }
@@ -1369,14 +1396,14 @@ header input[type=checkbox]:checked ~ #menu{
   background-color: #0073b5;
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.6rem;
   outline: 0;
   border: none;
 }
 
 .rent-ww-qst a {
   display: inline-block;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .rent-ww-footer-btn:hover {
@@ -1389,13 +1416,13 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .rent-ww-footer-h {
-  font-size: 18px;
+  font-size: 1.8rem;
   color: #444444;
   font-weight: bold;
 }
 
 .rent-ww-footer p{
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #444444;
   margin: 5px 0;
 }
@@ -1407,7 +1434,7 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .rent-phone {
-  font-size: 30px;
+  font-size: 3rem;
   color: #0073b5;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
   padding-bottom: 10px;
@@ -1416,20 +1443,20 @@ header input[type=checkbox]:checked ~ #menu{
 
 .social-h {
   color:#777777;
-  font-size: 15px;
+  font-size: 1.5rem;
   padding: 10px 0;
 }
 
 .social-i {
   color:#777777;
-  font-size: 35px;
+  font-size: 3.5rem;
   margin-left:15px;
 }
 
 /* FOOTER */
 
 .footer {
-  background-image: url(../img/footerbg.png);
+  background: url(../img/footerbg.png) 100% 50% no-repeat;
   background-size: cover;
 }
 
@@ -1444,13 +1471,13 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .footer-aside p {
-  font-size: 18px;
+  font-size: 1.8rem;
   color: #fff;
   margin-top: 35px;
 }
 
 .footer-h {
-  font-size: 60px;
+  font-size: 6rem;
   color: #fff;
   line-height: 1.1;
 }
@@ -1480,7 +1507,7 @@ header input[type=checkbox]:checked ~ #menu{
   display: block;
   padding-left: 85px;
   padding-top: 10px;
-  font-size: 13px;
+  font-size: 1.3rem;
   color: #0579c1;
   font-weight: 600;
   text-transform: uppercase;
@@ -1489,7 +1516,7 @@ header input[type=checkbox]:checked ~ #menu{
 .app-st {
   display: block;
   padding-left: 85px;
-  font-size: 22px;
+  font-size: 2.2rem;
   color: #0579c1;
   font-weight: 600;
 }
@@ -1502,7 +1529,7 @@ header input[type=checkbox]:checked ~ #menu{
 .stars-foot {
   text-align: center;
   color: #fff292;
-  font-size: 15px;
+  font-size: 1.5rem;
   margin: 10px 0;
 }
 
@@ -1602,23 +1629,21 @@ header input[type=checkbox]:checked ~ #menu{
 .partners span,
 .info-foot span {
   display: block;
-  font-size: 18px;
+  font-size: 1.8rem;
   color: #cccccc;
   margin-bottom: 13px;
 }
 
 .partners a {
-  display: block;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 1.2rem;
   color: #ffffff;
   line-height: 2.14;
 }
 
 .info-foot a {
-  display: block;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 1.3rem;
   color: #ffffff;
   line-height: 2.14;
 }
@@ -1639,7 +1664,7 @@ header input[type=checkbox]:checked ~ #menu{
   width: 32px;
   height: 32px;
   margin-bottom: 20px;
-  font-size: 32px;
+  font-size: 3.2rem;
   color: #dddddd;
   line-height: inherit;
 }
@@ -1654,14 +1679,14 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .subscribe h3 {
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #f6f6f6;
   margin-bottom: 5px;
   margin-top: 0;
 }
 
 .subscribe span {
-  font-size: 12px;
+  font-size: 1.2rem;
   color: #cccccc;
   margin: inherit;
 }
@@ -1674,12 +1699,12 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .subscribe-mail {
-  font-size: 13px;
+  font-size: 1.3rem;
   color: #aaaaaa;
 }
 
 .subscribe-btn {
-  font-size: 14px;
+  font-size: 1.4rem;
   color: #ffffff;
   margin-top: 15px;
   border-radius: 4px;
@@ -1693,9 +1718,9 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .bgroup {
-  font-size: 12px;
+  font-size: 1.2rem;
   color: #939393;
-  float: left;
+  text-align: left;
 }
 
 .bgroup-logo {
@@ -1709,29 +1734,30 @@ header input[type=checkbox]:checked ~ #menu{
           transition: none;
 }
 
+.market {
+  text-align: center;
+  margin-top: 30px;
+}
+
 .apple {
   width: 135px;
   height: 40px;
-  float: right;
-  margin-top: 30px;
   margin-right: 20px;
 }
 
 .google {
   width: 115px;
   height: 40px;
-  float: left;
-  margin-top: 30px;
-  margin-left: 20px;
 }
 
 .footer-copyr .norton {
-  float: right;
   width: 110px;
   height: 60px;
-  margin-top: 15px;
 }
 
+.antiv {
+  text-align: right;
+}
 
 /* DROPDOWNS SEARCHBAR */
 
@@ -1772,7 +1798,7 @@ header input[type=checkbox]:checked ~ #menu{
 .all-loc span {
   display: block;
   padding: 10px 21px;
-  font-size: 13px;
+  font-size: 1.3rem;
   margin: 0 2px;
   position: relative;
 }
@@ -1797,7 +1823,7 @@ header input[type=checkbox]:checked ~ #menu{
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   color: #777777;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .all-loc .plane:hover::before {
@@ -1822,7 +1848,7 @@ header input[type=checkbox]:checked ~ #menu{
 .top-loc span {
   display: inline-block;
   padding:10px 24px;
-  font-size: 15px;
+  font-size: 1.5rem;
   margin:1px 0;
   position: relative;
   background-color: #eeeeee;
@@ -1833,7 +1859,7 @@ header input[type=checkbox]:checked ~ #menu{
   font-family: FontAwesome;
   margin-left: 5px;
   color: #777777;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 .top-loc .plane:hover::after {
@@ -1905,7 +1931,7 @@ header input[type=checkbox]:checked ~ #menu{
 .top-cities span {
   display: inline-block;
   padding:10px 21px;
-  font-size: 15px;
+  font-size: 1.5rem;
   margin:1px 0;
   position: relative;
   background-color: #eeeeee;
@@ -1916,4 +1942,59 @@ header input[type=checkbox]:checked ~ #menu{
   background: none;
   text-transform: uppercase;
   color: #0073b5;
+}
+
+
+
+
+/* Media query 600px */
+@media (max-width: 600px) {
+
+  .container {
+    width: 520px;
+  }
+
+  [class*="col-"] {
+        width: 100%;
+    }
+
+
+  /* NAVIGATION */
+  .liked-users {
+    display: none;
+  }
+
+  .mobile-nav-wrapp .mobile-btn {
+    display: block;
+    float: right;
+    font-size: 3rem;
+    color: #fff;
+    margin-top: 5px;
+  }
+
+  .mobile-nav-wrapp {
+    float: right;
+  }
+
+  .logo {
+    float: left;
+  }
+
+  .mobile-nav {
+    clear: both;
+    display: none;
+  }
+
+  .mobile-nav > div {
+    display: block;
+  }
+
+  .mobile-nav-wrapp:hover .mobile-nav{
+    display: block;
+  }
+
+  .border-right::after {
+    display: none;
+  }
+
 }
