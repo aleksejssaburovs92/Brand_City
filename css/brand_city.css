@@ -518,7 +518,6 @@ header div {
 
 .avis-logo {
   width: 105px;
-  display: inline-block;
   position: relative;
   background-color: #d4002a;
   padding-top: 5px;
@@ -582,7 +581,6 @@ header div {
   -webkit-flex: 1 1 0%;
       -ms-flex: 1 1 0%;
           flex: 1 1 0%;
-  display: inline-block;
   outline: 0;
   border: none;
   padding-left: 10px;
@@ -590,7 +588,6 @@ header div {
 
 .searchbar-price {
   width: 155px;
-  display: inline-block;
   border: none;
   padding: 11px 0px;
   background-color: #0073b5;
@@ -601,7 +598,6 @@ header div {
 }
 
 .searchbar-date {
-  display: inline-block;
   width: 72px;
   background-color: #dddddd;
   padding-top: 11px;
