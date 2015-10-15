@@ -49,6 +49,7 @@ a:hover {
   display:-webkit-flex;
   display:-ms-flexbox;
   display:flex;
+  width: 100%;
 }
 
 .first-order {
@@ -508,7 +509,7 @@ header div {
 
 .searchbar-section-darkness {
   background-color: rgba(0, 0, 0, 0.5);
-  padding-top: 66px;
+  padding-top: 97px;
 }
 
 .searchbar-section .container {
@@ -578,9 +579,9 @@ header div {
 
 .search {
   -webkit-box-flex: 1;
-  -webkit-flex: 1 1 0;
-      -ms-flex: 1 1 0;
-          flex: 1 1 0;
+  -webkit-flex: 1 1 0%;
+      -ms-flex: 1 1 0%;
+          flex: 1 1 0%;
   display: inline-block;
   outline: 0;
   border: none;
@@ -647,6 +648,7 @@ header div {
   font-size: 1.3rem;
   color: #fff;
   padding: 5px 30px 25px 30px;
+  width: 100%
 }
 
 .searchbar-calendar {
@@ -864,13 +866,19 @@ header div {
 }
 
 .slider {
-  width: 1150px;
+  width: 1200px;
+  padding: 20px;
+}
+
+.auto-wrapp {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .car-rent{
   position: relative;
   text-align: center;
-  width: 230px;
+  min-width: 230px;
   height: 320px;
 }
 
@@ -1259,10 +1267,6 @@ header input[type=checkbox]:checked ~ #menu{
   font-size: 1.8rem;
   text-align: center;
   margin: 25px 0;
-}
-
-.rental-cont {
-  margin: 0 -5px;
 }
 
 .rental-supp {
@@ -1961,14 +1965,18 @@ header input[type=checkbox]:checked ~ #menu{
 
   .mobile-nav-wrapp .mobile-btn {
     display: block;
-    float: right;
     font-size: 3rem;
     color: #fff;
     margin-top: 5px;
+    position: absolute;
+    top:0;
+    right: 20px;
+    height: 50px;
   }
 
   .mobile-nav-wrapp {
-    float: right;
+    display: block;
+    clear: both;
   }
 
   .logo {
