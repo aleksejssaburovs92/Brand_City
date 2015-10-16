@@ -7,3 +7,27 @@
 .box {
     display: table;
 }
+
+.container .box {
+  width: 100%;
+}
+
+.car-coord {
+  position: static;
+}
+
+.info-foot .social-i {
+  display: block;
+}
+
+.auto-advertise-main .box {
+  margin: 0 auto;
+}
+
+.auto-advertise-main .box-item {
+  vertical-align: middle;
+}
+
+.car-rent .car-coord {
+  position: static;
+}
