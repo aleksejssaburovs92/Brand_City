@@ -9,7 +9,15 @@
 }
 
 .container .box {
-  width: 100%;
+
+}
+
+.searchbar-border {
+  table-layout: auto;
+}
+
+.search {
+  width: 492px;
 }
 
 .car-coord {
@@ -30,4 +38,17 @@
 
 .car-rent .car-coord {
   position: static;
+}
+
+
+.footer-aside .box {
+  width: 100%;
+}
+
+.rental-cont {
+  width: 100%;
+}
+
+.avis-row {
+  width: 100%;
 }

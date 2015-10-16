@@ -519,7 +519,6 @@ header div {
   width: 105px;
   position: relative;
   background-color: #d4002a;
-  padding-top: 5px;
   font-size: 2.7rem;
   font-weight: bold;
   color: white;
@@ -588,12 +587,11 @@ header div {
 .searchbar-price {
   width: 155px;
   border: none;
-  padding: 11px 0px;
+  padding: 10px 0px;
   background-color: #0073b5;
   outline: none;
   color:#fff;
   font-size: 1.8rem;
-  padding-top: 8px;
 }
 
 .searchbar-date {
