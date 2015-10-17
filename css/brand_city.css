@@ -497,6 +497,10 @@ header div {
   border:none ;
 }
 
+.mobile-close {
+  display: none;
+}
+
 /* SEARCHBAR SECTION */
 
 .searchbar-section {
@@ -1962,7 +1966,7 @@ header input[type=checkbox]:checked ~ #menu{
     margin-top: 5px;
     position: absolute;
     top:0;
-    right: 20px;
+    right: 30px;
     height: 50px;
   }
 
@@ -1978,18 +1982,28 @@ header input[type=checkbox]:checked ~ #menu{
   .mobile-nav {
     clear: both;
     display: none;
+    text-align: center;
   }
 
   .mobile-nav > div {
     display: block;
   }
 
-  .mobile-nav-wrapp:hover .mobile-nav{
-    display: block;
-  }
+
 
   .border-right::after {
     display: none;
+  }
+
+  .mobile-close {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .mobile-close span {
+    font-size: 1.6rem;
+    cursor: pointer;
   }
 
 }

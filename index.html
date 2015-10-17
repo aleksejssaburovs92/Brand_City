@@ -10,6 +10,17 @@
 </head>
 
 <body>
+<script>
+  function mobilenav()
+{
+    document.getElementById("mobile-menu").style.display="block";
+}
+
+  function mobnavcl()
+{
+    document.getElementById("mobile-menu").style.display="none";
+}
+</script>
   <!--<div class="template"></div>-->
   <header class="navigation">
     <div class="container cf">
@@ -19,9 +30,9 @@
         <span class="liked-users-number">41,760</span>
         <span class="liked-users-cont">users love us</span>
       </div>
-      <div class="mobile-nav-wrapp">
+      <div class="mobile-nav-wrapp" onclick="mobilenav()">
         <a class="mobile-btn ">&#9776;</a>
-          <nav class="mobile-nav cf">
+          <nav class="mobile-nav cf" id="mobile-menu">
           <div class="dropdown border-right">
             <div class="dropdown-header contact-information">
                 <span class="contact-information-phone">(+371) 6-601-0858</span>
@@ -113,7 +124,10 @@
               </div>
             </div>
           </div>
-        </div>
+          <div class="mobile-close">
+            <span class="fa fa-times-circle" onclick="mobnavcl"></span>
+          </div>
+        </nav>
       </div>
     </div>
   </header>
