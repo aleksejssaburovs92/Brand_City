@@ -1802,7 +1802,9 @@ header input[type=checkbox]:checked ~ #menu{
 .top-loc span:hover,
 .locations span:hover,
 .all-cities span:hover,
-.top-cities span:hover {
+.top-cities span:hover,
+.loc div:hover,
+.loc li:hover {
   background-color: #b2dcff;
   color: #0073b5;
   cursor: pointer;
@@ -1939,7 +1941,104 @@ header input[type=checkbox]:checked ~ #menu{
   color: #0073b5;
 }
 
+/* AUTOCOMPLETE */
 
+
+.autocomplete {
+  width: 600px;
+  position: absolute;
+  top: 58px;
+  z-index: 3;
+}
+
+.loc {
+  margin-bottom: 20px;
+  background: #fff;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  padding: 1px;
+  position: relative;
+}
+
+.loc-index {
+  font-size: 1.5rem;
+  color: #aaaaaa;
+}
+
+.loc ul {
+  list-style: none;
+    margin: 0;
+    padding:0;
+}
+
+.loc li {
+  font-size: 13px;
+  color: 444444;
+}
+
+.riga-places {
+  padding: 10px 5px 10px 50px;
+  position: relative;
+}
+
+.loc div {
+  padding: 10px 5px 10px 30px;
+}
+
+.places-name {
+  font-size: 1.5rem;
+  color: #000;
+  position: relative;
+}
+
+.loc .loc-bg {
+  background: #f6f6f6;
+  font-size: 1.2rem;
+  color: #777777;
+  padding-left:5px;
+  position: relative;
+}
+
+.loc-bg b {
+  color: #000;
+}
+
+.loc-bg .show-more,
+.places-name .show-more {
+  position: absolute;
+  right: 5px;
+}
+
+.show-more:hover {
+  text-decoration: underline;
+}
+
+.show-more::before {
+  content: '\f101';
+  font-family: FontAwesome;
+  margin-right: 5px;
+}
+
+.loc .plane::before {
+  position: absolute;
+  content: '\f072';
+  font-family: FontAwesome;
+  left: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #777777;
+  font-size: 1.6rem;
+}
+
+.loc ul .plane::before {
+  left: 30px;
+}
+
+.show-more {
+  font-size: 13px;
+  color: #777777;
+}
 
 
 /* Media query 600px */
