@@ -1945,6 +1945,7 @@ header input[type=checkbox]:checked ~ #menu{
 
 
 .autocomplete {
+  display: none;
   width: 600px;
   position: absolute;
   top: 58px;
