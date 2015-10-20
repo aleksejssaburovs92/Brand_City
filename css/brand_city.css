@@ -583,9 +583,18 @@ header div {
   -webkit-flex: 1 1 0%;
       -ms-flex: 1 1 0%;
           flex: 1 1 0%;
+}
+
+.search-input {
+  width: 100%;
+  height: 45px;
+  padding-left: 10px;
   outline: 0;
   border: none;
-  padding-left: 10px;
+}
+
+.search-input::-ms-clear {
+    display: none;
 }
 
 .searchbar-price {
