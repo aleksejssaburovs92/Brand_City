@@ -1853,11 +1853,13 @@ header input[type=checkbox]:checked ~ #menu{
 
 .top-loc span {
   display: inline-block;
-  padding:10px 24px;
+  padding:10px 20px;
   font-size: 1.5rem;
-  margin:1px 0;
+  margin:1px;
   position: relative;
   background-color: #eeeeee;
+  white-space: nowrap;
+  flex: 1 1 auto;
 }
 
 .top-loc .plane::after {
@@ -1877,6 +1879,7 @@ header input[type=checkbox]:checked ~ #menu{
   background: none;
   text-transform: uppercase;
   color: #0073b5;
+  flex-basis: 100%
 }
 
 
@@ -1936,11 +1939,13 @@ header input[type=checkbox]:checked ~ #menu{
 
 .top-cities span {
   display: inline-block;
-  padding:10px 21px;
+  padding:10px 20px;
+  margin: 1px;
   font-size: 1.5rem;
-  margin:1px 0;
   position: relative;
   background-color: #eeeeee;
+  flex: 1 1 auto;
+  white-space: nowrap;
 }
 
 .top-cities .box-item-fullsize {
@@ -1948,6 +1953,7 @@ header input[type=checkbox]:checked ~ #menu{
   background: none;
   text-transform: uppercase;
   color: #0073b5;
+  flex-basis: 100%;
 }
 
 /* AUTOCOMPLETE */
