@@ -203,6 +203,7 @@ a:hover {
   position: absolute;
   top: 100%;
   display: none;
+  cursor: initial;
 }
 
 .dropdown-row {
@@ -278,6 +279,7 @@ a:hover {
   position: fixed;
   width: 100%;
   z-index: 4;
+  height: 65px;
 }
 
 header div,
@@ -295,17 +297,38 @@ header div {
   vertical-align: middle;
 }
 
+.nav-dd-centering {
+
+}
+
 .logo {
-  margin: 0 40px 0 0;
-  display: inline-block;
-  vertical-align: middle;
-  padding: 18px 0 10px 0;
+  float: left;
+  position: relative;
+  height: 65px;
+  width: 172px;
+  margin-right: 45px;
+}
+
+.img-logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
 }
 
 
 .liked-users {
-  margin: 0 80px 0 0;
-  display: inline-block;
+  float: left;
+  width: 156px;
+  height: 65px;
+  position: relative;
+}
+.liked-wrapp {
+  height: 22px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
 }
 
 .liked-users-heart {
@@ -324,6 +347,17 @@ header div {
 
 .mobile-nav-wrapp{
   display: inline-block;
+  float: right;
+}
+
+.mobile-nav {
+  height: 65px;
+  width: 502px;
+  position: relative;
+}
+
+.nav-dd-centering {
+
 }
 
 .mobile-btn {
@@ -373,10 +407,8 @@ header div {
   position: relative;
 }
 
-.contact-information::before {
-  content: '\f095';
-  font-family: FontAwesome;
-  position: relative;
+.ci-icon {
+  position: absolute;
   top:10px;
   left: 2px;
   font-size: 1.7rem;
@@ -393,7 +425,7 @@ header div {
 
 .contact-information-phone {
   font-size: 1.5rem;
-  padding-left: 5px;
+  padding-left: 20px;
 }
 
 .contact-information-communication {
@@ -527,6 +559,7 @@ header div {
   font-weight: bold;
   color: white;
   text-align: center;
+  z-index: 1;
 }
 
 .ItalyFlag {
@@ -536,10 +569,7 @@ header div {
 }
 
 .searchbar {
-  border-left: 30px solid #ffcd4a;
-  border-right: 30px solid #ffcd4a;
-  border-top: 20px solid #ffcd4a;
-  border-bottom: 20px solid #ffcd4a;
+  border: 20px solid #ffcd4a;
   border-radius: 5px;
   position: relative;
 }
@@ -2058,67 +2088,146 @@ header input[type=checkbox]:checked ~ #menu{
 
 
 /* Media query 600px */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
 
   .container {
-    width: 520px;
+    width: 610px;
+    margin: auto;
   }
 
-  [class*="col-"] {
-        width: 100%;
-    }
-
-
   /* NAVIGATION */
-  .liked-users {
+
+  .liked-users-cont {
     display: none;
   }
 
-  .mobile-nav-wrapp .mobile-btn {
-    display: block;
-    font-size: 3rem;
-    color: #fff;
-    margin-top: 5px;
-    position: absolute;
-    top:0;
-    right: 30px;
-    height: 50px;
-  }
-
-  .mobile-nav-wrapp {
-    display: block;
-    clear: both;
+  .liked-users {
+    width: 71px;
   }
 
   .logo {
-    float: left;
+    margin-right: 20px;
+  }
+
+  .contact-information {
+    display: inline-block;
+    padding: 9px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    width: auto;
+  }
+
+  .contact-information-phone {
+    display: none;
+  }
+
+  .contact-information-communication {
+    display: none;
+  }
+
+  .ci-icon {
+    position: static;
   }
 
   .mobile-nav {
-    clear: both;
-    display: none;
-    text-align: center;
+    width: 323px;
   }
 
-  .mobile-nav > div {
-    display: block;
+  .border-right {
+    padding: inherit;
   }
-
-
 
   .border-right::after {
+    content: initial;
+  }
+
+  .border-right.dropdown .contact-information::after{
+    position: static;
+    margin-left: 10px;
+  }
+
+  .border-right:hover {
+    border-radius: 5px;
+  }
+
+  .nav-dd-centering {
+    height: 38px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+  }
+
+  .menu-btn-bordered {
+    margin-left: 10px;
+  }
+
+  .dropdown-row {
+    margin-top: 30px;
+  }
+
+  .dropdown-content {
+    left: -95px;
+  }
+
+  .dropdown-row::before {
+    left: 110px;
+    top: 15px;
+  }
+
+  .contact-information-list .dropdown-row::before {
+    top: 15px;
+    left: 308px;
+  }
+
+  .dropdown .contact-information-list {
+    left: -300px;
+    width: 638px;
+  }
+
+  .menu-btn-bordered .dropdown-content {
+    left: -120px;
+  }
+
+  .my-bookings .dropdown-row::before {
+    left: 175px;
+  }
+
+  .searchbar-section-advertise h1 {
+    font-size: 3.2rem;
+  }
+
+  .quote,
+  .quote-2 {
+    font-size:  1.6rem;
+  }
+
+  .searchbar-section .container {
+    width: 640px;
+    margin: 0;
+  }
+
+  .search {
+    order: -1;
+    flex-basis: 100%;
+  }
+
+  .non-active-tabl {
     display: none;
   }
 
-  .mobile-close {
-    display: block;
-    padding: 10px 0;
-    text-align: center;
+  .searchbar-calendar {
+    width: 600px;
   }
 
-  .mobile-close span {
-    font-size: 1.6rem;
-    cursor: pointer;
+  .searchbar-calendar-date-in {
+    left: -107px;
   }
 
+
+
+  .auto-wrapp {
+    width: 500px;
+  }
 }
