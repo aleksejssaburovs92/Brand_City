@@ -640,9 +640,20 @@ header div {
 .searchbar-date {
   width: 72px;
   background-color: #dddddd;
-  padding-top: 11px;
-  padding-left: 20px;
   font-size: 1.4rem;
+}
+
+.searchbar-date .dropdown-header {
+    height: 16px;
+    top: 0;
+    left: 20px;
+    bottom: 0;
+    position: absolute;
+    margin: auto 0;
+}
+
+.date-full{
+  display: none;
 }
 
 .searchbar-date::before {
@@ -2145,6 +2156,8 @@ header input[type=checkbox]:checked ~ #menu{
   .border-right.dropdown .contact-information::after{
     position: static;
     margin-left: 10px;
+    top: inherit;
+    transform: none;
   }
 
   .border-right:hover {
