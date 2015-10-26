@@ -10,11 +10,12 @@
   <title>EconomyBookings</title>
 </head>
 
-<body>
+<body id="body">
 <script>
   function mobilenav()
 {
     document.getElementById("mobile-menu").style.display="block";
+    document.getElementById("liked-users").style.display="block";
 }
 
 
@@ -24,7 +25,7 @@
     <div class="container cf">
       <a class="logo" href="#"><img class="img-logo" src="img/EconomyBookings-Logo.png" alt="EconomyBookings" /></a>
       <div class="mobile-nav-wrapp" onclick="mobilenav()">
-        <a class="mobile-btn ">&#9776;</a>
+        <span class="mobile-btn fa fa-bars"></span>
           <nav class="mobile-nav cf" id="mobile-menu">
             <div class="nav-dd-centering">
             <div class="dropdown border-right">
@@ -35,6 +36,11 @@
               </div>
               <div class="dropdown-content contact-information-list">
                 <div class="dropdown-row cf">
+                  <div class="lte-table-ci">
+                    <i class="ci-icon fa fa-phone"></i>
+                    <span class="contact-information-phone">(+371) 6-601-0858</span>
+                    <span class="contact-information-communication">communication in english</span>
+                  </div>
                   <div class="col-2">
                     <a href="#" class="choice"><img class="flag" src="img/PortuFlag.png" alt="countryflag"/>France<span class="contact-number">+33 17 09 186 12</span></a>
                     <a href="#" class="choice"><img class="flag" src="img/HungaryFlag.png" alt="countryflag"/>Sweden<span class="contact-number">+46 8 5051 3532</span></a>
@@ -106,13 +112,13 @@
               <div class="dropdown-content my-bookings">
                 <div class="dropdown-row cf">
                   <form action="#">
-                    <div>
+                    <div class="nav-log">
                       <input class="my-bookings-input" type="text" name="name" id="name" placeholder="John Smith" />
                     </div>
-                    <div>
+                    <div class="nav-log">
                       <input class="my-bookings-input" type="password" name="password" id="password"/>
                     </div>
-                    <div>
+                    <div class="nav-sub">
                       <input class="my-bookings-submit" type="submit" value="Sign in" />
                     </div>
                   </form>
@@ -120,12 +126,9 @@
               </div>
             </div>
           </div>
-          <div class="mobile-close">
-            <span class="fa fa-times-circle"></span>
-          </div>
         </nav>
       </div>
-      <div class="liked-users">
+      <div class="liked-users" id="liked-users">
         <div class="liked-wrapp">
           <a class="liked-users-heart" href="#"><i class="fa fa-heart"></i></a>
           <span class="liked-users-number">41,760</span>
@@ -191,7 +194,7 @@
         </div>
 
         <div class="top-loc arrow-up box box-wrappable">
-          <span class="box-item">All Areas</span><span class="box-item plane">Malpensa Airport (MXP)</span><span class="box-item plane">Airport Bergamo (BGY)</span><span class="box-item plane">Airport Linate (LIN)</span><span class="box-item">Downtown</span><span class="box-item">Asago</span><span class="box-item">Milan Exhibition Center</span><span class="box-item">Largo Augusto</span><span class="box-item">Legnano</span><span class="box-item">Limito Di Pioltello</span><span class="box-item">Lorenteggio</span>
+          <span class="box-item">All Areas</span><span class="box-item plane">Malpensa Airport (MXP)</span><span class="box-item plane">Airport Bergamo (BGY)</span><span class="box-item plane">Airport Linate (LIN)</span><span class="box-item tablet-dsp-none">Downtown</span><span class="box-item">Asago</span><span class="box-item">Milan Exhibition Center</span><span class="box-item">Largo Augusto</span><span class="box-item">Legnano</span><span class="box-item">Limito Di Pioltello</span><span class="box-item">Lorenteggio</span>
           <span class="box-item box-item-fullsize">Show all locations</span>
         </div>
 
@@ -260,8 +263,8 @@
           <div class="search box-item">
             <input class="search-input" type="text" name="Searchbar" value="">
           </div>
-          <div class="dropdown searchbar-date box-item">
-            <div class="dropdown-header">
+          <div class="dropdown searchbar-date sd-start box-item">
+            <div class="dropdown-header date-in">
               <span class="date-mini">Dec 29</span>
               <span class="date-full">December 29</span>
             </div>
@@ -336,7 +339,7 @@
                     </table>
                   </div>
                   </div>
-                  <div class="calendar-wrap box-item ">
+                  <div class="calendar-wrap non-active-mob box-item ">
                     <div class="calendar-months">January 2015</div>
                     <div class="calendar-border-left">
                     <table class="calendar">
@@ -471,12 +474,12 @@
               </div>
             </div>
           </div>
-          <div class="dropdown searchbar-date box-item">
-            <div class="dropdown-header">
+          <div class="dropdown searchbar-date sd-end box-item">
+            <div class="dropdown-header date-out">
               <span class="date-mini">Jan 11</span>
               <span class="date-full">January 29</span>
             </div>
-            <div class="dropdown-content searchbar-calendar searchbar-calendar-date-in">
+            <div class="dropdown-content searchbar-calendar searchbar-calendar-date-out">
               <div class="dropdown-row cf">
                 <div class="calendar-box">
                   <i class="table-left-arrow fa fa-chevron-left"></i>
@@ -547,7 +550,7 @@
                     </table>
                   </div>
                   </div>
-                  <div class="calendar-wrap box-item ">
+                  <div class="calendar-wrap non-active-mob box-item ">
                     <div class="calendar-months">January 2015</div>
                     <div class="calendar-border-left">
                     <table class="calendar">

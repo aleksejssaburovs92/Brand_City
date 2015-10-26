@@ -199,6 +199,10 @@ a:hover {
   position: relative;
 }
 
+header .dropdown {
+    z-index: 2;
+}
+
 .dropdown-content {
   position: absolute;
   top: 100%;
@@ -297,10 +301,6 @@ header div {
   vertical-align: middle;
 }
 
-.nav-dd-centering {
-
-}
-
 .logo {
   float: left;
   position: relative;
@@ -322,6 +322,7 @@ header div {
   width: 156px;
   height: 65px;
   position: relative;
+  z-index: 1;
 }
 .liked-wrapp {
   height: 22px;
@@ -354,10 +355,6 @@ header div {
   height: 65px;
   width: 502px;
   position: relative;
-}
-
-.nav-dd-centering {
-
 }
 
 .mobile-btn {
@@ -465,7 +462,7 @@ header div {
   padding: 10px 0;
 }
 
-.contact-information-list .col-2:nth-child(1),
+.contact-information-list .col-2:nth-child(2),
 .language-currency .col-2:nth-child(1) {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -480,7 +477,9 @@ header div {
   color: #fff;
 }
 
-
+.lte-table-ci {
+  display: none;
+}
 
 .choice {
   font-size: 1.3rem;
@@ -560,6 +559,7 @@ header div {
   color: white;
   text-align: center;
   z-index: 1;
+  height: 45px;
 }
 
 .ItalyFlag {
@@ -639,6 +639,7 @@ header div {
 
 .searchbar-date {
   width: 72px;
+  height: 45px;
   background-color: #dddddd;
   font-size: 1.4rem;
 }
@@ -735,6 +736,10 @@ header div {
 
 .searchbar-calendar-date-in {
   left: -598px;
+}
+
+.searchbar-calendar-date-out {
+  left: -690px;
 }
 
 .searchbar-pref p::before{
@@ -2129,15 +2134,31 @@ header input[type=checkbox]:checked ~ #menu{
     width: auto;
   }
 
-  .contact-information-phone {
+  .dropdown-header .contact-information-phone {
     display: none;
   }
 
-  .contact-information-communication {
+  .dropdown-header .contact-information-communication {
     display: none;
   }
 
-  .ci-icon {
+  .lte-table-ci {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .lte-table-ci > *{
+    color: #000;
+    display: block;
+  }
+
+  .lte-table-ci .ci-icon {
+    left: 250px;
+    top: 50px;
+  }
+
+  .dropdown-header .ci-icon {
     position: static;
   }
 
@@ -2169,6 +2190,7 @@ header input[type=checkbox]:checked ~ #menu{
     position: absolute;
     top: 0;
     bottom: 0;
+    right: 0;
     margin: auto 0;
   }
 
@@ -2176,7 +2198,7 @@ header input[type=checkbox]:checked ~ #menu{
     margin-left: 10px;
   }
 
-  .dropdown-row {
+  header .dropdown-row {
     margin-top: 30px;
   }
 
@@ -2218,7 +2240,7 @@ header input[type=checkbox]:checked ~ #menu{
 
   .searchbar-section .container {
     width: 640px;
-    margin: 0;
+    margin: 0 auto;
   }
 
   .search {
@@ -2238,9 +2260,285 @@ header input[type=checkbox]:checked ~ #menu{
     left: -107px;
   }
 
+  .searchbar-calendar-date-out {
+    left: -271px;
+  }
 
+  .searchbar-date,
+  .searchbar-price {
+    flex: 1 0 0%;
+  }
+
+  .date-mini {
+    display: none;
+  }
+
+  .date-full {
+    display: block;
+  }
+
+  .searchbar-date .date-in {
+    left: 40px;
+  }
+
+  .searchbar-date .date-out {
+    left: 50px;
+  }
+
+  .searchbar-calendar .dropdown-row:before {
+    left: 180px;
+  }
+
+  .searchbar-calendar .dropdown-row:after {
+    left: 181px;
+  }
+
+  .all-loc {
+    width: 600px;
+  }
+
+  .top-loc {
+    width: 600px;
+  }
+
+  .top-loc .tablet-dsp-none {
+    display: none;
+  }
+
+  .top-loc .plane:nth-child(n+4) {
+    display: none;
+  }
+
+  .top-loc .box-item:nth-child(n+10) {
+    display: none;
+  }
+
+  .all-loc .box-item:nth-child(n+3) {
+    display: none;
+  }
+
+  .top-cities {
+    width: 600px;
+  }
+
+  .top-cities .box-item:nth-child(n+7) {
+    display: none;
+  }
+
+  .top-cities .box-item:last-child,
+  .top-loc .box-item:last-child {
+    display: block;
+  }
 
   .auto-wrapp {
     width: 500px;
   }
+}
+
+
+@media (max-width: 320px) {
+
+  [class*="col-"] {
+        width: 100%;
+    }
+
+  .container {
+    width: 290px;
+    margin: auto;
+  }
+
+  .mobile-nav {
+    display: none;
+    width: 290px;
+  }
+
+  .language-menu,
+  .currency-menu,
+  .menu-btn-bordered {
+    margin: 0;
+  }
+
+  .menu-btn-bordered .menu-btn-header {
+    border: none;
+  }
+
+  .contact-information,
+  .menu-btn-header {
+    padding: 10px;
+  }
+
+  .liked-users {
+    display: none;
+    width: 100%;
+    background: green;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+
+
+  .liked-wrapp {
+    width: 156px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .liked-users-cont {
+    display: initial;
+  }
+
+  .mobile-btn {
+    display: block;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    padding: 5px;
+    height: 28px;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+
+  }
+
+  .searchbar-section .container {
+    width: 320px;
+    margin: auto;
+  }
+
+  .searchbar-section-advertise h1 {
+    font-size: 2.8rem;
+  }
+
+  .searchbar-section-advertise sup {
+    display: none;
+  }
+
+  .quote,
+  .quote-2 {
+    font-size: 1.4rem;
+  }
+
+  .dropdown .contact-information-list {
+    width: 320px;
+    left: -20px;
+  }
+
+  .contact-information-list .dropdown-row::before {
+    left: 40px;
+  }
+
+  .border-right .dropdown-row {
+    height: 260px;
+    overflow: scroll;
+  }
+
+  header .dropdown-row {
+    margin-top: 10px;
+  }
+
+  .contact-information-list .dropdown-row::before {
+    top:2px;
+  }
+
+  .menu-btn-bordered .my-bookings {
+    width: 320px;
+    left: -195px;
+  }
+
+  .my-bookings .dropdown-row {
+    padding: 0;
+  }
+
+  .my-bookings form {
+    padding: 0;
+  }
+
+  .my-bookings input {
+    margin: 0;
+    text-align: center;
+    border: none;
+  }
+
+  .nav-log {
+    border-bottom: 1px solid red;
+  }
+
+  .nav-sub {
+    padding: 15px;
+  }
+
+
+  .date-mini {
+    display: block;
+  }
+
+  .date-full {
+    display: none;
+  }
+
+  .searchbar-price {
+    flex-basis: 100%;
+    border-top: 1px solid #fff;
+  }
+
+  .sd-end::before,
+  .sd-end::after {
+    content: none;
+  }
+
+  .searchbar-date .date-in {
+    left: 20px;
+  }
+
+  .searchbar-date .date-out {
+    left: 30px;
+  }
+
+  .non-active-mob {
+    display: none;
+  }
+
+  .searchbar-date .dropdown-content {
+    width: 280px;
+  }
+
+  .searchbar-calendar-date-out {
+    left: -193px;
+  }
+
+  .searchbar-calendar-date-in .dropdown-row:before{
+    left: 140px;
+  }
+
+  .searchbar-calendar-date-in .dropdown-row:after {
+    left: 139px;
+  }
+
+  .searchbar-calendar-date-out .dropdown-row:before{
+    left: 240px;
+  }
+
+  .searchbar-calendar-date-out .dropdown-row:after {
+    left: 239px;
+  }
+
+  .lte-table-ci .ci-icon {
+    left: 90px;
+    top: 30px;
+  }
+
+  .lte-table-ci {
+    padding: 5px;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .dropdown-row::before {
+    top: 2px;
+  }
+
+  .my-bookings .dropdown-row::before {
+    left: 245px;
+  }
+
 }
