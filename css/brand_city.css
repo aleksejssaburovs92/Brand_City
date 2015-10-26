@@ -724,7 +724,7 @@ header div {
 .searchbar-calendar .dropdown-row:after {
     position: absolute;
     content: "";
-    top:5px;
+    top:6px;
     z-index: 2;
     left: 631px;
     width: 0;
@@ -735,11 +735,11 @@ header div {
 }
 
 .searchbar-calendar-date-in {
-  left: -598px;
+  left: -600px;
 }
 
 .searchbar-calendar-date-out {
-  left: -690px;
+  left: -600px;
 }
 
 .searchbar-pref p::before{
