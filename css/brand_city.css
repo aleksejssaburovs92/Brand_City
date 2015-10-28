@@ -123,7 +123,8 @@ a:hover {
 
 
 .container {
-  width: 960px;
+  max-width: 1000px;
+  padding: 0 20px;
   margin: auto;
 }
 /* FOR DESKTOP */
@@ -305,31 +306,21 @@ header div {
   float: left;
   position: relative;
   height: 65px;
-  width: 172px;
   margin-right: 45px;
 }
 
 .img-logo {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
+  padding-top: 16px;
 }
-
 
 .liked-users {
   float: left;
-  width: 156px;
-  height: 65px;
   position: relative;
   z-index: 1;
 }
+
 .liked-wrapp {
-  height: 22px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
+  padding-top: 20px;
 }
 
 .liked-users-heart {
@@ -347,18 +338,15 @@ header div {
 }
 
 .mobile-nav-wrapp{
-  display: inline-block;
-  float: right;
-}
-
-.mobile-nav {
-  height: 65px;
-  width: 502px;
-  position: relative;
+  display: inline;
 }
 
 .mobile-btn {
   display: none;
+}
+
+.nav-dd-centering {
+  float: right;
 }
 
 .border-right {
@@ -695,8 +683,13 @@ header div {
   text-shadow: 2px 2px #000;
   font-size: 1.3rem;
   color: #fff;
-  padding: 5px 30px 25px 30px;
-  width: 100%
+  padding: 0 30px;
+  margin: 5px 0 20px;
+  width: 100%;
+  white-space: nowrap;
+  height: 75px;
+  overflow: hidden;
+  flex-wrap: wrap;
 }
 
 .searchbar-calendar {
@@ -922,8 +915,7 @@ header div {
 }
 
 .auto-wrapp {
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow:hidden;
 }
 
 .car-rent{
@@ -1166,10 +1158,6 @@ header div {
   border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
 }
 
-.feedback-header .flag {
-  margin-right: inherit;
-}
-
 .feedback-rat {
   float: right;
   font-size: 1.8rem;
@@ -1183,11 +1171,17 @@ header div {
 
 .feedback-name {
   font-size: 1.4rem;
+  font-weight: bold;
 }
 
+.feedback-country,
 .feedback-date {
   font-size: 1.2rem;
   color: #777777;
+}
+
+.feedback-country::after {
+  content: &#8212;;
 }
 
 .positive::before {
@@ -1201,7 +1195,7 @@ header div {
 }
 
 .negative {
-  padding-left: 40px;
+  margin-left: 20px;
 }
 
 .negative::before{
@@ -1209,8 +1203,8 @@ header div {
   font-size: 1.5rem;
   content: '\f068';
   position: absolute;
-  top: 10px;
-  left: 15px;
+  top: 8px;
+  left: 3px;
   color: #960b0b;
 }
 
@@ -1366,7 +1360,6 @@ header input[type=checkbox]:checked ~ #menu{
 
 .rent-ww-left {
   margin-top: 20px;
-  width: 660px;
   float: left;
 }
 
@@ -1433,9 +1426,10 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .rent-ww-qst,
-.rent-ww-email {
+.rent-ww-email,
+.rent-ww-tl {
   background-color: #eeeeee;
-  padding: 25px 25px 0;
+  padding: 25px;
 }
 
 .rent-ww-footer  .rent-ww-footer-btn {
@@ -1462,7 +1456,6 @@ header input[type=checkbox]:checked ~ #menu{
 
 .rent-ww-tl {
   background-color: #dddddd;
-  padding: 25px 25px 0;
 }
 
 .rent-ww-footer-h {
@@ -1489,6 +1482,7 @@ header input[type=checkbox]:checked ~ #menu{
   border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
   padding-bottom: 10px;
   display: block;
+  font-weight: bold;
 }
 
 .social-h {
@@ -2103,12 +2097,73 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 
-/* Media query 600px */
-@media (max-width: 640px) {
+/* Media query 640px */
+@media (max-width: 1023px) {
 
   .container {
-    width: 610px;
+    width: 640px;
+    padding: 0 15px;
     margin: auto;
+  }
+
+  .col-t-1{
+    width: 8.333%;
+    float: left;
+  }
+
+  .col-t-2{
+    width: 16.666%;
+    float: left;
+  }
+
+  .col-t-3{
+    width: 25%;
+    float: left;
+  }
+
+  .col-t-4{
+    width: 33.333%;
+    float: left;
+  }
+
+  .col-t-5{
+    width: 41.666%;
+    float: left;
+  }
+
+  .col-t-6{
+    width: 50%;
+    float: left;
+  }
+
+  .col-t-7{
+    width: 58.333%;
+    float: left;
+  }
+
+  .col-t-8{
+    width: 66.666%;
+    float: left;
+  }
+
+  .col-t-9{
+    width: 75%;
+    float: left;
+  }
+
+  .col-t-10{
+    width: 83.333%;
+    float: left;
+  }
+
+  .col-t-11{
+    width: 91.666%;
+    float: left;
+  }
+
+  .col-t-12{
+    width: 100%;
+    float: left;
   }
 
   /* NAVIGATION */
@@ -2117,12 +2172,12 @@ header input[type=checkbox]:checked ~ #menu{
     display: none;
   }
 
-  .liked-users {
-    width: 71px;
-  }
-
   .logo {
     margin-right: 20px;
+  }
+
+  .nav-dd-centering {
+    padding-top: 14px;
   }
 
   .contact-information {
@@ -2162,12 +2217,8 @@ header input[type=checkbox]:checked ~ #menu{
     position: static;
   }
 
-  .mobile-nav {
-    width: 323px;
-  }
-
   .border-right {
-    padding: inherit;
+    padding: initial;
   }
 
   .border-right::after {
@@ -2183,15 +2234,6 @@ header input[type=checkbox]:checked ~ #menu{
 
   .border-right:hover {
     border-radius: 5px;
-  }
-
-  .nav-dd-centering {
-    height: 38px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto 0;
   }
 
   .menu-btn-bordered {
@@ -2236,11 +2278,6 @@ header input[type=checkbox]:checked ~ #menu{
   .quote,
   .quote-2 {
     font-size:  1.6rem;
-  }
-
-  .searchbar-section .container {
-    width: 640px;
-    margin: 0 auto;
   }
 
   .search {
@@ -2330,21 +2367,118 @@ header input[type=checkbox]:checked ~ #menu{
     display: block;
   }
 
+  .searchbar-pref {
+    padding: 0 10px;
+  }
+
   .auto-wrapp {
     width: 500px;
+    height: 345px;
+  }
+
+  .car-rent {
+    margin-bottom: 20px;
+  }
+
+
+  /* CUSTOMER RATINGS */
+
+  .feedback-main {
+    padding-left: 15px;
+  }
+
+  .feedback-aside {
+    padding-right: 15px;
+  }
+
+  .feedback-country {
+    float: left;
+    clear: right;
+  }
+
+  .feedback-date {
+    float: right;
+  }
+
+  .negative {
+    margin-left: 0;
+  }
+
+
+  /* AVIS IN OTHER CITIES */
+
+  .avis-col {
+    flex-basis: 50%;
+  }
+
+  .avis-row {
+    overflow: hidden;
+  }
+
+  /* OTHER SUPP */
+
+  .rental-cont {
+    height: 203px;
+    overflow: hidden;
+  }
+
+  /* WORLDWIDE */
+
+  .rent-ww-row {
+    flex-wrap: wrap;
+  }
+
+  .rent-ww-row .box-item {
+    flex-basis: 100%;
+  }
+
+  .rent-ww-footer {
+    flex-wrap: wrap;
+    padding-left: 15px;
+    margin-top: 20px;
+  }
+
+  .rent-ww-footer .box-item {
+    flex-basis: 100%;
+  }
+
+  .rent-ww-c-h {
+    font-size: 1.8rem;
+  }
+
+  .rent-ww-cont {
+    padding: 0 0 0 35px;
+  }
+
+  .rent-ww-footer-h {
+    font-size: 1.6rem;
+  }
+
+  .rent-phone {
+    font-size: 2.4rem;
+  }
+
+  .rent-ww-footer p {
+    font-size: 1.3rem;
+  }
+
+  .rent-ww-footer .rent-ww-footer-btn {
+    margin-bottom: 0;
   }
 }
 
 
-@media (max-width: 320px) {
+@media (max-width: 639px) {
 
   [class*="col-"] {
         width: 100%;
     }
 
   .container {
-    width: 290px;
+    width: 320px;
+    padding: 0 15px;
     margin: auto;
+    position: relative;
   }
 
   .mobile-nav {
@@ -2374,14 +2508,6 @@ header input[type=checkbox]:checked ~ #menu{
     border-top: 1px solid rgba(255, 255, 255, 0.3);
   }
 
-
-
-  .liked-wrapp {
-    width: 156px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
   .liked-users-cont {
     display: initial;
   }
@@ -2393,10 +2519,8 @@ header input[type=checkbox]:checked ~ #menu{
     padding: 5px;
     height: 28px;
     position: absolute;
-    right: 20px;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
+    right: 15px;
+    top:15px;
 
   }
 
