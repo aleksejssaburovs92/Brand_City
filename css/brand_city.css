@@ -53,7 +53,10 @@ a:hover {
 }
 
 .first-order {
-  order: -1;
+  -webkit-box-ordinal-group: 0;
+  -webkit-order: -1;
+      -ms-flex-order: -1;
+          order: -1;
 }
 
 .box-equal {
@@ -116,7 +119,9 @@ a:hover {
 }
 
 .box-no-wrapp {
-  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
 }
 
 .cf:before,
@@ -617,6 +622,7 @@ header div {
   padding-left: 10px;
   outline: 0;
   border: none;
+  border-radius: 0;
 }
 
 .search-input::-ms-clear {
@@ -697,7 +703,9 @@ header div {
   white-space: nowrap;
   height: 75px;
   overflow: hidden;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 .searchbar-calendar {
@@ -922,7 +930,9 @@ header div {
 }
 
 .slider .box {
-  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 .auto-wrapp {
@@ -1836,6 +1846,10 @@ header input[type=checkbox]:checked ~ #menu{
   display: none;
 }
 
+.mobile-footer-slct {
+  display: none;
+}
+
 /* DROPDOWNS SEARCHBAR */
 
 /* ALL LOC */
@@ -1932,7 +1946,10 @@ header input[type=checkbox]:checked ~ #menu{
   position: relative;
   background-color: #eeeeee;
   white-space: nowrap;
-  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .top-loc .plane::after {
@@ -1952,7 +1969,9 @@ header input[type=checkbox]:checked ~ #menu{
   background: none;
   text-transform: uppercase;
   color: #0073b5;
-  flex-basis: 100%
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%
 }
 
 
@@ -2017,7 +2036,10 @@ header input[type=checkbox]:checked ~ #menu{
   font-size: 1.5rem;
   position: relative;
   background-color: #eeeeee;
-  flex: 1 1 auto;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   white-space: nowrap;
 }
 
@@ -2026,7 +2048,9 @@ header input[type=checkbox]:checked ~ #menu{
   background: none;
   text-transform: uppercase;
   color: #0073b5;
-  flex-basis: 100%;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
 }
 
 /* AUTOCOMPLETE */
@@ -2128,6 +2152,8 @@ header input[type=checkbox]:checked ~ #menu{
   font-size: 13px;
   color: #777777;
 }
+
+
 
 
 /* Media query 640px */
@@ -2261,7 +2287,9 @@ header input[type=checkbox]:checked ~ #menu{
     position: static;
     margin-left: 10px;
     top: inherit;
-    transform: none;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
   }
 
   .border-right:hover {
@@ -2325,8 +2353,14 @@ header input[type=checkbox]:checked ~ #menu{
   }
 
   .search {
-    order: -1;
-    flex-basis: 100%;
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+        -ms-flex-order: -1;
+            order: -1;
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    border-radius: 0;
   }
 
   .non-active-tabl {
@@ -2347,7 +2381,10 @@ header input[type=checkbox]:checked ~ #menu{
 
   .searchbar-date,
   .searchbar-price {
-    flex: 1 0 0%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0%;
+        -ms-flex: 1 0 0%;
+            flex: 1 0 0%;
   }
 
   .date-mini {
@@ -2451,7 +2488,9 @@ header input[type=checkbox]:checked ~ #menu{
   /* AVIS IN OTHER CITIES */
 
   .avis-col {
-    flex-basis: 50%;
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
   }
 
   .avis-row {
@@ -2468,21 +2507,29 @@ header input[type=checkbox]:checked ~ #menu{
   /* WORLDWIDE */
 
   .rent-ww-row {
-    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
   }
 
   .rent-ww-row .box-item {
-    flex-basis: 100%;
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
   }
 
   .rent-ww-footer {
-    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     padding-left: 15px;
     margin-top: 20px;
   }
 
   .rent-ww-footer .box-item {
-    flex-basis: 100%;
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
   }
 
   .rent-ww-c-h {
@@ -2537,11 +2584,17 @@ header input[type=checkbox]:checked ~ #menu{
   }
 
   .subscribe form {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
   }
 
   .subscribe-wrap {
-    flex: 1 0 0%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 0%;
+        -ms-flex: 1 0 0%;
+            flex: 1 0 0%;
   }
 
   form .subscribe-btn {
@@ -2596,7 +2649,6 @@ header input[type=checkbox]:checked ~ #menu{
     }
 
   .container {
-    width: 320px;
     padding: 0 15px;
     margin: auto;
     position: relative;
@@ -2604,7 +2656,19 @@ header input[type=checkbox]:checked ~ #menu{
 
   .mobile-nav {
     display: none;
-    width: 290px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #133f5c;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .nav-dd-centering {
+    float: none;
+    padding: 15px 0;
   }
 
   .language-menu,
@@ -2624,9 +2688,8 @@ header input[type=checkbox]:checked ~ #menu{
 
   .liked-users {
     display: none;
-    width: 100%;
-    background: green;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    float: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .liked-users-cont {
@@ -2645,11 +2708,6 @@ header input[type=checkbox]:checked ~ #menu{
 
   }
 
-  .searchbar-section .container {
-    width: 320px;
-    margin: auto;
-  }
-
   .searchbar-section-advertise h1 {
     font-size: 2.8rem;
   }
@@ -2666,6 +2724,7 @@ header input[type=checkbox]:checked ~ #menu{
   .dropdown .contact-information-list {
     width: 320px;
     left: -20px;
+    text-align: initial;
   }
 
   .contact-information-list .dropdown-row::before {
@@ -2682,7 +2741,7 @@ header input[type=checkbox]:checked ~ #menu{
   }
 
   .contact-information-list .dropdown-row::before {
-    top:2px;
+    top:-5px;
   }
 
   .menu-btn-bordered .my-bookings {
@@ -2705,7 +2764,7 @@ header input[type=checkbox]:checked ~ #menu{
   }
 
   .nav-log {
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   }
 
   .nav-sub {
@@ -2722,7 +2781,9 @@ header input[type=checkbox]:checked ~ #menu{
   }
 
   .searchbar-price {
-    flex-basis: 100%;
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
     border-top: 1px solid #fff;
   }
 
@@ -2756,7 +2817,7 @@ header input[type=checkbox]:checked ~ #menu{
   }
 
   .searchbar-calendar-date-in .dropdown-row:after {
-    left: 139px;
+    left: 141px;
   }
 
   .searchbar-calendar-date-out .dropdown-row:before{
@@ -2764,15 +2825,16 @@ header input[type=checkbox]:checked ~ #menu{
   }
 
   .searchbar-calendar-date-out .dropdown-row:after {
-    left: 239px;
+    left: 241px;
   }
 
   .lte-table-ci .ci-icon {
     left: 90px;
-    top: 30px;
+    top: 10px;
   }
 
   .lte-table-ci {
+    position: relative;
     padding: 5px;
     margin-bottom: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -2784,6 +2846,111 @@ header input[type=checkbox]:checked ~ #menu{
 
   .my-bookings .dropdown-row::before {
     left: 245px;
+  }
+
+  .feedback-main {
+    padding-left: 0;
+  }
+
+  .feedback-aside {
+    padding-right: 0;
+  }
+
+  .avis-col {
+    -webkit-flex-basis: 100%;
+        -ms-flex-preferred-size: 100%;
+            flex-basis: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-right: 0;
+  }
+
+  .avis-row {
+    height: 400px;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+
+  .Avis-other-cities {
+    text-align: center;
+  }
+
+  .rent-ww-c-h {
+    text-align: center;
+  }
+
+  .footer-phone {
+    display: none;
+  }
+
+  .imarket-g {
+    margin-right: 0;
+  }
+
+  .imarket {
+    float: none;
+    display: block;
+  }
+
+  .footer-h,
+  .footer-aside p {
+    text-align: center;
+  }
+
+  .footer-market {
+    margin: auto;
+  }
+
+  .subscribe form {
+    display: block;
+  }
+
+  .subscribe-wrap {
+    margin-bottom: 20px;
+  }
+
+  form .subscribe-btn {
+    margin-left: 0;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .partners .box {
+    display: none;
+  }
+
+  .mobile-footer-slct {
+    display: block;
+  }
+
+  .default-slct {
+    display: none;
+  }
+
+  .footer-slct {
+    width: 100%;
+  }
+
+  .bgroup,
+  .antiv {
+    width: 50%;
+    float: left;
+  }
+
+  .partners-bg .icon-box,
+  .market-t {
+    float: none;
+    text-align: center;
+  }
+
+  .customer-ratings-header .avis-logo{
+    float: none;
+    margin: auto;
+  }
+
+  .customer-ratings-heading {
+    float: none;
+    text-align: center;
   }
 
 }
