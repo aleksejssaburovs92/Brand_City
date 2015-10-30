@@ -9,6 +9,7 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
+  overflow-x: hidden;
 }
 
 a{
@@ -91,6 +92,13 @@ a:hover {
   -webkit-flex: 1 0 0%;
       -ms-flex: 1 0 0%;
           flex: 1 0 0%;
+}
+
+.box__item--double {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2 0 0%;
+      -ms-flex: 2 0 0%;
+          flex: 2 0 0%;
 }
 
 .box__item--triple {
@@ -910,12 +918,16 @@ header div {
 }
 
 .slider {
-  width: 1200px;
   padding: 20px;
+}
+
+.slider .box {
+  flex-wrap: wrap;
 }
 
 .auto-wrapp {
   overflow:hidden;
+  height: 345px;
 }
 
 .car-rent{
@@ -1032,6 +1044,7 @@ header div {
   border-right: 15px solid #cccccc;
   cursor: pointer;
   margin-right: 10px;
+  padding-left: 15px;
 }
 
 .arrow-right {
@@ -1042,6 +1055,7 @@ header div {
   border-left: 15px solid #cccccc;
   cursor: pointer;
   margin-left: 10px;
+  padding-right: 15px;
 }
 
 .contact-information-list .dropdown-row:before {
@@ -1508,6 +1522,10 @@ header input[type=checkbox]:checked ~ #menu{
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.footer-darkness .container {
+  position: relative;
+}
+
 .footer-aside {
   width: 500px;
   float: left;
@@ -1535,8 +1553,16 @@ header input[type=checkbox]:checked ~ #menu{
   text-decoration: none;
 }
 
-.footer-aside .box {
+.imarket-wr {
   margin: 40px 0 50px;
+}
+
+.imarket {
+  display: inline-block;
+}
+
+.imarket-g {
+  margin-right: 20px;
 }
 
 .google-play {
@@ -1587,9 +1613,8 @@ header input[type=checkbox]:checked ~ #menu{
 }
 
 .footer-phone {
-  text-align: center;
-  position: relative;
-  float: right;
+  position: absolute;
+  right: 0;
 }
 
 .phone {
@@ -1653,21 +1678,14 @@ header input[type=checkbox]:checked ~ #menu{
   background-color: #555555;
 }
 
-.partners-bg .container {
-  padding: 26px 0;
-}
-
 .partners {
-  width: 390px;
-}
-
-.info-foot {
-  width: 570px;
-  float: right;
-}
-
-.partners-left {
+  width: 60%;
   float: left;
+}
+
+.partners-bg .container {
+  padding-top: 26px;
+  padding-bottom: 26px;
 }
 
 .partners span,
@@ -1698,24 +1716,33 @@ header input[type=checkbox]:checked ~ #menu{
 
 .icon-box {
   padding-left: 10px;
+  float: right;
+  margin-right: 50px;
+  margin-top: 10px;
+}
+
+.icon-box .social-i {
+  color: #dddddd;
+  display: block;
 }
 
 .info-foot a:hover {
   color: red;
 }
 
-.info-foot .social-i {
+.social-i {
   width: 32px;
   height: 32px;
   margin-bottom: 20px;
   font-size: 3.2rem;
-  color: #dddddd;
   line-height: inherit;
+  text-decoration: none;
 }
 
 .subscribe {
   padding: 15px 20px;
   background-color: #444444;
+  float: right;
 }
 
 .subscribe form {
@@ -1733,6 +1760,7 @@ header input[type=checkbox]:checked ~ #menu{
   font-size: 1.2rem;
   color: #cccccc;
   margin: inherit;
+  display: block;
 }
 
 .subscribe input {
@@ -1801,6 +1829,11 @@ header input[type=checkbox]:checked ~ #menu{
 
 .antiv {
   text-align: right;
+}
+
+
+.market-t {
+  display: none;
 }
 
 /* DROPDOWNS SEARCHBAR */
@@ -1881,7 +1914,7 @@ header input[type=checkbox]:checked ~ #menu{
 
 .top-loc {
   display: none;
-  width: 900px;
+  width: inherit;
   position: absolute;
   top: 58px;
   background: #fff;
@@ -2101,7 +2134,6 @@ header input[type=checkbox]:checked ~ #menu{
 @media (max-width: 1023px) {
 
   .container {
-    width: 640px;
     padding: 0 15px;
     margin: auto;
   }
@@ -2280,6 +2312,18 @@ header input[type=checkbox]:checked ~ #menu{
     font-size:  1.6rem;
   }
 
+  .searchbar-date .date-in,
+  .searchbar-date .date-out {
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: inherit;
+  }
+
+  .date-full {
+    width: 88px;
+  }
+
   .search {
     order: -1;
     flex-basis: 100%;
@@ -2314,20 +2358,20 @@ header input[type=checkbox]:checked ~ #menu{
     display: block;
   }
 
-  .searchbar-date .date-in {
-    left: 40px;
-  }
-
-  .searchbar-date .date-out {
-    left: 50px;
-  }
-
   .searchbar-calendar .dropdown-row:before {
     left: 180px;
   }
 
   .searchbar-calendar .dropdown-row:after {
     left: 181px;
+  }
+
+  .sd-end .dropdown-row:before {
+    left: 400px;
+  }
+
+  .sd-end .dropdown-row:after {
+    left: 401px;
   }
 
   .all-loc {
@@ -2372,7 +2416,6 @@ header input[type=checkbox]:checked ~ #menu{
   }
 
   .auto-wrapp {
-    width: 500px;
     height: 345px;
   }
 
@@ -2450,6 +2493,10 @@ header input[type=checkbox]:checked ~ #menu{
     padding: 0 0 0 35px;
   }
 
+  .ren-ww-right {
+    float: left;
+  }
+
   .rent-ww-footer-h {
     font-size: 1.6rem;
   }
@@ -2464,6 +2511,80 @@ header input[type=checkbox]:checked ~ #menu{
 
   .rent-ww-footer .rent-ww-footer-btn {
     margin-bottom: 0;
+  }
+
+  /* PHONE SECTION */
+
+  .footer-h {
+    font-size: 5rem;
+  }
+
+  .footer-phone {
+    right: -200px;
+    bottom: -120px;
+  }
+
+  .imarket {
+    float: left;
+    clear: both;
+  }
+
+  /* SUBSCRIBE SECTION */
+
+  .subscribe {
+    float: none;
+    margin-bottom: 20px;
+  }
+
+  .subscribe form {
+    display: flex;
+  }
+
+  .subscribe-wrap {
+    flex: 1 0 0%;
+  }
+
+  form .subscribe-btn {
+    width: 200px;
+    margin-left: 20px;
+    margin-top: 0;
+  }
+
+  .partners {
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  .subscribe h3 {
+    font-size: 2.2rem;
+  }
+
+  .subscribe span {
+    display: inline;
+  }
+
+  .partners-bg .icon-box {
+    float: left;
+    overflow: hidden;
+  }
+
+  .icon-box .social-i {
+    display: inline-block;
+  }
+
+  .market-t {
+    display: block;
+    float: right;
+    margin-top: 10px;
+  }
+
+  .footer-copyr .market {
+    display: none;
+  }
+
+  .antiv {
+    float: right;
   }
 }
 
