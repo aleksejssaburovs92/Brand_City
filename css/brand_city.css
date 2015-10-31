@@ -45,6 +45,11 @@ a:hover {
   text-decoration: none;
 }
 
+svg{
+	width: 400px;
+	transform: rotate(-90deg)
+}
+
 .box {
   display:-webkit-box;
   display:-webkit-flex;
@@ -1648,7 +1653,10 @@ header input[type=checkbox]:checked ~ #menu{
 
 .news-bg {
   background-color: #444444;
-  height: 105px;
+}
+
+.news {
+    padding-bottom: 20px;
 }
 
 .crn {
@@ -2935,6 +2943,16 @@ header input[type=checkbox]:checked ~ #menu{
   .customer-ratings-heading {
     float: none;
     text-align: center;
+  }
+
+  .arn {
+    margin-left: 0;
+    float: right;
+    zoom:.7;
+  }
+
+  .crn {
+    zoom:.7;
   }
 
 }
