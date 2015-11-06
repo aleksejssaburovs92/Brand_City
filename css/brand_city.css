@@ -45,11 +45,6 @@ a:hover {
   text-decoration: none;
 }
 
-svg{
-	width: 400px;
-	transform: rotate(-90deg)
-}
-
 .box {
   display:-webkit-box;
   display:-webkit-flex;
@@ -901,6 +896,7 @@ header div {
 
 .auto-advertise-main {
   background: white;
+  position: relative;
 }
 
 .auto-advertise-footer {
@@ -943,6 +939,25 @@ header div {
 .auto-wrapp {
   overflow:hidden;
   height: 345px;
+  margin: 0 30px;
+}
+
+.auto-advertise-left-ar {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.auto-advertise-right-ar {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .car-rent{
@@ -1333,7 +1348,7 @@ header input[type=checkbox]:checked ~ #menu{
 
 .rental-supp {
   text-align: center;
-  margin-top: 70px;
+  margin-top: 30px;
   margin-bottom: 35px;
   padding: 0 5px;
 }
@@ -2145,7 +2160,53 @@ header input[type=checkbox]:checked ~ #menu{
   color: #777777;
 }
 
+/* CIRCLES SVG */
 
+.circle-svg {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: relative;
+  width: 100px;
+  display: block;
+  margin: 0 auto 5px;
+}
+
+.outer-circle {
+  stroke: #dfdfdf;
+  fill: #fff;
+}
+
+.inner-circle {
+  stroke: #dfdfdf;
+  fill: #f6f6f6;
+}
+
+.circle-rat {
+  font-size:150px;
+  fill: #0073b5;
+}
+
+.searchbar-section-advertise .circle-svg {
+  bottom: 25px;
+  width:50px;
+  display: inline-block;
+  margin: 0;
+}
+
+.searchbar-section-advertise .outer-circle {
+  stroke: rgba(255, 255, 255, 0.5);
+  fill: transparent;
+}
+
+.searchbar-section-advertise .inner-circle {
+  stroke: rgba(255, 255, 255, 0.5);
+  fill: rgba(255, 255, 255, 0.3);
+}
+
+.searchbar-section-advertise .circle-rat {
+  fill: #fff;
+}
 
 
 /* Media query 640px */
@@ -2444,10 +2505,6 @@ header input[type=checkbox]:checked ~ #menu{
     padding: 0 10px;
   }
 
-  .auto-wrapp {
-    height: 345px;
-  }
-
   .car-rent {
     margin-bottom: 20px;
   }
@@ -2640,10 +2697,40 @@ header input[type=checkbox]:checked ~ #menu{
         width: 100%;
     }
 
+    * {
+      -webkit-transition-property: none;
+              transition-property: none;
+    }
+
+    body {
+      min-width: 320px;
+    }
+
+    .car-rent:hover {
+      -webkit-transform: none;
+          -ms-transform: none;
+              transform: none;
+      -webkit-animation: none;
+              animation: none;
+    }
+
+    .menu-btn.dropdown:hover .menu-btn-header::after {
+      -webkit-transform: none;
+          -ms-transform: none;
+              transform: none;
+      -webkit-animation: none;
+              animation: none;
+    }
+
+    .searchbar-section-advertise .circle-svg {
+      display: none;
+    }
+
   .container {
     padding: 0 15px;
     margin: auto;
     position: relative;
+    min-width: 320px;
   }
 
   .mobile-nav {
@@ -2789,7 +2876,7 @@ header input[type=checkbox]:checked ~ #menu{
   }
 
   .searchbar-date .date-out {
-    left: 30px;
+    left: 20px;
   }
 
   .non-active-mob {
