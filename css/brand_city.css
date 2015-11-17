@@ -39,6 +39,8 @@ input {
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
   outline: 0;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 a:hover {
@@ -700,12 +702,11 @@ header div {
   padding: 0 30px;
   margin: 5px 0 20px;
   width: 100%;
-  white-space: nowrap;
-  height: 75px;
-  overflow: hidden;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+}
+
+.searchbar-pref-item {
+  width: 25%;
+  float:left;
 }
 
 .searchbar-calendar {
@@ -2505,6 +2506,11 @@ header input[type=checkbox]:checked ~ #menu{
     padding: 0 10px;
   }
 
+  .searchbar-pref-item {
+    width: 33.333%;
+    float: left;
+  }
+
   .car-rent {
     margin-bottom: 20px;
   }
@@ -2766,7 +2772,6 @@ header input[type=checkbox]:checked ~ #menu{
   }
 
   .liked-users {
-    display: none;
     float: none;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
@@ -2785,6 +2790,10 @@ header input[type=checkbox]:checked ~ #menu{
     right: 15px;
     top:15px;
 
+  }
+
+  .searchbar {
+    margin: 0 0 100px 0;
   }
 
   .searchbar-section-advertise h1 {
@@ -2905,6 +2914,10 @@ header input[type=checkbox]:checked ~ #menu{
 
   .searchbar-calendar-date-out .dropdown-row:after {
     left: 241px;
+  }
+
+  .searchbar-pref{
+    display: none;
   }
 
   .lte-table-ci .ci-icon {
