@@ -41,6 +41,7 @@ input {
   outline: 0;
   -webkit-appearance: none;
   border-radius: 0;
+  border:1px solid rgba(204, 204, 204, 0.8);
 }
 
 a:hover {
@@ -1311,9 +1312,6 @@ header div {
   margin-right: 5px;
 }
 
-
-
-
 .show-menu {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-decoration: none;
@@ -1322,14 +1320,6 @@ header div {
 	text-align: center;
 	padding: 10px 0;
 	display: none;
-}
-
-header input[type=checkbox]{
-    display: none;
-}
-
-header input[type=checkbox]:checked ~ #menu{
-    display: block;
 }
 
 
