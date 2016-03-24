@@ -11,29 +11,20 @@
 </head>
 
 <body id="body">
-<script>
-  function mobilenav()
-{
-    document.getElementById("mobile-menu").style.display="block";
-}
-
-
-</script>
-  <!--<div class="template"></div>-->
   <header class="navigation">
     <div class="container cf">
       <a class="logo" href="#"><img class="img-logo" src="img/EconomyBookings-Logo.png" alt="EconomyBookings" /></a>
-      <div class="mobile-nav-wrapp" onclick="mobilenav()">
+      <div class="mobile-nav-wrapp">
         <span class="mobile-btn fa fa-bars"></span>
           <nav class="mobile-nav cf" id="mobile-menu">
             <div class="nav-dd-centering">
-            <div class="dropdown border-right">
-              <div class="dropdown-header contact-information">
+            <div class="dropdown border-right js-dropdown" data-dropdown-type="closing">
+              <div class="dropdown-header contact-information js-dropdown-toggler">
                   <i class="ci-icon fa fa-phone"></i>
                   <span class="contact-information-phone">(+371) 6-601-0858</span>
                   <span class="contact-information-communication">communication in english</span>
               </div>
-              <div class="dropdown-content contact-information-list">
+              <div class="dropdown-content contact-information-list js-dropdown-box">
                 <div class="dropdown-row cf">
                   <div class="lte-table-ci">
                     <i class="ci-icon fa fa-phone"></i>
@@ -65,33 +56,33 @@
                 </div>
               </div>
             </div>
-            <div class="dropdown menu-btn language-menu">
-              <span class="dropdown-header menu-btn-header">EN</span>
-              <div class="dropdown-content language-currency  ">
+            <div class="dropdown menu-btn language-menu js-dropdown js-lang" data-dropdown-type="closing">
+              <span class="dropdown-header menu-btn-header js-dropdown-toggler js-lang-display">EN</span>
+              <div class="dropdown-content language-currency js-dropdown-box">
                 <div class="dropdown-row cf">
                   <div class="col-2">
-                    <a href="#" class="choice">Deutsch</a>
-                    <a href="#" class="choice">English</a>
-                    <a href="#" class="choice">Espanol</a>
-                    <a href="#" class="choice">Francais</a>
-                    <a href="#" class="choice">Italiano</a>
-                    <a href="#" class="choice">Suomi</a>
-                    <a href="#" class="choice">Latviesu</a>
+                    <a href="#DE" class="choice js-lang-toggler">Deutsch</a>
+                    <a href="#EN" class="choice js-lang-toggler">English</a>
+                    <a href="#ES" class="choice js-lang-toggler">Espanol</a>
+                    <a href="#FR" class="choice js-lang-toggler">Francais</a>
+                    <a href="#IT" class="choice js-lang-toggler">Italiano</a>
+                    <a href="#SU" class="choice js-lang-toggler">Suomi</a>
+                    <a href="#LV" class="choice js-lang-toggler">Latviesu</a>
                   </div>
                   <div class="col-2">
-                    <a href="#" class="choice">Nederlands</a>
-                    <a href="#" class="choice">Polski</a>
-                    <a href="#" class="choice">Русский</a>
-                    <a href="#" class="choice">Portugese</a>
-                    <a href="#" class="choice">Svenska</a>
-                    <a href="#" class="choice">Chinese</a>
+                    <a href="#ND" class="choice js-lang-toggler">Nederlands</a>
+                    <a href="#PL" class="choice js-lang-toggler">Polski</a>
+                    <a href="#RU" class="choice js-lang-toggler">Русский</a>
+                    <a href="#PO" class="choice js-lang-toggler">Portugese</a>
+                    <a href="#SV" class="choice js-lang-toggler">Svenska</a>
+                    <a href="#CH" class="choice js-lang-toggler">Chinese</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="dropdown menu-btn currency-menu">
-              <span class="dropdown-header menu-btn-header"><i class="fa fa-eur"></i></span>
-              <div class="dropdown-content language-currency">
+            <div class="dropdown menu-btn currency-menu js-dropdown" data-dropdown-type="closing">
+              <span class="dropdown-header menu-btn-header js-dropdown-toggler"><i class="fa fa-eur"></i></span>
+              <div class="dropdown-content language-currency js-dropdown-box">
                 <div class="dropdown-row cf">
                   <a href="#" class="choice">Euro<span class="currency-symbol"><span class="fa fa-eur"></span></span></a>
                   <a href="#" class="choice">US Dollars<span class="currency-symbol"><span class="fa fa-usd"></span></span></a>
@@ -106,9 +97,9 @@
                 </div>
               </div>
             </div>
-            <div class="dropdown menu-btn menu-btn-bordered">
-              <label class="dropdown-header menu-btn-header my-bookings-label" for="name">My Booking</label>
-              <div class="dropdown-content my-bookings">
+            <div class="dropdown menu-btn menu-btn-bordered js-dropdown">
+              <label class="dropdown-header menu-btn-header my-bookings-label js-dropdown-toggler" for="name">My Booking</label>
+              <div class="dropdown-content my-bookings js-dropdown-box">
                 <div class="dropdown-row cf">
                   <form action="#">
                     <div class="nav-log">
@@ -276,426 +267,29 @@
           <div class="search box-item">
             <input class="search-input" type="text" name="Searchbar" value="">
           </div>
-          <div class="dropdown searchbar-date sd-start box-item">
-            <div class="dropdown-header date-in">
+          <div class="dropdown searchbar-date sd-start box-item js-dropdown">
+            <div class="dropdown-header date-in js-dropdown-toggler">
               <span class="date-mini">Dec 29</span>
               <span class="date-full">December 29</span>
             </div>
-            <div class="dropdown-content searchbar-calendar searchbar-calendar-date-in">
+            <div class="dropdown-content searchbar-calendar searchbar-calendar-date-in js-dropdown-box">
               <div class="dropdown-row cf">
-                <div class="calendar-box">
-                  <i class="table-left-arrow fa fa-chevron-left"></i>
-                  <i class="table-right-arrow fa fa-chevron-right"></i>
-                  <div class="calendar-table-box box cf">
-                    <div class="calendar-wrap  box-item">
-                      <div class="calendar-months">December 2014</div>
-                      <div class="calendar-border-left calendar-none-border">
-                      <table class="calendar">
-                        <thead class="calendar-head">
-                            <tr>
-                              <th>S</th>
-                              <th>M</th>
-                              <th>T</th>
-                              <th>W</th>
-                              <th>T</th>
-                              <th>F</th>
-                              <th>S</th>
-                            </tr>
-                        </thead>
-                        <tbody class="calendar-body">
-                            <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td>1</td>
-                              <td>2</td>
-                            </tr>
-                            <tr>
-                              <td>3</td>
-                              <td>4</td>
-                              <td>5</td>
-                              <td>6</td>
-                              <td>7</td>
-                              <td>8</td>
-                              <td>9</td>
-                            </tr>
-                            <tr>
-                              <td>10</td>
-                              <td>11</td>
-                              <td>12</td>
-                              <td>13</td>
-                              <td>14</td>
-                              <td>15</td>
-                              <td>16</td>
-                            </tr>
-                            <tr>
-                              <td>17</td>
-                              <td>18</td>
-                              <td>19</td>
-                              <td>20</td>
-                              <td>21</td>
-                              <td>22</td>
-                              <td>23</td>
-                            </tr>
-                            <tr>
-                              <td>24</td>
-                              <td>25</td>
-                              <td>26</td>
-                              <td>27</td>
-                              <td class="calendar-trip-number-start"><div class="right-arrow"></div>28</td>
-                              <td class="calendar-trip-number">29</td>
-                              <td class="calendar-trip-number">30</td>
-                            </tr>
-                      </tbody>
-                    </table>
+                <div class="calendar-box js-calendar-box">
+                  <i class="table-left-arrow fa fa-chevron-left js-calendar-arrow" data-dir="prev"></i>
+                  <i class="table-right-arrow fa fa-chevron-right js-calendar-arrow" data-dir="next"></i>
+                  <div class="calendar-container">
+                    <div class="calendar-wrap box-item js-calendar-wrap"></div>
+                    <div class="calendar-wrap box-item js-calendar-wrap"></div>
+                    <div class="calendar-wrap box-item js-calendar-wrap"></div>
                   </div>
-                  </div>
-                  <div class="calendar-wrap non-active-mob box-item ">
-                    <div class="calendar-months">January 2015</div>
-                    <div class="calendar-border-left">
-                    <table class="calendar">
-                      <thead class="calendar-head">
-                        <tr>
-                          <th>S</th>
-                          <th>M</th>
-                          <th>T</th>
-                          <th>W</th>
-                          <th>T</th>
-                          <th>F</th>
-                          <th>S</th>
-                        </tr>
-                      </thead>
-                      <tbody class="calendar-body">
-                          <tr>
-                            <td class="calendar-trip-number">1</td>
-                            <td class="calendar-trip-number">2</td>
-                            <td class="calendar-trip-number">3</td>
-                            <td class="calendar-trip-number">4</td>
-                            <td class="calendar-trip-number">5</td>
-                            <td class="calendar-trip-number">6</td>
-                            <td class="calendar-trip-number">7</td>
-                          </tr>
-                          <tr>
-                            <td class="calendar-trip-number">8</td>
-                            <td class="calendar-trip-number">9</td>
-                            <td class="calendar-trip-number">10</td>
-                            <td class="calendar-trip-number-end"><div class="right-arrow"></div>11</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td>14</td>
-                          </tr>
-                          <tr>
-                            <td>15</td>
-                            <td>16</td>
-                            <td>17</td>
-                            <td>18</td>
-                            <td>19</td>
-                            <td>20</td>
-                            <td>21</td>
-                          </tr>
-                          <tr>
-                            <td>22</td>
-                            <td>23</td>
-                            <td>24</td>
-                            <td>25</td>
-                            <td>26</td>
-                            <td>27</td>
-                            <td>28</td>
-                          </tr>
-                          <tr>
-                            <td>29</td>
-                            <td>30</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                    </tbody>
-                  </table>
                 </div>
-                </div>
-                <div class="calendar-wrap non-active-tabl box-item ">
-                  <div class="calendar-months">February 2015</div>
-                  <div class="calendar-border-left">
-                  <table class="calendar">
-                    <thead class="calendar-head">
-                      <tr>
-                        <th>S</th>
-                        <th>M</th>
-                        <th>T</th>
-                        <th>W</th>
-                        <th>T</th>
-                        <th>F</th>
-                        <th>S</th>
-                      </tr>
-                    </thead>
-                    <tbody class="calendar-body">
-                        <tr>
-                          <td></td>
-                          <td></td>
-                          <td>1</td>
-                          <td>2</td>
-                          <td>3</td>
-                          <td>4</td>
-                          <td>5</td>
-                        </tr>
-                        <tr>
-                          <td>6</td>
-                          <td>7</td>
-                          <td>8</td>
-                          <td>9</td>
-                          <td>10</td>
-                          <td>11</td>
-                          <td>12</td>
-                        </tr>
-                        <tr>
-                          <td>13</td>
-                          <td>14</td>
-                          <td>15</td>
-                          <td>16</td>
-                          <td>17</td>
-                          <td>18</td>
-                          <td>19</td>
-                        </tr>
-                        <tr>
-                          <td>20</td>
-                          <td>21</td>
-                          <td>22</td>
-                          <td>23</td>
-                          <td>24</td>
-                          <td>25</td>
-                          <td>26</td>
-                        </tr>
-                        <tr>
-                          <td>27</td>
-                          <td>28</td>
-                          <td>29</td>
-                          <td>30</td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                  </tbody>
-                </table>
-              </div>
-              </div>
-              </div>
-              </div>
               </div>
             </div>
           </div>
-          <div class="dropdown searchbar-date sd-end box-item">
-            <div class="dropdown-header date-out">
+          <div class="searchbar-date sd-end box-item">
+            <div class="date-out">
               <span class="date-mini">Jan 11</span>
               <span class="date-full">January 29</span>
-            </div>
-            <div class="dropdown-content searchbar-calendar searchbar-calendar-date-out">
-              <div class="dropdown-row cf">
-                <div class="calendar-box">
-                  <i class="table-left-arrow fa fa-chevron-left"></i>
-                  <i class="table-right-arrow fa fa-chevron-right"></i>
-                  <div class="calendar-table-box box cf">
-                    <div class="calendar-wrap box-item ">
-                      <div class="calendar-months">December 2014</div>
-                      <div class="calendar-border-left calendar-none-border">
-                      <table class="calendar">
-                        <thead class="calendar-head">
-                            <tr>
-                              <th>S</th>
-                              <th>M</th>
-                              <th>T</th>
-                              <th>W</th>
-                              <th>T</th>
-                              <th>F</th>
-                              <th>S</th>
-                            </tr>
-                        </thead>
-                        <tbody class="calendar-body">
-                            <tr>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td></td>
-                              <td>1</td>
-                              <td>2</td>
-                            </tr>
-                            <tr>
-                              <td>3</td>
-                              <td>4</td>
-                              <td>5</td>
-                              <td>6</td>
-                              <td>7</td>
-                              <td>8</td>
-                              <td>9</td>
-                            </tr>
-                            <tr>
-                              <td>10</td>
-                              <td>11</td>
-                              <td>12</td>
-                              <td>13</td>
-                              <td>14</td>
-                              <td>15</td>
-                              <td>16</td>
-                            </tr>
-                            <tr>
-                              <td>17</td>
-                              <td>18</td>
-                              <td>19</td>
-                              <td>20</td>
-                              <td>21</td>
-                              <td>22</td>
-                              <td>23</td>
-                            </tr>
-                            <tr>
-                              <td>24</td>
-                              <td>25</td>
-                              <td>26</td>
-                              <td>27</td>
-                              <td class="calendar-trip-number-start"><div class="right-arrow"></div>28</td>
-                              <td class="calendar-trip-number">29</td>
-                              <td class="calendar-trip-number">30</td>
-                            </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  </div>
-                  <div class="calendar-wrap non-active-mob box-item ">
-                    <div class="calendar-months">January 2015</div>
-                    <div class="calendar-border-left">
-                    <table class="calendar">
-                      <thead class="calendar-head">
-                        <tr>
-                          <th>S</th>
-                          <th>M</th>
-                          <th>T</th>
-                          <th>W</th>
-                          <th>T</th>
-                          <th>F</th>
-                          <th>S</th>
-                        </tr>
-                      </thead>
-                      <tbody class="calendar-body">
-                          <tr>
-                            <td class="calendar-trip-number">1</td>
-                            <td class="calendar-trip-number">2</td>
-                            <td class="calendar-trip-number">3</td>
-                            <td class="calendar-trip-number">4</td>
-                            <td class="calendar-trip-number">5</td>
-                            <td class="calendar-trip-number">6</td>
-                            <td class="calendar-trip-number">7</td>
-                          </tr>
-                          <tr>
-                            <td class="calendar-trip-number">8</td>
-                            <td class="calendar-trip-number">9</td>
-                            <td class="calendar-trip-number">10</td>
-                            <td class="calendar-trip-number-end"><div class="right-arrow"></div>11</td>
-                            <td>12</td>
-                            <td>13</td>
-                            <td>14</td>
-                          </tr>
-                          <tr>
-                            <td>15</td>
-                            <td>16</td>
-                            <td>17</td>
-                            <td>18</td>
-                            <td>19</td>
-                            <td>20</td>
-                            <td>21</td>
-                          </tr>
-                          <tr>
-                            <td>22</td>
-                            <td>23</td>
-                            <td>24</td>
-                            <td>25</td>
-                            <td>26</td>
-                            <td>27</td>
-                            <td>28</td>
-                          </tr>
-                          <tr>
-                            <td>29</td>
-                            <td>30</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                    </tbody>
-                  </table>
-                </div>
-                </div>
-                <div class="calendar-wrap non-active-tabl box-item ">
-                  <div class="calendar-months">February 2015</div>
-                  <div class="calendar-border-left">
-                  <table class="calendar">
-                    <thead class="calendar-head">
-                      <tr>
-                        <th>S</th>
-                        <th>M</th>
-                        <th>T</th>
-                        <th>W</th>
-                        <th>T</th>
-                        <th>F</th>
-                        <th>S</th>
-                      </tr>
-                    </thead>
-                    <tbody class="calendar-body">
-                        <tr>
-                          <td></td>
-                          <td></td>
-                          <td>1</td>
-                          <td>2</td>
-                          <td>3</td>
-                          <td>4</td>
-                          <td>5</td>
-                        </tr>
-                        <tr>
-                          <td>6</td>
-                          <td>7</td>
-                          <td>8</td>
-                          <td>9</td>
-                          <td>10</td>
-                          <td>11</td>
-                          <td>12</td>
-                        </tr>
-                        <tr>
-                          <td>13</td>
-                          <td>14</td>
-                          <td>15</td>
-                          <td>16</td>
-                          <td>17</td>
-                          <td>18</td>
-                          <td>19</td>
-                        </tr>
-                        <tr>
-                          <td>20</td>
-                          <td>21</td>
-                          <td>22</td>
-                          <td>23</td>
-                          <td>24</td>
-                          <td>25</td>
-                          <td>26</td>
-                        </tr>
-                        <tr>
-                          <td>27</td>
-                          <td>28</td>
-                          <td>29</td>
-                          <td>30</td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                  </tbody>
-                </table>
-              </div>
-              </div>
-              </div>
-              </div>
-              </div>
             </div>
           </div>
           <input class="searchbar-price box-item" type="submit" value="Show Prices" />
@@ -735,13 +329,10 @@
       <span>hot deals in milan from avis</span>
     </div>
     <div class="auto-advertise-main">
-      <div class="auto-advertise-left-ar">
-        <img src="img/leftar.png" class="arrow-left" />
-      </div>
-      <div class="auto-wrapp">
-        <div class="slider">
-          <div class="box box--center">
-            <div class="car-rent box-item ">
+      <div class="auto-wrapp js-carousel">
+        <div class="slider js-carousel-container">
+          <div class="box box--center js-carousel-list">
+            <div class="car-rent box-item js-carousel-item">
               <span class="car-naming">Audi Q3</span>
               <img class="car-photo" src="img/AudiQ3.png" alt="Audi Q3"/>
               <span class="car-new-price">16,72</span>
@@ -749,7 +340,7 @@
               <a href="#" class="rent-btn">Book now</a>
               <span class="car-coord">at Malpensa Airport (MXP)</span>
             </div>
-            <div class="car-rent box-item ">
+            <div class="car-rent box-item js-carousel-item">
               <span class="car-naming">Chevrolet Tahoe</span>
               <img class="car-photo" src="img/Tahoe.png" alt="Chevrolet Tahoe"/>
               <span class="car-new-price">14,99</span>
@@ -757,21 +348,108 @@
               <a href="#" class="rent-btn">Book now</a>
               <span class="car-coord">at Airport Belgamo</span>
             </div>
-            <div class="car-rent box-item ">
+            <div class="car-rent box-item js-carousel-item">
               <span class="car-naming">Skoda Octavia Scout</span>
               <img class="car-photo" src="img/Skoda.png" alt="Skoda Octavia Scout"/>
               <span class="car-price">18,42</span>
               <a href="#" class="rent-btn">Book now</a>
               <span class="car-coord">at Airport Linate</span>
             </div>
-            <div class="car-rent box-item ">
+            <div class="car-rent box-item js-carousel-item">
               <span class="car-naming">УАЗ Patriot</span>
               <img class="car-photo" src="img/Patriot.png" alt="УАЗ Patriot"/>
               <span class="car-price">19,99</span>
               <a href="#" class="rent-btn">Book now</a>
               <span class="car-coord">at Downtown</span>
             </div>
-            <div class="car-rent box-item ">
+            <div class="car-rent box-item js-carousel-item">
+              <span class="car-naming">Audi Q3</span>
+              <img class="car-photo" src="img/AudiQ3.png" alt="Audi Q3"/>
+              <span class="car-price">16,72</span>
+              <a href="#" class="rent-btn">Book now</a>
+              <span class="car-coord">at Milan Exhibition center</span>
+            </div>
+            <div class="car-rent box-item js-carousel-item">
+              <span class="car-naming">Audi Q3</span>
+              <img class="car-photo" src="img/AudiQ3.png" alt="Audi Q3"/>
+              <span class="car-new-price">16,72</span>
+              <span class="car-old-price">19,99 <i class="fa fa-eur"></i></span>
+              <a href="#" class="rent-btn">Book now</a>
+              <span class="car-coord">at Malpensa Airport (MXP)</span>
+            </div>
+            <div class="car-rent box-item js-carousel-item">
+              <span class="car-naming">Chevrolet Tahoe</span>
+              <img class="car-photo" src="img/Tahoe.png" alt="Chevrolet Tahoe"/>
+              <span class="car-new-price">14,99</span>
+              <span class="car-old-price">17,74 <i class="fa fa-eur"></i></span>
+              <a href="#" class="rent-btn">Book now</a>
+              <span class="car-coord">at Airport Belgamo</span>
+            </div>
+            <div class="car-rent box-item js-carousel-item">
+              <span class="car-naming">Skoda Octavia Scout</span>
+              <img class="car-photo" src="img/Skoda.png" alt="Skoda Octavia Scout"/>
+              <span class="car-price">18,42</span>
+              <a href="#" class="rent-btn">Book now</a>
+              <span class="car-coord">at Airport Linate</span>
+            </div>
+            <div class="car-rent box-item js-carousel-item">
+              <span class="car-naming">УАЗ Patriot</span>
+              <img class="car-photo" src="img/Patriot.png" alt="УАЗ Patriot"/>
+              <span class="car-price">19,99</span>
+              <a href="#" class="rent-btn">Book now</a>
+              <span class="car-coord">at Downtown</span>
+            </div>
+            <div class="car-rent box-item js-carousel-item">
+              <span class="car-naming">Audi Q3</span>
+              <img class="car-photo" src="img/AudiQ3.png" alt="Audi Q3"/>
+              <span class="car-price">16,72</span>
+              <a href="#" class="rent-btn">Book now</a>
+              <span class="car-coord">at Milan Exhibition center</span>
+            </div><div class="car-rent box-item js-carousel-item">
+              <span class="car-naming">Audi Q3</span>
+              <img class="car-photo" src="img/AudiQ3.png" alt="Audi Q3"/>
+              <span class="car-new-price">16,72</span>
+              <span class="car-old-price">19,99 <i class="fa fa-eur"></i></span>
+              <a href="#" class="rent-btn">Book now</a>
+              <span class="car-coord">at Malpensa Airport (MXP)</span>
+            </div>
+            <div class="car-rent box-item js-carousel-item">
+              <span class="car-naming">Chevrolet Tahoe</span>
+              <img class="car-photo" src="img/Tahoe.png" alt="Chevrolet Tahoe"/>
+              <span class="car-new-price">14,99</span>
+              <span class="car-old-price">17,74 <i class="fa fa-eur"></i></span>
+              <a href="#" class="rent-btn">Book now</a>
+              <span class="car-coord">at Airport Belgamo</span>
+            </div>
+            <div class="car-rent box-item js-carousel-item">
+              <span class="car-naming">Skoda Octavia Scout</span>
+              <img class="car-photo" src="img/Skoda.png" alt="Skoda Octavia Scout"/>
+              <span class="car-price">18,42</span>
+              <a href="#" class="rent-btn">Book now</a>
+              <span class="car-coord">at Airport Linate</span>
+            </div>
+            <div class="car-rent box-item js-carousel-item">
+              <span class="car-naming">УАЗ Patriot</span>
+              <img class="car-photo" src="img/Patriot.png" alt="УАЗ Patriot"/>
+              <span class="car-price">19,99</span>
+              <a href="#" class="rent-btn">Book now</a>
+              <span class="car-coord">at Downtown</span>
+            </div>
+            <div class="car-rent box-item js-carousel-item">
+              <span class="car-naming">Audi Q3</span>
+              <img class="car-photo" src="img/AudiQ3.png" alt="Audi Q3"/>
+              <span class="car-price">16,72</span>
+              <a href="#" class="rent-btn">Book now</a>
+              <span class="car-coord">at Milan Exhibition center</span>
+            </div>
+            <div class="car-rent box-item js-carousel-item">
+              <span class="car-naming">УАЗ Patriot</span>
+              <img class="car-photo" src="img/Patriot.png" alt="УАЗ Patriot"/>
+              <span class="car-price">19,99</span>
+              <a href="#" class="rent-btn">Book now</a>
+              <span class="car-coord">at Downtown</span>
+            </div>
+            <div class="car-rent box-item js-carousel-item">
               <span class="car-naming">Audi Q3</span>
               <img class="car-photo" src="img/AudiQ3.png" alt="Audi Q3"/>
               <span class="car-price">16,72</span>
@@ -780,9 +458,12 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="auto-advertise-right-ar">
-        <img src="img/rightar.png" class="arrow-right" />
+        <div class="auto-advertise-left-ar js-carousel-button" data-dir="prev">
+          <img src="img/leftar.png" class="arrow-left" />
+        </div>
+        <div class="auto-advertise-right-ar js-carousel-button" data-dir="next">
+          <img src="img/rightar.png" class="arrow-right" />
+        </div>
       </div>
     </div>
     <div class="auto-advertise-footer">
@@ -1322,4 +1003,9 @@
       </div>
     </div>
   </section>
+  <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="js/dropdown.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/calendar.js"></script>
+  <!-- <script src="js/ajax.js"></script> -->
 </body>
