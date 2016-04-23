@@ -101,15 +101,15 @@
               <label class="dropdown-header menu-btn-header my-bookings-label js-dropdown-toggler" for="name">My Booking</label>
               <div class="dropdown-content my-bookings js-dropdown-box">
                 <div class="dropdown-row cf">
-                  <form action="#">
+                  <form action="/private/" method="post" id="auth-form" novalidate="novalidate">
                     <div class="nav-log">
-                      <input class="my-bookings-input" type="text" name="name" id="name" placeholder="John Smith" />
+                      <input class="my-bookings-input" type="email" name="email" id="email" placeholder="John Smith"/>
                     </div>
                     <div class="nav-log">
                       <input class="my-bookings-input" type="password" name="password" id="password"/>
                     </div>
                     <div class="nav-sub">
-                      <input class="my-bookings-submit" type="submit" value="Sign in" />
+                      <button class="my-bookings-submit" type="submit">Sign in</button>
                     </div>
                   </form>
                 </div>
@@ -265,7 +265,7 @@
             <img class="ItalyFlag" src="img/ItalyFlag.png" alt="ItalyFlag" />
           </div>
           <div class="search box-item">
-            <input class="search-input" type="text" name="Searchbar" value="">
+            <input class="search-input" type="text" data-role="autocomplete" name="Searchbar" value="">
           </div>
           <div class="dropdown searchbar-date sd-start box-item js-dropdown">
             <div class="dropdown-header date-in js-dropdown-toggler">
@@ -278,9 +278,6 @@
                   <i class="table-left-arrow fa fa-chevron-left js-calendar-arrow" data-dir="prev"></i>
                   <i class="table-right-arrow fa fa-chevron-right js-calendar-arrow" data-dir="next"></i>
                   <div class="calendar-container">
-                    <div class="calendar-wrap box-item js-calendar-wrap"></div>
-                    <div class="calendar-wrap box-item js-calendar-wrap"></div>
-                    <div class="calendar-wrap box-item js-calendar-wrap"></div>
                   </div>
                 </div>
               </div>
@@ -840,9 +837,9 @@
           <div class="rent-ww-email box__item--equal box-item ">
             <div class="rent-ww-footer-h">Stay tuned</div>
             <p>Subscribe to our latest news and offers</p>
-            <form action="#">
+            <form action="#" id="subscription-form">
                 <input class="rent-ww-footer-mail" type="text" name="email" id="email" placeholder="Your email" />
-                <input class="rent-ww-footer-btn" type="submit" value="Subscribe" />
+                <button class="rent-ww-footer-btn" type="submit">Subscribe</button>
             </form>
           </div>
         </div>
@@ -1007,5 +1004,7 @@
   <script src="js/dropdown.js"></script>
   <script src="js/slider.js"></script>
   <script src="js/calendar.js"></script>
+  <script src="js/autocomplete.js"></script>
+  <script src="js/validation.js"></script>
   <!-- <script src="js/ajax.js"></script> -->
 </body>

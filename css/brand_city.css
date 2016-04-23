@@ -31,7 +31,7 @@ a span {
           transition-timing-function: ease-in-out;
 }
 
-input {
+input , button {
   -webkit-transition-property: color background-color opacity;
           transition-property: color background-color opacity;
   -webkit-transition-duration: .25s;
@@ -622,6 +622,7 @@ header div {
   -webkit-flex: 1 1 0%;
       -ms-flex: 1 1 0%;
           flex: 1 1 0%;
+  position: relative;
 }
 
 .search-input {
@@ -653,6 +654,10 @@ header div {
   background-color: #dddddd;
   font-size: 1.4rem;
   position: relative;
+}
+
+.calendar-container {
+  display: flex;
 }
 
 .calendar-container::before,
@@ -692,11 +697,13 @@ header div {
   border-left: 10px solid #dddddd;
 }
 
-.searchbar-date:hover {
+.searchbar-date:hover,
+.searchbar-date.open {
   background-color: #add8e6;
 }
 
-.searchbar-date:hover::before {
+.searchbar-date:hover::before,
+.searchbar-date.open::before {
   border-left: 10px solid #add8e6;
 }
 
@@ -841,8 +848,7 @@ header div {
 }
 
 .calendar-wrap {
-  width: 33.333%;
-  float: left;
+  flex: 1 0 0;
 }
 
 .calendar td {
@@ -968,7 +974,13 @@ header div {
   position: absolute;
   top: 0;
   bottom: 0;
+  width: 40px;
+  cursor: pointer;
+}
 
+.auto-advertise-right-ar:hover,
+.auto-advertise-left-ar:hover {
+  background: #eee;
 }
 
 .auto-advertise-left-ar {
@@ -1082,7 +1094,10 @@ header div {
 
 .arrow-left,
 .arrow-right {
-  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
 }
 
 .carousel__list.unwrap{
@@ -1782,7 +1797,8 @@ header div {
   display: block;
 }
 
-.subscribe input {
+.subscribe input,
+.subscribe button {
   display: block;
   outline: none;
   width: 100%;
@@ -3092,4 +3108,28 @@ header div {
 
 .trip-day {
   background-color: yellow;
+}
+
+[data-role="autocomplete"] + .dropdown {
+  position: absolute;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #000;
+  width: 100%;
+  z-index: 1000;
+  top: 120%;
+}
+
+[data-role="autocomplete"] + .dropdown .dropdown-item {
+  padding: 5px 10px;
+}
+
+
+[data-role="autocomplete"] + .dropdown .dropdown-item:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+.input-error {
+  border-color: red;
 }
