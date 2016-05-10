@@ -1,124 +1,122 @@
-NodeList.prototype.forEach = Array.prototype.forEach;
+(function(){
 
-var Autocomplete = {
+    var searchInputWrap = document.querySelector(".js-autocomplete-wrap");
+    var searchInput = document.querySelector(".js-autocomplete-input");
+    var storeData;
 
-    _defaultOptions: {
-        apiUrl: 'https://restcountries.eu/rest/v1/name/{search}'
-    },
+    var ResultItem = function(country, city, airport, locations, searchInput) {
+  		this.country = country;
+  		this.city = city;
+  		this.airport = airport;
+  		this.locations = locations;
+  		this.searchInput = searchInput;
+  	};
 
-    attachInputEventListener: function(autocomplete) {
-        var timer = null;
+    var autocomplete = {
 
-        autocomplete.addEventListener('input', function() {
-            clearTimeout(timer);
-            timer = setTimeout(function() {
-                var ajax = new XMLHttpRequest();
-                var ajax_url = this._defaultOptions.apiUrl;
-                ajax_url = ajax_url.replace('{search}', encodeURIComponent(autocomplete.value));
+      resultsContainer : false,
+      enterKeyEvent : false,
+      activeResults: false,
 
-                ajax.open('GET', ajax_url);
+      addAutocompleteWrap : function() {
+        var containerDiv = document.createElement('div');
+        containerDiv.classList.add('autocomplete-wrap');
+        searchInputWrap.appendChild(containerDiv);
+        this.resultsContainer = true;
 
-                ajax.onload = function() {
-                    if (ajax.status === 200) {
-                        var countries = JSON.parse(ajax.responseText);
-                        var result_countries = {};
-                        countries.forEach(function(country) {
-                            result_countries[country.alpha2Code] = country.name;
-                        });
-                        var dropdown = this.createDropdown(result_countries);
-                        this.showDropdown(autocomplete, dropdown);
-                    } else {
-                        console.error('Autocomplete ajax error');
-                    }
-                }.bind(Autocomplete);
+        if ( !this.enterKeyEvent ){
+          document.addEventListener('click' , this.closeSearch);
+          this.enterKeyEvent = true;
+        };
+      },
 
-                ajax.send();
+      collapse : function() {
+          if ( this.activeResults ){
+            this.hideResults();
+            var acWrap = document.querySelector(".autocomplete-wrap");
+    				acWrap.classList.add("is-hidden");
+          }
+      },
 
-            }.bind(Autocomplete), 300)
-        });
-    },
+      showNoResult : function() {
+        var acWrap = document.querySelector(".autocomplete-wrap");
+        acWrap.innerHTML = "<div class='nothing-found'>Nothing found</div>";
+        this.activeResults = true;
+      },
 
-    createDropdown: function(items_list) {
-        var dropdown = Dropdown.createContainer();
-        var item = null;
-        for (var item_key in items_list) {
-            item = Dropdown.createItem(items_list[item_key], item_key);
-            dropdown.appendChild(item);
+      hideResults : function() {
+        var acWrap = document.querySelector(".autocomplete-wrap");
+        while (acWrap.firstChild) {
+          acWrap.firstChild.remove();
         }
-        return dropdown;
-    },
+      },
 
-    showDropdown: function(autocomplete, dropdown) {
-        this.removeDropdown(autocomplete);
-        autocomplete.parentNode.appendChild(dropdown);
-    },
+      closeSearch: function(e) {
+  			var acWrap = document.querySelector(".autocomplete-wrap");
+  			if (e.target != acWrap ) {
+          if ( !this.activeResults ) {
+            autocomplete.collapse();
+          }
+  			}
+  		},
 
-    getDropdown: function(autocomplete) {
-        return autocomplete.parentNode.getElementsByClassName(Dropdown._defaultOptions.styles.containerClass)[0];
-    },
+      searchData : function( obj ) {
+        var userInput = searchInput.value,
+            inputValue = userInput.toLowerCase();
+            console.log(inputValue);
+  			    // this.searchCities( obj, inputValue );
+      },
 
-    dropdownExists: function(autocomplete) {
-        var el = this.getDropdown(autocomplete)
-        if (el === undefined) {
-            return false;
-        } else {
-            return true;
+      parseResults : function() {
+        if ( !this.resultsContainer ) {
+  				this.addAutocompleteWrap();
+  			} else {
+  				var acWrap = document.querySelector(".autocomplete-wrap");
+  				acWrap.classList.remove("is-hidden");
+  			}
+
+        this.showNoResult();
+      },
+
+      init : function() {
+        var inputValue = searchInput.value;
+
+        for (var k in storeData) {
+  		    if (storeData.hasOwnProperty(k)) {
+  		      this.searchData(storeData[k]);
+  		    }
         }
-    },
 
-    /**
-     * Removes dropdown from DOM if dropdown exists
-     * @param autocomplete - autocomplete input HTML element
-     */
-    removeDropdown: function(autocomplete) {
-        var dropdown = this.getDropdown(autocomplete);
-        if (dropdown !== undefined) {
-            autocomplete.parentNode.removeChild(dropdown);
-        }
+        this.parseResults();
+      }
     }
 
-};
 
-var Dropdown = {
+    var parseData = function() {
+      var inputValue = searchInput.value;
 
-    _defaultOptions: {
-        styles: {
-            containerClass: 'dropdown',
-            itemClass: 'dropdown-item',
-        },
-        markup: {
-            containerTagName: 'div',
-            itemTagName: 'div',
-            itemValueAttributeName: 'data-value',
-        }
-    },
+  		if ( inputValue.length >= 3 ) {
+  			autocomplete.init();
+  		} else {
+  			autocomplete.collapse();
+  		}
+    }
 
-    createContainer: function() {
-        var el = document.createElement(this._defaultOptions.markup.containerTagName);
-        el.classList.add(this._defaultOptions.styles.containerClass);
-        return el;
-    },
+    var loadData = function() {
+  	  var ajax = new XMLHttpRequest();
+  	  ajax.open("GET", "https://api.myjson.com/bins/3809q", false);
+  	  ajax.onreadystatechange = function() {
+  	    if (ajax.readyState == 4 && ajax.status == 200) {
+  	      var data = JSON.parse(ajax.responseText);
+  				// Store object's "country" property with an array of countries objects
+  	      storeData = data.countries;
+  	    }
+  	  };
+  	  ajax.send(null);
+  	  searchInput.removeEventListener("focus", loadData);
+  	};
 
-    createItem: function(content, id) {
-        if (id === undefined) {
-            id = null;
-        }
-        var el = document.createElement(this._defaultOptions.markup.itemTagName);
-        el.classList.add(this._defaultOptions.styles.itemClass);
-        if (id !== null) {
-            el.setAttribute(this._defaultOptions.markup.itemValueAttributeName, id);
-        }
+    searchInput.addEventListener("input" , parseData);
+    searchInput.addEventListener("focus" , loadData);
 
-        el.textContent = content;
-        return el;
-    },
-
-
-
-};
-
-document.querySelectorAll('[data-role="autocomplete"]').forEach(function(ac) {
-
-    Autocomplete.attachInputEventListener(ac);
-
-});
+})();

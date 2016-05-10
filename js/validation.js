@@ -5,6 +5,7 @@ var validation = {
     $formElementsText : null,
     $formElementsEmail : null,
     $formElementsPassword : null,
+    errorClass : 'input-error',
 
     validEmail : null,
     validPass : null,
@@ -25,9 +26,35 @@ var validation = {
             en : {
 
               empty : "Fill field!",
-              email : "Enter correct e-mail!"
+              email : "Enter correct e-mail!",
+              password : "Password is too short!"
             }
         }
+    },
+
+    createErrorText : function( errorType ) {
+      var html = '<span class="' + validation.errorClass + '">' + errorType + '</span>';
+      return html;
+    },
+
+    removeErrorText : function( element , error ) {
+
+      element.removeClass("input-error");
+      element.siblings().each(function(){
+        if ($(this).hasClass(validation.errorClass)) {
+          $(this).remove();
+        }
+      });
+      if ( element.siblings().hasClass(error) ) {
+          element.siblings(error).remove();
+      }
+    },
+
+    insertErrorText : function( er , element ) {
+
+      validation.removeErrorText( element , $( validation.errorClass ) );
+      element.addClass("input-error");
+      $(er).insertAfter(element);
     },
 
     checkFill : function(val){
@@ -40,14 +67,6 @@ var validation = {
 
     },
 
-    addError : function(el) {
-      el.addClass("input-error");
-    },
-
-    hideError : function(el) {
-      el.removeClass("input-error");
-    },
-
     validate : function() {
 
       if ( validation.$formElementsText.length > 0 ) {
@@ -55,14 +74,12 @@ var validation = {
       } else {
           validation.validText = true;
       }
-
       if ( validation.$formElementsEmail.length > 0 ) {
           validation.validEmail = false;
           validation.validateEmail(validation.$formElementsEmail);
       } else {
           validation.validEmail = true;
       }
-
       if ( validation.$formElementsPassword.length > 0 ) {
           validation.validPass = false;
           validation.validatePassword(validation.$formElementsPassword);
@@ -77,73 +94,95 @@ var validation = {
     formSubmit : function() {
 
         if ( validation.validText && validation.validEmail && validation.validPass ) {
-          validation.$form.unbind("submit");
-          validation.$form.submit();
+            // validation.$form.unbind("submit");
+            // validation.$form.submit();
+          var url = validation.$form.attr('action');
+		      var serializedData = validation.$form.serialize();
+
+    			$.post( url, serializedData,
+    				// function(data){
+    				// 	if (data.error){
+            //     console.log("error");
+    				// 	} else if (data.success){
+    				// 		if (data.redirect){
+    				// 			window.location = data.redirect;
+    				// 			return ;
+    				// 		}
+    				// 		window.location.reload();
+    				// 	}
+    				// },
+             "json");
         }
 
     },
 
-    validateEmail : function(emailInput) {
+    validateEmail : function( emailInput ) {
 
-      $.each(emailInput , function(){
+      $.each( emailInput , function(){
 
         if ( validation.checkFill( emailInput.val() ) ) {
+
           if ( validation.emailFormat.test(emailInput.val()) ) {
-            validation.hideError(emailInput);
             validation.validEmail = true;
-            console.log("good email");
+            validation.removeErrorText( emailInput );
           } else {
-            validation.addError(emailInput);
             validation.validEmail = false;
-            console.log("bad email");
+            validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.email)  , emailInput );
           }
+
         } else {
-          validation.addError(emailInput);
           validation.validEmail = false;
-          console.log("fill email");
+          validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.empty)  , emailInput );
         }
 
       });
 
     },
 
-    validatePassword : function(passwordInput) {
+    validatePassword : function( passwordInput ) {
 
       if ( validation.checkFill( passwordInput.val() ) ) {
 
           if ( passwordInput.val().length >= validation.passFormat.passLength ) {
-              validation.hideError(passwordInput);
               validation.validPass = true;
-              console.log("good pass");
+              validation.removeErrorText( passwordInput );
           } else {
-              validation.addError(passwordInput);
               validation.validPass = false;
-              console.log("short pass");
+              validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.password)  , passwordInput );
           }
 
       } else {
-        validation.addError(passwordInput);
-        validation.validPass = false;
-        console.log("fill pass");
+          validation.validPass = false;
+          validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.empty)  , passwordInput );
       }
 
     },
 
 
-    init : function(formID){
+    init : function( formID ){
 
-
-        validation.$form = $(formID);
+        validation.$form = $( formID );
         validation.$formElementsText = validation.$form.find("input[type=text]");
         validation.$formElementsEmail = validation.$form.find("input[type=email]");
         validation.$formElementsPassword = validation.$form.find("input[type=password]");
 
-
-        validation.$form.on("submit", function(e){
-          e.preventDefault();
-          validation.validate();
-        });
+        validation.validate();
     }
 };
 
-validation.init("#auth-form");
+
+
+$("#auth-form").on("submit", function(e){
+  e.preventDefault();
+  validation.init($(this));
+});
+
+$("#subscription-form").on("submit", function(e){
+  e.preventDefault();
+  validation.init($(this));
+});
+
+$("#deals-subscription-form").on("submit", function(e){
+  e.preventDefault();
+  validation.init($(this));
+});

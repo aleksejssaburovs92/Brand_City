@@ -14,15 +14,9 @@ body {
 
 a{
   color: #0073b5;
-  -webkit-transition-property: color background-color opacity;
-          transition-property: color background-color opacity;
-  -webkit-transition-duration: .25s;
-          transition-duration: .25s;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
 }
 
-a span {
+a , a span , button {
   -webkit-transition-property: color background-color opacity;
           transition-property: color background-color opacity;
   -webkit-transition-duration: .25s;
@@ -32,12 +26,6 @@ a span {
 }
 
 input , button {
-  -webkit-transition-property: color background-color opacity;
-          transition-property: color background-color opacity;
-  -webkit-transition-duration: .25s;
-          transition-duration: .25s;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
   outline: 0;
   -webkit-appearance: none;
   border-radius: 0;
@@ -528,6 +516,10 @@ header div {
   width: 100%;
   padding: 5px;
   color: #000;
+}
+
+.my-bookings-input.input-error {
+  margin-bottom: 0;
 }
 
 .my-bookings-submit {
@@ -3110,7 +3102,7 @@ header div {
   background-color: yellow;
 }
 
-[data-role="autocomplete"] + .dropdown {
+.autocomplete-wrap {
   position: absolute;
   border: 1px solid #ccc;
   background: #fff;
@@ -3118,6 +3110,12 @@ header div {
   width: 100%;
   z-index: 1000;
   top: 120%;
+  max-height: 200px;
+  overflow: scroll;
+}
+
+.autocomplete-wrap.is-hidden {
+  display: none;
 }
 
 [data-role="autocomplete"] + .dropdown .dropdown-item {
@@ -3132,4 +3130,5 @@ header div {
 
 .input-error {
   border-color: red;
+  color: red;
 }

@@ -203,6 +203,13 @@ var calendarOptions = function(element){
         $target.addClass("js-start-date");
         start_date = new Date( $target.attr("data-date") );
 
+        // ADD MONTH TO DROPDOWN HEADER
+        var fullStartDate = cal_months_labels[start_date.getMonth()] + ' ' + start_date.getDate();
+        var shortStratDate = cal_months_labels[start_date.getMonth()].substring(0,3) + ' ' + start_date.getDate();
+
+        $(".sd-start").find(".date-full").html(fullStartDate);
+        $(".sd-start").find(".date-mini").html(shortStratDate);
+
         //UNBIND firstTripDate FUNCTION AND BIND lastTripDate FUNCTION
         $calendarDay.each(function(){
           $(this).off("click" , firstTripDate);
@@ -229,6 +236,13 @@ var calendarOptions = function(element){
       //ADD OUR CLICK TARGET CLASS AND UNBIND THIS CLICK EVENt
       $target.addClass("js-end-date");
       end_date = new Date( $target.attr("data-date") );
+
+      // ADD MONTH TO DROPDOWN HEADER
+      var fullEndDate = cal_months_labels[end_date.getMonth()] + ' ' + end_date.getDate();
+      var shortEndDate = cal_months_labels[end_date.getMonth()].substring(0,3) + ' ' + end_date.getDate();
+
+      $(".sd-end").find(".date-full").html(fullEndDate);
+      $(".sd-end").find(".date-mini").html(shortEndDate);
 
       //UNBIND lastTripDate FUNCTION AND BIND firstTripDate FUNCTION
       addEventToCalDay($calendarDay);

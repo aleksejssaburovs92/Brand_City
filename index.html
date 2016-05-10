@@ -264,8 +264,8 @@
             <span>AVIS</span>
             <img class="ItalyFlag" src="img/ItalyFlag.png" alt="ItalyFlag" />
           </div>
-          <div class="search box-item">
-            <input class="search-input" type="text" data-role="autocomplete" name="Searchbar" value="">
+          <div class="search box-item js-autocomplete-wrap">
+            <input class="search-input js-autocomplete-input" type="text" data-role="autocomplete" name="Searchbar" value="">
           </div>
           <div class="dropdown searchbar-date sd-start box-item js-dropdown">
             <div class="dropdown-header date-in js-dropdown-toggler">
@@ -837,8 +837,8 @@
           <div class="rent-ww-email box__item--equal box-item ">
             <div class="rent-ww-footer-h">Stay tuned</div>
             <p>Subscribe to our latest news and offers</p>
-            <form action="#" id="subscription-form">
-                <input class="rent-ww-footer-mail" type="text" name="email" id="email" placeholder="Your email" />
+            <form action="/subscribe-blank/" id="subscription-form" novalidate="novalidate">
+                <input class="rent-ww-footer-mail" type="email" name="email" id="email" placeholder="Your email" />
                 <button class="rent-ww-footer-btn" type="submit">Subscribe</button>
             </form>
           </div>
@@ -906,9 +906,9 @@
           <h3>Subscribe to our best deals</h3>
           <span>Car hire at half-price.</span>
           <span>Subscribe to our Exclusive Offers.</span>
-          <form action="#">
-              <div class="subscribe-wrap"><input class="subscribe-mail" type="text" name="email" id="email" placeholder="Enter your email" /></div>
-              <input class="subscribe-btn" type="submit" value="Subscribe" />
+          <form id="deals-subscription-form" action="/subscribe-deals/" novalidate="novalidate">
+              <div class="subscribe-wrap"><input class="subscribe-mail" type="email" name="email" id="email" placeholder="Enter your email" /></div>
+              <button class="subscribe-btn" type="submit">Subscribe</button>
           </form>
         </div>
         <div class="partners">
