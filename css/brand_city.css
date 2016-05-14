@@ -14,6 +14,9 @@ body {
 
 a{
   color: #0073b5;
+}
+
+a , a span , button {
   -webkit-transition-property: color background-color opacity;
           transition-property: color background-color opacity;
   -webkit-transition-duration: .25s;
@@ -22,23 +25,11 @@ a{
           transition-timing-function: ease-in-out;
 }
 
-a span {
-  -webkit-transition-property: color background-color opacity;
-          transition-property: color background-color opacity;
-  -webkit-transition-duration: .25s;
-          transition-duration: .25s;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
-}
-
-input {
-  -webkit-transition-property: color background-color opacity;
-          transition-property: color background-color opacity;
-  -webkit-transition-duration: .25s;
-          transition-duration: .25s;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
+input , button {
   outline: 0;
+  -webkit-appearance: none;
+  border-radius: 0;
+  border:1px solid rgba(204, 204, 204, 0.8);
 }
 
 a:hover {
@@ -232,7 +223,7 @@ header .dropdown {
   background-color: white;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown.open .dropdown-content {
   display: block;
 }
 
@@ -248,7 +239,8 @@ header .dropdown {
   font-size: 1.3rem;
 
 }
-.menu-btn-header:hover {
+.menu-btn-header:hover,
+.open .menu-btn-header {
   background-color: #133f5c;
   cursor: pointer;
 }
@@ -271,7 +263,7 @@ header .dropdown {
   font-size: 1rem;
 }
 
-.menu-btn.dropdown:hover .menu-btn-header::after{
+.menu-btn.dropdown.open .menu-btn-header::after{
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -445,6 +437,10 @@ header div {
   margin-left: 10px;
 }
 
+.language-menu .menu-btn-header {
+  width:60px;
+}
+
 .currency-menu {
   margin-left: 10px;
 }
@@ -520,6 +516,10 @@ header div {
   width: 100%;
   padding: 5px;
   color: #000;
+}
+
+.my-bookings-input.input-error {
+  margin-bottom: 0;
 }
 
 .my-bookings-submit {
@@ -614,6 +614,7 @@ header div {
   -webkit-flex: 1 1 0%;
       -ms-flex: 1 1 0%;
           flex: 1 1 0%;
+  position: relative;
 }
 
 .search-input {
@@ -644,15 +645,31 @@ header div {
   height: 45px;
   background-color: #dddddd;
   font-size: 1.4rem;
+  position: relative;
 }
 
-.searchbar-date .dropdown-header {
-    height: 16px;
-    top: 0;
-    left: 20px;
-    bottom: 0;
-    position: absolute;
-    margin: auto 0;
+.calendar-container {
+  display: flex;
+}
+
+.calendar-container::before,
+.calendar-container::after {
+  content:' ';
+  display: table;
+  clear: both;
+}
+
+.calendar-container td {
+  text-align: center;
+}
+
+.date-in,
+.date-out {
+  margin: auto 0;
+  padding-left: 20px;
+  padding-top: 13px;
+  cursor:pointer;
+  height: 100%;
 }
 
 .date-full{
@@ -672,11 +689,13 @@ header div {
   border-left: 10px solid #dddddd;
 }
 
-.searchbar-date:hover {
+.searchbar-date:hover,
+.searchbar-date.open {
   background-color: #add8e6;
 }
 
-.searchbar-date:hover::before {
+.searchbar-date:hover::before,
+.searchbar-date.open::before {
   border-left: 10px solid #add8e6;
 }
 
@@ -700,12 +719,11 @@ header div {
   padding: 0 30px;
   margin: 5px 0 20px;
   width: 100%;
-  white-space: nowrap;
-  height: 75px;
-  overflow: hidden;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+}
+
+.searchbar-pref-item {
+  width: 25%;
+  float:left;
 }
 
 .searchbar-calendar {
@@ -775,6 +793,7 @@ header div {
 
 .calendar-box {
   position: relative;
+  padding: 3px;
 }
 
 .table-left-arrow {
@@ -821,10 +840,7 @@ header div {
 }
 
 .calendar-wrap {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 0 0;
-      -ms-flex: 1 0 0;
-          flex: 1 0 0;
+  flex: 1 0 0;
 }
 
 .calendar td {
@@ -927,6 +943,9 @@ header div {
 }
 
 .slider {
+  position: relative;
+  height: 345px;
+  overflow: hidden;
   padding: 20px;
 }
 
@@ -934,36 +953,39 @@ header div {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  position: relative;
 }
 
 .auto-wrapp {
-  overflow:hidden;
-  height: 345px;
-  margin: 0 30px;
+  padding: 0 30px;
+  position:relative;
+}
+
+.auto-advertise-right-ar,
+.auto-advertise-left-ar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  cursor: pointer;
+}
+
+.auto-advertise-right-ar:hover,
+.auto-advertise-left-ar:hover {
+  background: #eee;
 }
 
 .auto-advertise-left-ar {
-  position: absolute;
   left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 .auto-advertise-right-ar {
-  position: absolute;
   right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 .car-rent{
-  position: relative;
   text-align: center;
-  min-width: 230px;
+  flex:1 0 230px;
   height: 320px;
 }
 
@@ -1057,23 +1079,21 @@ header div {
 
 
 .car-coord {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   margin-bottom: 15px;
   font-size: 1.4rem;
   color: #444444;
 }
 
-.arrow-left {
-  cursor: pointer;
-  padding-left: 15px;
+.arrow-left,
+.arrow-right {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
 }
 
-.arrow-right {
-  cursor: pointer;
-  padding-right: 15px;
+.carousel__list.unwrap{
+	flex-wrap: nowrap;
 }
 
 .contact-information-list .dropdown-row:before {
@@ -1213,7 +1233,7 @@ header div {
 }
 
 .feedback-country::after {
-  content: &#8212;;
+  content: ' —';
 }
 
 .positive::before {
@@ -1310,9 +1330,6 @@ header div {
   margin-right: 5px;
 }
 
-
-
-
 .show-menu {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-decoration: none;
@@ -1321,14 +1338,6 @@ header div {
 	text-align: center;
 	padding: 10px 0;
 	display: none;
-}
-
-header input[type=checkbox]{
-    display: none;
-}
-
-header input[type=checkbox]:checked ~ #menu{
-    display: block;
 }
 
 
@@ -1780,7 +1789,8 @@ header input[type=checkbox]:checked ~ #menu{
   display: block;
 }
 
-.subscribe input {
+.subscribe input,
+.subscribe button {
   display: block;
   outline: none;
   width: 100%;
@@ -2395,15 +2405,9 @@ header input[type=checkbox]:checked ~ #menu{
 
   .searchbar-date .date-in,
   .searchbar-date .date-out {
-    right: 0;
-    left: 0;
-    margin: auto;
-    width: inherit;
+    text-align: center;
   }
 
-  .date-full {
-    width: 88px;
-  }
 
   .search {
     -webkit-box-ordinal-group: 0;
@@ -2505,8 +2509,13 @@ header input[type=checkbox]:checked ~ #menu{
     padding: 0 10px;
   }
 
+  .searchbar-pref-item {
+    width: 33.333%;
+    float: left;
+  }
+
   .car-rent {
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
   }
 
 
@@ -2714,7 +2723,7 @@ header input[type=checkbox]:checked ~ #menu{
               animation: none;
     }
 
-    .menu-btn.dropdown:hover .menu-btn-header::after {
+    .menu-btn.dropdown.open .menu-btn-header::after {
       -webkit-transform: none;
           -ms-transform: none;
               transform: none;
@@ -2766,7 +2775,6 @@ header input[type=checkbox]:checked ~ #menu{
   }
 
   .liked-users {
-    display: none;
     float: none;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
@@ -2783,8 +2791,12 @@ header input[type=checkbox]:checked ~ #menu{
     height: 28px;
     position: absolute;
     right: 15px;
-    top:15px;
+    top: 15px;
+    cursor: pointer;
+  }
 
+  .searchbar {
+    margin: 0 0 100px 0;
   }
 
   .searchbar-section-advertise h1 {
@@ -2871,14 +2883,6 @@ header input[type=checkbox]:checked ~ #menu{
     content: none;
   }
 
-  .searchbar-date .date-in {
-    left: 20px;
-  }
-
-  .searchbar-date .date-out {
-    left: 20px;
-  }
-
   .non-active-mob {
     display: none;
   }
@@ -2905,6 +2909,10 @@ header input[type=checkbox]:checked ~ #menu{
 
   .searchbar-calendar-date-out .dropdown-row:after {
     left: 241px;
+  }
+
+  .searchbar-pref{
+    display: none;
   }
 
   .lte-table-ci .ci-icon {
@@ -3042,4 +3050,85 @@ header input[type=checkbox]:checked ~ #menu{
     zoom:.7;
   }
 
+}
+
+.slider.js-carousel-container::before,
+.slider.js-carousel-container::after {
+  content:' ';
+  position: absolute;
+  top: 0;
+  width:20px;
+  height: 100%;
+  z-index: 10;
+}
+
+.slider.js-carousel-container::before {
+  left: 0;
+}
+
+.slider.js-carousel-container::after {
+  right:0;
+}
+
+.calendar-table {
+  width: 100%;
+}
+
+.calendar-day {
+  cursor: pointer;
+}
+
+.calendar-day:hover {
+  background: blue;
+  color: #fff;
+}
+
+.calendar-day.disabled {
+  color: #ccc;
+  pointer-events: none;
+}
+
+.js-start-date {
+  background-color: red;
+  color: #fff;
+}
+
+.js-end-date {
+  background-color: green;
+  color: #fff;
+}
+
+.trip-day {
+  background-color: yellow;
+}
+
+.autocomplete-wrap {
+  position: absolute;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #000;
+  width: 100%;
+  z-index: 1000;
+  top: 120%;
+  max-height: 200px;
+  overflow: scroll;
+}
+
+.autocomplete-wrap.is-hidden {
+  display: none;
+}
+
+[data-role="autocomplete"] + .dropdown .dropdown-item {
+  padding: 5px 10px;
+}
+
+
+[data-role="autocomplete"] + .dropdown .dropdown-item:hover {
+  background: #eee;
+  cursor: pointer;
+}
+
+.input-error {
+  border-color: red;
+  color: red;
 }
