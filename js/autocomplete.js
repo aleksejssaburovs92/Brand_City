@@ -18,76 +18,84 @@
       enterKeyEvent : false,
       activeResults: false,
 
+      //sets dropdown
       addAutocompleteWrap : function() {
-        var containerDiv = document.createElement('div');
-        containerDiv.classList.add('autocomplete-wrap');
-        searchInputWrap.appendChild(containerDiv);
-        this.resultsContainer = true;
-
-        if ( !this.enterKeyEvent ){
-          document.addEventListener('click' , this.closeSearch);
-          this.enterKeyEvent = true;
-        };
+          var containerDiv = document.createElement('div');
+          containerDiv.classList.add('autocomplete-wrap');
+          searchInputWrap.appendChild(containerDiv);
+          autocomplete.resultsContainer = true;
       },
 
+      //hides dropdown
       collapse : function() {
-          if ( this.activeResults ){
-            this.hideResults();
-            var acWrap = document.querySelector(".autocomplete-wrap");
-    				acWrap.classList.add("is-hidden");
+          if ( autocomplete.activeResults ){
+              autocomplete.hideResults();
+              var acWrap = document.querySelector(".autocomplete-wrap");
+      				acWrap.classList.add("is-hidden");
           }
       },
 
+      //adds in dropdown element with no results found
       showNoResult : function() {
-        var acWrap = document.querySelector(".autocomplete-wrap");
-        acWrap.innerHTML = "<div class='nothing-found'>Nothing found</div>";
-        this.activeResults = true;
+          var acWrap = document.querySelector(".autocomplete-wrap");
+          acWrap.innerHTML = "<div class='nothing-found'>Nothing found</div>";
+          autocomplete.activeResults = true;
       },
 
+      // removes elements from dropdown
       hideResults : function() {
-        var acWrap = document.querySelector(".autocomplete-wrap");
-        while (acWrap.firstChild) {
-          acWrap.firstChild.remove();
-        }
+          var acWrap = document.querySelector(".autocomplete-wrap");
+          while (acWrap.firstChild) {
+              acWrap.firstChild.remove();
+          }
       },
 
       closeSearch: function(e) {
-  			var acWrap = document.querySelector(".autocomplete-wrap");
-  			if (e.target != acWrap ) {
-          if ( !this.activeResults ) {
-            autocomplete.collapse();
-          }
-  			}
+    			var acWrap = document.querySelector(".autocomplete-wrap");
+          console.log("closeSearch");
+    			if (e.target != acWrap ) {
+              if ( !this.activeResults ) {
+                  autocomplete.collapse();
+                  document.removeEventListener("click", autocomplete.closeSearch);
+                  autocomplete.enterKeyEvent = false;
+                  searchInput.addEventListener("click", autocomplete.parseResults);
+              }
+    			}
   		},
 
       searchData : function( obj ) {
-        var userInput = searchInput.value,
-            inputValue = userInput.toLowerCase();
-            console.log(inputValue);
-  			    // this.searchCities( obj, inputValue );
+          var userInput = searchInput.value,
+              inputValue = userInput.toLowerCase();
+    			    // this.searchCities( obj, inputValue );
       },
 
       parseResults : function() {
-        if ( !this.resultsContainer ) {
-  				this.addAutocompleteWrap();
-  			} else {
-  				var acWrap = document.querySelector(".autocomplete-wrap");
-  				acWrap.classList.remove("is-hidden");
-  			}
+          if ( !autocomplete.resultsContainer ) {
+    				    autocomplete.addAutocompleteWrap();
+    			} else {
+      				var acWrap = document.querySelector(".autocomplete-wrap");
+      				acWrap.classList.remove("is-hidden");
+    			}
 
-        this.showNoResult();
+          autocomplete.showNoResult();
+
+          if (!autocomplete.enterKeyEvent) {
+              console.log("add closeSearch");
+              document.addEventListener("click", autocomplete.closeSearch);
+      				autocomplete.enterKeyEvent = true;
+    			}
       },
 
       init : function() {
-        var inputValue = searchInput.value;
+          var inputValue = searchInput.value;
 
-        for (var k in storeData) {
-  		    if (storeData.hasOwnProperty(k)) {
-  		      this.searchData(storeData[k]);
-  		    }
-        }
+          for (var k in storeData) {
+      		    if (storeData.hasOwnProperty(k)) {
+      		        autocomplete.searchData(storeData[k]);
+      		    }
+          }
 
-        this.parseResults();
+          autocomplete.parseResults();
       }
     }
 
