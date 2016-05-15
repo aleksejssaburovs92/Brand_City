@@ -41,6 +41,62 @@
           autocomplete.resultsContainer = true;
       },
 
+      highlightElement : function ( index ) {
+          var currentHighlighted;
+          var array = document.querySelectorAll(".js-suggested-item");
+          if ( document.querySelector(".js-suggested-item_highlighted") !== null ) {
+              currentHighlighted = document.querySelector(".js-suggested-item_highlighted");
+          } else {
+              currentHighlighted = null;
+          }
+
+          if ( currentHighlighted === null ) {
+              if ( index === -1 ) {
+                  array[array.length - 1].classList.add("js-suggested-item_highlighted");
+              } else {
+                  array[0].classList.add("js-suggested-item_highlighted");
+              }
+          } else {
+              for(var i = 0; i < array.length; i++) {
+                  if ( array[i].classList.contains("js-suggested-item_highlighted") ) {
+                      array[i].classList.remove("js-suggested-item_highlighted");
+
+                      if ( array[ i + index ] === undefined && i+index < 0 ) {
+                          console.log("-");
+                          array[array.length - 1].classList.add("js-suggested-item_highlighted");
+                          return;
+                      } else if ( array[ i + index ] === undefined && i+index > array.length-1 ){
+                          console.log("+");
+                          array[0].classList.add("js-suggested-item_highlighted");
+                          return;
+                      } else {
+                          console.log("Z");
+                          array[i + index].classList.add("js-suggested-item_highlighted");
+                          return;
+                      }
+                  }
+              }
+          }
+      },
+
+      arroNavigation : function(e) {
+          var nextItem = null;
+
+          if ( e.keyCode === 38 ) {
+              nextItem = -1;
+              autocomplete.highlightElement( nextItem );
+          } else if ( e.keyCode === 40 ) {
+              nextItem = 1;
+              autocomplete.highlightElement( nextItem );
+          } else if ( e.keyCode === 13 ) {
+              searchInput.value = document.querySelector(".js-suggested-item_highlighted").innerText;
+              autocomplete.collapse();
+              autocomplete.clearData();
+              searchInput.addEventListener("focus", autocomplete.parseResults);
+              return;
+          }
+      },
+
       //hides dropdown
       collapse : function() {
           if ( autocomplete.activeResults ){
@@ -75,7 +131,7 @@
               document.removeEventListener("click", autocomplete.closeSearch);
               autocomplete.enterKeyEvent = false;
               autocomplete.clearData();
-              searchInput.addEventListener("click", autocomplete.parseResults);
+              searchInput.addEventListener("focus", autocomplete.parseResults);
     			}
   		},
 
@@ -102,17 +158,19 @@
       },
 
       selectValule : function() {
-          var x = document.querySelectorAll(".js-suggested-item");
-          for ( var z = 0; z < x.length; z++ ) {
-              x[z].addEventListener("click" , function(){
-                  searchInput.value = this.innerHTML;
+          var acElements = document.querySelectorAll(".js-suggested-item");
+          for ( var z = 0; z < acElements.length; z++ ) {
+              acElements[z].addEventListener("click" , function(){
+                  searchInput.value = this.innerText;
                   autocomplete.collapse();
+                  autocomplete.clearData();
+                  searchInput.addEventListener("focus", autocomplete.parseResults);
               });
           }
       },
 
-      searchData : function( obj ) {
-          var userInput = searchInput.value,
+      searchData : function( obj , value ) {
+          var userInput = value,
               inputValue = userInput.toLowerCase();
     			    this.searchCities( obj, inputValue );
       },
@@ -156,27 +214,31 @@
 			    autocomplete.addAutocompleteWrap();
 
           if ( autocomplete.citiesFound.length ) {
-            console.log(autocomplete.citiesFound.length + " :citiesfound");
               autocomplete.showResultCity();
+              document.addEventListener("keyup" , autocomplete.arroNavigation);
           } else {
               autocomplete.showNoResult();
           }
 
 
           if (!autocomplete.enterKeyEvent) {
-              document.addEventListener("click", autocomplete.closeSearch);
       				autocomplete.enterKeyEvent = true;
     			}
       },
 
-      init : function() {
-          var inputValue = searchInput.value;
-          console.log(this.citiesFound);
+      init : function( value ) {
+
           this.clearData();
+          var inputValue;
+          if ( value === undefined ) {
+              inputValue = searchInput.value;
+          } else {
+              inputValue = value;
+          }
 
           for (var k in storeData) {
       		    if (storeData.hasOwnProperty(k)) {
-      		        this.searchData(storeData[k]);
+      		        this.searchData(storeData[k] , inputValue );
       		    }
           }
 
@@ -189,13 +251,13 @@
      *
      */
     var parseData = function() {
-      var inputValue = searchInput.value;
+        var inputValue = searchInput.value;
 
-  		if ( inputValue.length >= 1 ) {
-  			   autocomplete.init();
-  		} else {
-  			   autocomplete.collapse();
-  		}
+    		if ( inputValue.length >= 1 ) {
+    			   autocomplete.init();
+    		} else {
+    			   autocomplete.collapse();
+    		}
     }
 
 
