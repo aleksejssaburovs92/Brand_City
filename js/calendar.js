@@ -144,6 +144,15 @@ addCalendarMonths();
 
 $(window).resize(function(){
   addCalendarMonths();
+  addCalendarOptions($(".calendar-container"));
+  colorChosenDays( start_date , end_date );
+  $(".calendar-day").each(function(i){
+      if ( $(this).attr("data-date") == start_date ) {
+        $(this).addClass("js-start-date");
+      } else if ( $(this).attr("data-date") == end_date ) {
+        $(this).addClass("js-end-date");
+      }
+  });
 });
 
 // CALENDAR OPTIONS NEXT OR PREV
@@ -225,18 +234,15 @@ var calendarOptions = function(element){
       var $target = $(event.target);
 
       // GET OBJECTS BY NEW DATE FROM OUR DATA_DATE ATTRIBUTE
-      var day_in = new Date( $(".js-start-date").attr("data-date") );
-      var day_out = new Date( $target.attr("data-date") );
+      end_date = new Date( $target.attr("data-date") );
 
+      $target.addClass("js-end-date");
 
       // DAY OUT CAN'T BE LESSER THAN DAY IN
-      if ( day_in > day_out ) {
+      if ( start_date > end_date ) {
         return false;
       }
 
-      //ADD OUR CLICK TARGET CLASS AND UNBIND THIS CLICK EVENt
-      $target.addClass("js-end-date");
-      end_date = new Date( $target.attr("data-date") );
 
       // ADD MONTH TO DROPDOWN HEADER
       var fullEndDate = cal_months_labels[end_date.getMonth()] + ' ' + end_date.getDate();
@@ -249,7 +255,7 @@ var calendarOptions = function(element){
       addEventToCalDay($calendarDay);
 
       //CALL FUNCTION colorChosenDays
-      colorChosenDays( day_in , day_out );
+      colorChosenDays( start_date , end_date );
     };
 
     addEventToCalDay = function(element) {
