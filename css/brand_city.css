@@ -3159,11 +3159,17 @@ header div {
   cursor: pointer;
 }
 
-.js-suggested-item:hover {
+.js-suggested-item:hover,
+.js-suggested-item_highlighted {
   background-color: #b2dcff;
   color: #0073b5;
 }
 
 .js-suggested-city {
   padding: 10px;
+}
+
+.nothing-found {
+  padding: 10px;
+  color: #ff0000;
 }

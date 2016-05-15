@@ -42,7 +42,7 @@ Calendar.prototype.generateHTML = function(){
 
 
     // do the header
-    var monthName = cal_months_labels[this.month]
+    var monthName = cal_months_labels[this.month];
     html += '<table class="calendar-table">';
     html += '<tr><th class="calendar-months" colspan="7">';
     html +=  monthName + "&nbsp;" + this.year;

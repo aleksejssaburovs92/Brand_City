@@ -2,7 +2,6 @@
 var validation = {
 
     $form : null,
-    $formElementsText : null,
     $formElementsEmail : null,
     $formElementsPassword : null,
     errorClass : 'input-error',
@@ -84,7 +83,7 @@ var validation = {
 
     formSubmit : function() {
 
-        if ( validation.validText && validation.validEmail && validation.validPass ) {
+        if ( validation.validEmail && validation.validPass ) {
 
           var url = validation.$form.attr('action');
 		      var serializedData = validation.$form.serialize();
@@ -108,25 +107,20 @@ var validation = {
 
     validateEmail : function( emailInput ) {
 
-        $.each( emailInput , function(){
+        if ( validation.checkFill( emailInput.val() ) ) {
 
-            if ( validation.checkFill( emailInput.val() ) ) {
-
-                if ( validation.emailFormat.test(emailInput.val()) ) {
-                    validation.validEmail = true;
-                    validation.removeErrorText( emailInput );
-                } else {
-                    validation.validEmail = false;
-                    validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.email)  , emailInput );
-                }
-
+            if ( validation.emailFormat.test(emailInput.val()) ) {
+                validation.validEmail = true;
+                validation.removeErrorText( emailInput );
             } else {
                 validation.validEmail = false;
-                validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.empty)  , emailInput );
+                validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.email)  , emailInput );
             }
 
-        });
-
+        } else {
+            validation.validEmail = false;
+            validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.empty)  , emailInput );
+        }
     },
 
     validatePassword : function( passwordInput ) {
