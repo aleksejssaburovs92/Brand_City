@@ -1,3 +1,4 @@
+(function(){
 // these are labels for the days of the week
 cal_days_labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -317,3 +318,4 @@ var addCalendarOptions = function(element) {
 };
 
 addCalendarOptions($(".calendar-container"));
+})();
