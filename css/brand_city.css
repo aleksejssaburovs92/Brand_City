@@ -1923,7 +1923,11 @@ header div {
   cursor: pointer;
 }
 
-.all-loc .plane::before {
+.plane {
+  position: relative;
+}
+
+.plane::before {
   content: '\f072';
   font-family: FontAwesome;
   position: absolute;
@@ -1936,7 +1940,7 @@ header div {
   font-size: 1.6rem;
 }
 
-.all-loc .plane:hover::before {
+.plane:hover::before {
   color: #0073b5;
 }
 
@@ -3111,8 +3115,7 @@ header div {
   width: 100%;
   z-index: 1000;
   top: 120%;
-  max-height: 210px;
-  overflow-x: scroll;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
 
 .autocomplete-wrap::before {
@@ -3125,6 +3128,11 @@ header div {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 10px solid #fff;
+}
+
+.autocomplete-inner-wrap {
+  max-height: 210px;
+  overflow-x: scroll;
 }
 
 .autocomplete-wrap.is-hidden {
@@ -3152,7 +3160,8 @@ header div {
 }
 
 .js-suggested-item:hover {
-  background-color : #eee;
+  background-color: #b2dcff;
+  color: #0073b5;
 }
 
 .js-suggested-city {

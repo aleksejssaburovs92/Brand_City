@@ -29,8 +29,11 @@
 
       addAutocompleteWrap : function() {
           var containerDiv = document.createElement('div');
+          var innerWrap = document.createElement('div');
+          innerWrap.classList.add('autocomplete-inner-wrap');
           containerDiv.classList.add('autocomplete-wrap');
           searchInputWrap.appendChild(containerDiv);
+          containerDiv.appendChild(innerWrap);
           autocomplete.resultsContainer = true;
       },
 
@@ -46,7 +49,7 @@
 
       //adds in dropdown element with no results found
       showNoResult : function() {
-          var acWrap = document.querySelector(".autocomplete-wrap");
+          var acWrap = document.querySelector(".autocomplete-inner-wrap");
           acWrap.innerHTML = "<div class='nothing-found'>Nothing found</div>";
           autocomplete.activeResults = true;
       },
@@ -115,14 +118,14 @@
 
       showResultCity : function(){
           autocomplete.activeResults = true;
-          var acWrap = document.querySelector(".autocomplete-wrap");
+          var acWrap = document.querySelector(".autocomplete-inner-wrap");
           acWrap.innerHTML = "";
           for (var x = 0; x < this.citiesFound.length; x++) {
               var matched = this.citiesFound[x].city.slice( this.citiesFound[x].city.toLowerCase().indexOf(this.citiesFound[x].searchInput) , this.citiesFound[x].city.toLowerCase().indexOf(this.citiesFound[x].searchInput) + this.citiesFound[x].searchInput.length );
               var matchedBold = "<b>" + matched + "</b>";
               var highlightedValue = this.citiesFound[x].city.replace( matched , matchedBold );
               acWrap.innerHTML += "<div class='" + this.itemClass + " " + this.itemCityClass + "'>" + highlightedValue + ", " + this.citiesFound[x].country + "</div>";
-              acWrap.innerHTML += "<div class='" + this.itemClass + "'>" + this.citiesFound[x].airport.name + "</div>";
+              acWrap.innerHTML += "<div class='" + this.itemClass + " plane'>" + this.citiesFound[x].airport.name + "</div>";
               for (var i = 0; i < this.citiesFound[x].locations.length; i++) {
                   acWrap.innerHTML += "<div class='" + this.itemClass + "'>" + this.citiesFound[x].locations[i] + "</div>";
               }
@@ -131,9 +134,7 @@
           autocomplete.selectValule();
       },
 
-      parseResults : function() {
-        // so click does not goes up of DOM
-          event.stopPropagation();
+      parseResults : function(e) {
           //remove old wrap
           autocomplete.collapse();
 
