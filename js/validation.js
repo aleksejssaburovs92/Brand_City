@@ -7,9 +7,8 @@ var validation = {
     $formElementsPassword : null,
     errorClass : 'input-error',
 
-    validEmail : null,
-    validPass : null,
-    validText : null,
+    validEmail : true,
+    validPass : true,
 
     emailFormat : /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 
@@ -69,22 +68,14 @@ var validation = {
 
     validate : function() {
 
-      if ( validation.$formElementsText.length > 0 ) {
-          validation.validText = false;
-      } else {
-          validation.validText = true;
-      }
       if ( validation.$formElementsEmail.length > 0 ) {
           validation.validEmail = false;
           validation.validateEmail(validation.$formElementsEmail);
-      } else {
-          validation.validEmail = true;
       }
+
       if ( validation.$formElementsPassword.length > 0 ) {
           validation.validPass = false;
           validation.validatePassword(validation.$formElementsPassword);
-      } else {
-          validation.validPass = true;
       }
 
       validation.formSubmit();
@@ -94,8 +85,7 @@ var validation = {
     formSubmit : function() {
 
         if ( validation.validText && validation.validEmail && validation.validPass ) {
-            // validation.$form.unbind("submit");
-            // validation.$form.submit();
+
           var url = validation.$form.attr('action');
 		      var serializedData = validation.$form.serialize();
 
@@ -118,43 +108,43 @@ var validation = {
 
     validateEmail : function( emailInput ) {
 
-      $.each( emailInput , function(){
+        $.each( emailInput , function(){
 
-        if ( validation.checkFill( emailInput.val() ) ) {
+            if ( validation.checkFill( emailInput.val() ) ) {
 
-          if ( validation.emailFormat.test(emailInput.val()) ) {
-            validation.validEmail = true;
-            validation.removeErrorText( emailInput );
-          } else {
-            validation.validEmail = false;
-            validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.email)  , emailInput );
-          }
+                if ( validation.emailFormat.test(emailInput.val()) ) {
+                    validation.validEmail = true;
+                    validation.removeErrorText( emailInput );
+                } else {
+                    validation.validEmail = false;
+                    validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.email)  , emailInput );
+                }
 
-        } else {
-          validation.validEmail = false;
-          validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.empty)  , emailInput );
-        }
+            } else {
+                validation.validEmail = false;
+                validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.empty)  , emailInput );
+            }
 
-      });
+        });
 
     },
 
     validatePassword : function( passwordInput ) {
 
-      if ( validation.checkFill( passwordInput.val() ) ) {
+        if ( validation.checkFill( passwordInput.val() ) ) {
 
-          if ( passwordInput.val().length >= validation.passFormat.passLength ) {
-              validation.validPass = true;
-              validation.removeErrorText( passwordInput );
-          } else {
-              validation.validPass = false;
-              validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.password)  , passwordInput );
-          }
+            if ( passwordInput.val().length >= validation.passFormat.passLength ) {
+                validation.validPass = true;
+                validation.removeErrorText( passwordInput );
+            } else {
+                validation.validPass = false;
+                validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.password)  , passwordInput );
+            }
 
-      } else {
-          validation.validPass = false;
-          validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.empty)  , passwordInput );
-      }
+        } else {
+            validation.validPass = false;
+            validation.insertErrorText( validation.createErrorText( validation.validationErrors.language.en.empty)  , passwordInput );
+        }
 
     },
 
@@ -162,7 +152,6 @@ var validation = {
     init : function( formID ){
 
         validation.$form = $( formID );
-        validation.$formElementsText = validation.$form.find("input[type=text]");
         validation.$formElementsEmail = validation.$form.find("input[type=email]");
         validation.$formElementsPassword = validation.$form.find("input[type=password]");
 
