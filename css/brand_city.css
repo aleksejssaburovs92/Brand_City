@@ -3105,13 +3105,26 @@ header div {
 .autocomplete-wrap {
   position: absolute;
   border: 1px solid #ccc;
+  padding: 2px;
   background: #fff;
   color: #000;
   width: 100%;
   z-index: 1000;
   top: 120%;
-  max-height: 200px;
-  overflow: scroll;
+  max-height: 210px;
+  overflow-x: scroll;
+}
+
+.autocomplete-wrap::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
 }
 
 .autocomplete-wrap.is-hidden {
@@ -3131,4 +3144,17 @@ header div {
 .input-error {
   border-color: red;
   color: red;
+}
+
+.js-suggested-item {
+  padding: 10px 10px 10px 30px;
+  cursor: pointer;
+}
+
+.js-suggested-item:hover {
+  background-color : #eee;
+}
+
+.js-suggested-city {
+  padding: 10px;
 }
