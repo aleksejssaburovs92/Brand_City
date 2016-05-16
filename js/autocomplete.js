@@ -15,11 +15,11 @@
     var autocomplete = {
 
       citiesFound : [],
-      resultsContainer : false,
-      enterKeyEvent : false,
-      activeResults : false,
       itemClass : "js-suggested-item",
+      itemHoverClass : "js-suggested-item_highlighted",
       itemCityClass : "js-suggested-city",
+      autocompleteWrap : "autocomplete-wrap",
+      autocompleteInnerWrap : "autocomplete-inner-wrap",
 
       //sets dropdown
       clearData : function() {
@@ -29,49 +29,45 @@
       /**
        * create autocomplete-wrap
        * inside autocomplete-wrap create autocomplete-inner-wrap
-       * set param autocomplete.resultsContainer = true;
        */
       addAutocompleteWrap : function() {
           var containerDiv = document.createElement('div');
           var innerWrap = document.createElement('div');
-          innerWrap.classList.add('autocomplete-inner-wrap');
-          containerDiv.classList.add('autocomplete-wrap');
+          innerWrap.classList.add(autocomplete.autocompleteInnerWrap);
+          containerDiv.classList.add(autocomplete.autocompleteWrap);
           searchInputWrap.appendChild(containerDiv);
           containerDiv.appendChild(innerWrap);
-          autocomplete.resultsContainer = true;
       },
 
       highlightElement : function ( index ) {
           var currentHighlighted;
-          var array = document.querySelectorAll(".js-suggested-item");
-          if ( document.querySelector(".js-suggested-item_highlighted") !== null ) {
-              currentHighlighted = document.querySelector(".js-suggested-item_highlighted");
+          var array = document.getElementsByClassName(autocomplete.itemClass);
+          if ( document.getElementsByClassName(autocomplete.itemHoverClass)[0] !== undefined ) {
+              currentHighlighted = document.getElementsByClassName(autocomplete.itemHoverClass)[0];
           } else {
               currentHighlighted = null;
           }
 
+
           if ( currentHighlighted === null ) {
               if ( index === -1 ) {
-                  array[array.length - 1].classList.add("js-suggested-item_highlighted");
+                  array[array.length - 1].classList.add(autocomplete.itemHoverClass);
               } else {
-                  array[0].classList.add("js-suggested-item_highlighted");
+                  array[0].classList.add(autocomplete.itemHoverClass);
               }
           } else {
               for(var i = 0; i < array.length; i++) {
-                  if ( array[i].classList.contains("js-suggested-item_highlighted") ) {
-                      array[i].classList.remove("js-suggested-item_highlighted");
+                  if ( array[i].classList.contains(autocomplete.itemHoverClass) ) {
+                      array[i].classList.remove(autocomplete.itemHoverClass);
 
                       if ( array[ i + index ] === undefined && i+index < 0 ) {
-                          console.log("-");
-                          array[array.length - 1].classList.add("js-suggested-item_highlighted");
+                          array[array.length - 1].classList.add(autocomplete.itemHoverClass);
                           return;
                       } else if ( array[ i + index ] === undefined && i+index > array.length-1 ){
-                          console.log("+");
-                          array[0].classList.add("js-suggested-item_highlighted");
+                          array[0].classList.add(autocomplete.itemHoverClass);
                           return;
                       } else {
-                          console.log("Z");
-                          array[i + index].classList.add("js-suggested-item_highlighted");
+                          array[i + index].classList.add(autocomplete.itemHoverClass);
                           return;
                       }
                   }
@@ -79,7 +75,29 @@
           }
       },
 
+      mouseHover : function(e) {
+
+          var itemCollection = document.getElementsByClassName(autocomplete.itemClass);
+
+          for ( var i = 0; i < itemCollection.length; i++ ) {
+              if ( itemCollection[i].classList.contains(autocomplete.itemHoverClass) ) {
+                  itemCollection[i].classList.remove(autocomplete.itemHoverClass)
+              }
+          }
+
+          if ( e.target.classList.contains(autocomplete.itemClass)  ) {
+              e.target.classList.add(autocomplete.itemHoverClass);
+          }
+      },
+
+      mouseRemoveHover : function(e) {
+          if ( e.target.classList.contains(autocomplete.itemHoverClass)  ) {
+              e.target.classList.remove(autocomplete.itemHoverClass);
+          }
+      },
+
       arroNavigation : function(e) {
+
           var nextItem = null;
 
           if ( e.keyCode === 38 ) {
@@ -89,7 +107,7 @@
               nextItem = 1;
               autocomplete.highlightElement( nextItem );
           } else if ( e.keyCode === 13 ) {
-              searchInput.value = document.querySelector(".js-suggested-item_highlighted").innerText;
+              searchInput.value = document.getElementsByClassName(autocomplete.itemHoverClass)[0].innerText;
               autocomplete.collapse();
               autocomplete.clearData();
               searchInput.addEventListener("focus", autocomplete.parseResults);
@@ -99,22 +117,18 @@
 
       //hides dropdown
       collapse : function() {
-          if ( autocomplete.activeResults ){
-              var acWrap = document.querySelector(".autocomplete-wrap");
-              if  ( acWrap !== null ) {
-                  acWrap.remove();
-              }
+          var acWrap = document.getElementsByClassName(autocomplete.autocompleteWrap);
+          if  ( acWrap[0] !== undefined ) {
+              acWrap[0].remove();
           }
       },
 
       /**
        * add to wrap div with innerHTML = Nothing found
-       * set param autocomplete.activeResults true
        */
       showNoResult : function() {
-          var acWrap = document.querySelector(".autocomplete-inner-wrap");
-          acWrap.innerHTML = "<div class='nothing-found'>Nothing found</div>";
-          autocomplete.activeResults = true;
+          var acWrap = document.getElementsByClassName(autocomplete.autocompleteWrap);
+          acWrapp[0].innerHTML = "<div class='nothing-found'>Nothing found</div>";
       },
 
       /**
@@ -129,8 +143,6 @@
     			if ( !autocomplete.isInsideContainer( e.target ) ) {
               autocomplete.collapse();
               document.removeEventListener("click", autocomplete.closeSearch);
-              autocomplete.enterKeyEvent = false;
-              autocomplete.clearData();
               searchInput.addEventListener("focus", autocomplete.parseResults);
     			}
   		},
@@ -143,7 +155,6 @@
        * @returns {boolean} - true if element is inside container or is container itself or false
        */
       isInsideContainer : function(element) {
-
           if ( element === null ) {
               return;
           }
@@ -158,7 +169,7 @@
       },
 
       selectValule : function() {
-          var acElements = document.querySelectorAll(".js-suggested-item");
+          var acElements = document.getElementsByClassName(autocomplete.itemClass);
           for ( var z = 0; z < acElements.length; z++ ) {
               acElements[z].addEventListener("click" , function(){
                   searchInput.value = this.innerText;
@@ -189,17 +200,16 @@
       },
 
       showResultCity : function(){
-          autocomplete.activeResults = true;
-          var acWrap = document.querySelector(".autocomplete-inner-wrap");
-          acWrap.innerHTML = "";
+          var acWrap = document.getElementsByClassName(autocomplete.autocompleteInnerWrap);
+          acWrap[0].innerHTML = "";
           for (var x = 0; x < this.citiesFound.length; x++) {
               var matched = this.citiesFound[x].city.slice( this.citiesFound[x].city.toLowerCase().indexOf(this.citiesFound[x].searchInput) , this.citiesFound[x].city.toLowerCase().indexOf(this.citiesFound[x].searchInput) + this.citiesFound[x].searchInput.length );
               var matchedBold = "<b>" + matched + "</b>";
               var highlightedValue = this.citiesFound[x].city.replace( matched , matchedBold );
-              acWrap.innerHTML += "<div class='" + this.itemClass + " " + this.itemCityClass + "'>" + highlightedValue + ", " + this.citiesFound[x].country + "</div>";
-              acWrap.innerHTML += "<div class='" + this.itemClass + " plane'>" + this.citiesFound[x].airport.name + "</div>";
+              acWrap[0].innerHTML += "<div class='" + this.itemClass + " " + this.itemCityClass + "'>" + highlightedValue + ", " + this.citiesFound[x].country + "</div>";
+              acWrap[0].innerHTML += "<div class='" + this.itemClass + " plane'>" + this.citiesFound[x].airport.name + "</div>";
               for (var i = 0; i < this.citiesFound[x].locations.length; i++) {
-                  acWrap.innerHTML += "<div class='" + this.itemClass + "'>" + this.citiesFound[x].locations[i] + "</div>";
+                  acWrap[0].innerHTML += "<div class='" + this.itemClass + "'>" + this.citiesFound[x].locations[i] + "</div>";
               }
           }
 
@@ -207,23 +217,23 @@
       },
 
       parseResults : function(e) {
+
           //remove old wrap
           autocomplete.collapse();
-
+          console.log("add");
           //create new wrap
 			    autocomplete.addAutocompleteWrap();
 
           if ( autocomplete.citiesFound.length ) {
               autocomplete.showResultCity();
               document.addEventListener("keyup" , autocomplete.arroNavigation);
+              document.addEventListener("mouseover" , autocomplete.mouseHover);
+              document.addEventListener("mouseout" , autocomplete.mouseRemoveHover);
           } else {
               autocomplete.showNoResult();
           }
 
-
-          if (!autocomplete.enterKeyEvent) {
-      				autocomplete.enterKeyEvent = true;
-    			}
+          document.addEventListener("click", autocomplete.closeSearch);
       },
 
       init : function( value ) {

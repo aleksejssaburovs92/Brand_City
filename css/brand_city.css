@@ -3159,7 +3159,6 @@ header div {
   cursor: pointer;
 }
 
-.js-suggested-item:hover,
 .js-suggested-item_highlighted {
   background-color: #b2dcff;
   color: #0073b5;
